@@ -1,0 +1,418 @@
+---
+import Layout from './Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  author: string;
+  category: string;
+  tags: string[];
+}
+
+const { title, description, pubDate, author, category, tags } = Astro.props;
+
+const formattedDate = new Date(pubDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+---
+
+<Layout title={`${title} | Skyabove Blog`} description={description}>
+  <Navigation />
+
+  <article class="blog-post">
+    <div class="blog-header">
+      <div class="container">
+        <div class="breadcrumbs">
+          <a href="/">Home</a>
+          <span class="separator">→</span>
+          <a href="/blog">Blog</a>
+          <span class="separator">→</span>
+          <span>{category}</span>
+        </div>
+
+        <div class="post-meta">
+          <span class="category-badge">{category}</span>
+        </div>
+
+        <h1 class="post-title">{title}</h1>
+        <p class="post-description">{description}</p>
+
+        <div class="post-info">
+          <div class="author-info">
+            <div class="author-avatar">
+              {author.split(' ').map(n => n[0]).join('')}
+            </div>
+            <div>
+              <div class="author-name">{author}</div>
+              <div class="post-date">{formattedDate}</div>
+            </div>
+          </div>
+
+          <div class="post-tags">
+            {tags.map((tag) => (
+              <span class="tag">{tag}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-content">
+      <div class="container">
+        <div class="prose">
+          <slot />
+        </div>
+
+        <div class="post-footer">
+          <div class="share-section">
+            <h3>Share this article</h3>
+            <div class="share-buttons">
+              <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(Astro.url.href)}`} target="_blank" rel="noopener" class="share-button twitter">
+                Twitter
+              </a>
+              <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.href)}`} target="_blank" rel="noopener" class="share-button linkedin">
+                LinkedIn
+              </a>
+              <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.href)}`} target="_blank" rel="noopener" class="share-button facebook">
+                Facebook
+              </a>
+            </div>
+          </div>
+
+          <div class="cta-section">
+            <h3>Ready to transform your marketing with AI?</h3>
+            <p>Let's discuss how Skyabove can help your business achieve extraordinary results.</p>
+            <a href="/#contact" class="btn btn-primary">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>
+
+<style>
+  .blog-post {
+    padding-top: 80px;
+  }
+
+  .blog-header {
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .breadcrumbs a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--primary-light);
+  }
+
+  .breadcrumbs .separator {
+    color: var(--text-muted);
+  }
+
+  .post-meta {
+    margin-bottom: 1.5rem;
+  }
+
+  .category-badge {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary-light);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+
+  .post-title {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .post-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .post-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--gradient-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .author-name {
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .post-date {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .post-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+  }
+
+  .blog-content {
+    padding: 4rem 0;
+  }
+
+  .prose {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+  }
+
+  .prose :global(h2) {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .prose :global(h3) {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .prose :global(p) {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+  }
+
+  .prose :global(li) {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .prose :global(strong) {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .prose :global(a) {
+    color: var(--primary-light);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
+  }
+
+  .prose :global(a:hover) {
+    color: var(--primary-color);
+  }
+
+  .prose :global(code) {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.95em;
+    color: var(--primary-light);
+    border: 1px solid var(--border-color);
+  }
+
+  .prose :global(pre) {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .prose :global(blockquote) {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+
+  .post-footer {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .share-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .share-section h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .share-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .share-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+  }
+
+  .share-button.twitter {
+    background: #1DA1F2;
+    color: white;
+    border-color: #1DA1F2;
+  }
+
+  .share-button.linkedin {
+    background: #0077B5;
+    color: white;
+    border-color: #0077B5;
+  }
+
+  .share-button.facebook {
+    background: #1877F2;
+    color: white;
+    border-color: #1877F2;
+  }
+
+  .share-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .cta-section {
+    background: var(--gradient-1);
+    border-radius: 16px;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  .cta-section h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .cta-section .btn {
+    background: white;
+    color: var(--bg-darker);
+  }
+
+  .cta-section .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    .post-title {
+      font-size: 2rem;
+    }
+
+    .post-description {
+      font-size: 1.1rem;
+    }
+
+    .post-info {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .prose :global(h2) {
+      font-size: 1.5rem;
+    }
+
+    .prose :global(h3) {
+      font-size: 1.25rem;
+    }
+
+    .prose :global(p),
+    .prose :global(li) {
+      font-size: 1rem;
+    }
+
+    .cta-section {
+      padding: 2rem;
+    }
+  }
+</style>
