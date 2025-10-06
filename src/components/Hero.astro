@@ -1,0 +1,330 @@
+---
+---
+
+<section id="home" class="hero">
+  <div class="hero-background">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-line">Transform Your Brand</span>
+        <span class="title-line">With <span class="gradient-text">AI-Powered</span></span>
+        <span class="title-line">Marketing</span>
+      </h1>
+      <p class="hero-description">
+        We leverage cutting-edge artificial intelligence to create data-driven marketing strategies
+        that deliver measurable results and accelerate your business growth.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Start Your Journey</a>
+        <a href="#portfolio" class="btn btn-secondary">View Our Work</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Clients Served</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label">Satisfaction Rate</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3.5x</span>
+          <span class="stat-label">Avg ROI Increase</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span class="scroll-text">Scroll to explore</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<script>
+  // Animated Counters for Hero Stats
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const stats = entry.target.querySelectorAll('.stat-number');
+        stats.forEach(stat => {
+          const text = stat.textContent || '';
+          let target: number;
+
+          if (text.includes('+')) {
+            target = parseInt(text.replace('+', ''));
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                stat.textContent = target + '+';
+                clearInterval(timer);
+              } else {
+                stat.textContent = Math.floor(current) + '+';
+              }
+            }, 30);
+          } else if (text.includes('%')) {
+            target = parseInt(text.replace('%', ''));
+            let current = 0;
+            const timer = setInterval(() => {
+              if (current >= target) {
+                stat.textContent = target + '%';
+                clearInterval(timer);
+              } else {
+                current += 1;
+                stat.textContent = current + '%';
+              }
+            }, 20);
+          } else if (text.includes('x')) {
+            const targetVal = parseFloat(text.replace('x', ''));
+            let current = 0;
+            const timer = setInterval(() => {
+              current += 0.1;
+              if (current >= targetVal) {
+                stat.textContent = targetVal + 'x';
+                clearInterval(timer);
+              } else {
+                stat.textContent = current.toFixed(1) + 'x';
+              }
+            }, 50);
+          }
+        });
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const heroStats = document.querySelector('.hero-stats');
+  if (heroStats) {
+    statsObserver.observe(heroStats);
+  }
+</script>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float 20s infinite ease-in-out;
+  }
+
+  .orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+    top: -10%;
+    left: -10%;
+    animation-delay: 0s;
+  }
+
+  .orb-2 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #ec4899 0%, transparent 70%);
+    top: 20%;
+    right: -15%;
+    animation-delay: 7s;
+  }
+
+  .orb-3 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, #14b8a6 0%, transparent 70%);
+    bottom: -10%;
+    left: 30%;
+    animation-delay: 14s;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .title-line {
+    display: block;
+    animation: fadeInUp 1s ease-out backwards;
+  }
+
+  .title-line:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .title-line:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .title-line:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  .gradient-text {
+    position: relative;
+    display: inline-block;
+  }
+
+  .gradient-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-1);
+    border-radius: 2px;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease-out 0.4s backwards;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out 0.5s backwards;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    animation: fadeInUp 1s ease-out 0.6s backwards;
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.7s backwards;
+  }
+
+  .scroll-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .scroll-arrow {
+    width: 2px;
+    height: 30px;
+    background: var(--text-muted);
+    margin: 0 auto;
+    position: relative;
+    animation: scrollArrow 2s infinite ease-in-out;
+  }
+
+  .scroll-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--text-muted);
+    border-bottom: 2px solid var(--text-muted);
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  @media (max-width: 1024px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+    }
+
+    .hero-stats {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+  }
+</style>

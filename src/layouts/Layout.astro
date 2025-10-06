@@ -1,0 +1,128 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Skyabove - Elevating brands with AI-powered marketing solutions" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <slot />
+
+    <script>
+      // Smooth Scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href') as string);
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Navbar Scroll Effect
+      const navbar = document.querySelector('.navbar');
+      let lastScroll = 0;
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+          navbar?.classList.add('scrolled');
+        } else {
+          navbar?.classList.remove('scrolled');
+        }
+
+        lastScroll = currentScroll;
+      });
+
+      // Intersection Observer for Scroll Animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all sections and cards
+      const animatedElements = document.querySelectorAll(
+        '.service-card, .portfolio-card, .testimonial-card, .section-header'
+      );
+
+      animatedElements.forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+      });
+
+      // Parallax Effect for Hero Orbs
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const orbs = document.querySelectorAll('.gradient-orb');
+
+        orbs.forEach((orb, index) => {
+          const speed = 0.3 + (index * 0.1);
+          (orb as HTMLElement).style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+
+      // Active Navigation Link Based on Scroll
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach(section => {
+          const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+          const sectionHeight = section.clientHeight;
+
+          if (window.pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id') || '';
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+
+      // Console message for developers
+      console.log('%c🚀 Skyabove - AI Marketing Agency', 'color: #6366f1; font-size: 20px; font-weight: bold;');
+      console.log('%cWebsite built with Astro', 'color: #94a3b8; font-size: 12px;');
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

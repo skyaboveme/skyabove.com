@@ -1,0 +1,203 @@
+---
+const services = [
+  {
+    icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
+    title: "AI Content Creation",
+    description: "Generate high-quality, engaging content at scale using advanced AI models trained on your brand voice.",
+    features: ["Blog posts & articles", "Social media content", "Email campaigns", "Ad copy optimization"]
+  },
+  {
+    icon: "M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z",
+    title: "Predictive Analytics",
+    description: "Make data-driven decisions with AI-powered analytics that predict customer behavior and market trends.",
+    features: ["Customer behavior forecasting", "Market trend analysis", "ROI prediction", "Campaign optimization"]
+  },
+  {
+    icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z",
+    title: "Personalization Engine",
+    description: "Deliver hyper-personalized experiences to each customer using machine learning algorithms.",
+    features: ["Dynamic content personalization", "Behavioral targeting", "Product recommendations", "Customer journey mapping"]
+  },
+  {
+    icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
+    title: "AI Chatbots & Automation",
+    description: "Engage customers 24/7 with intelligent chatbots and automated marketing workflows.",
+    features: ["Conversational AI", "Lead qualification", "Marketing automation", "Customer support bots"]
+  },
+  {
+    icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+    title: "SEO & Voice Search Optimization",
+    description: "Dominate search rankings with AI-optimized SEO strategies for both text and voice search.",
+    features: ["AI keyword research", "Voice search optimization", "Content optimization", "Technical SEO audits"]
+  },
+  {
+    icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+    title: "Performance Marketing",
+    description: "Maximize your ad spend with AI-driven campaigns that continuously optimize for conversions.",
+    features: ["Programmatic advertising", "Real-time bid optimization", "A/B testing automation", "Multi-channel attribution"]
+  }
+];
+---
+
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Services</span>
+      <h2 class="section-title">AI-Driven Marketing Solutions</h2>
+      <p class="section-description">
+        Harness the power of artificial intelligence to revolutionize your marketing strategy
+      </p>
+    </div>
+    <div class="services-grid">
+      {services.map((service) => (
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d={service.icon}/>
+            </svg>
+          </div>
+          <h3 class="service-title">{service.title}</h3>
+          <p class="service-description">{service.description}</p>
+          <ul class="service-features">
+            {service.features.map((feature) => (
+              <li>{feature}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Service Card Hover Effect
+  const serviceCards = document.querySelectorAll('.service-card');
+
+  serviceCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      serviceCards.forEach(otherCard => {
+        if (otherCard !== card) {
+          (otherCard as HTMLElement).style.opacity = '0.6';
+          (otherCard as HTMLElement).style.transform = 'scale(0.95)';
+        }
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      serviceCards.forEach(otherCard => {
+        (otherCard as HTMLElement).style.opacity = '1';
+        (otherCard as HTMLElement).style.transform = 'scale(1)';
+      });
+    });
+  });
+</script>
+
+<style>
+  .services {
+    background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-1);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    background: rgba(99, 102, 241, 0.05);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-icon svg {
+    width: 30px;
+    height: 30px;
+    color: white;
+  }
+
+  .service-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .service-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .service-features {
+    list-style: none;
+  }
+
+  .service-features li {
+    color: var(--text-muted);
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+  }
+
+  @media (max-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .service-card {
+      padding: 1.5rem;
+    }
+  }
+</style>
