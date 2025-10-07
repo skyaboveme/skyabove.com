@@ -3,6 +3,7 @@
 
 <section id="home" class="hero">
   <div class="hero-background">
+    <canvas id="gridCanvas" class="grid-canvas"></canvas>
     <div class="gradient-orb orb-1"></div>
     <div class="gradient-orb orb-2"></div>
     <div class="gradient-orb orb-3"></div>
@@ -46,6 +47,103 @@
 </section>
 
 <script>
+  // Animated Grid Background
+  const canvas = document.getElementById('gridCanvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d');
+
+  if (canvas && ctx) {
+    // Set canvas size
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Grid settings
+    const gridSize = 50;
+    const dotSize = 2;
+    const connectionDistance = 150;
+    const particles: Array<{x: number, y: number, vx: number, vy: number}> = [];
+
+    // Create particles
+    const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5
+      });
+    }
+
+    // Mouse position
+    let mouseX = canvas.width / 2;
+    let mouseY = canvas.height / 2;
+
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    });
+
+    function drawGrid() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw grid dots
+      ctx.fillStyle = 'rgba(99, 102, 241, 0.15)';
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        for (let y = 0; y < canvas.height; y += gridSize) {
+          const distToMouse = Math.hypot(mouseX - x, mouseY - y);
+          const opacity = Math.max(0.05, Math.min(0.3, 1 - distToMouse / 300));
+          ctx.globalAlpha = opacity;
+          ctx.beginPath();
+          ctx.arc(x, y, dotSize, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      ctx.globalAlpha = 1;
+
+      // Update and draw particles
+      particles.forEach((particle, i) => {
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        // Bounce off edges
+        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+
+        // Draw particle
+        const distToMouse = Math.hypot(mouseX - particle.x, mouseY - particle.y);
+        const size = Math.max(2, Math.min(5, 5 - distToMouse / 200));
+
+        ctx.fillStyle = 'rgba(99, 102, 241, 0.8)';
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, size, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw connections
+        particles.slice(i + 1).forEach(otherParticle => {
+          const dist = Math.hypot(particle.x - otherParticle.x, particle.y - otherParticle.y);
+          if (dist < connectionDistance) {
+            const opacity = (1 - dist / connectionDistance) * 0.3;
+            ctx.strokeStyle = `rgba(99, 102, 241, ${opacity})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.stroke();
+          }
+        });
+      });
+
+      requestAnimationFrame(drawGrid);
+    }
+
+    drawGrid();
+  }
+
   // Animated Counters for Hero Stats
   const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -123,46 +221,58 @@
     right: 0;
     bottom: 0;
     z-index: 0;
+    background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.8) 0%, var(--bg-darker) 100%);
+  }
+
+  .grid-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
 
   .gradient-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.3;
+    filter: blur(100px);
+    opacity: 0.2;
     animation: float 20s infinite ease-in-out;
+    z-index: 2;
+    pointer-events: none;
   }
 
   .orb-1 {
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     background: radial-gradient(circle, #6366f1 0%, transparent 70%);
-    top: -10%;
-    left: -10%;
+    top: -15%;
+    left: -15%;
     animation-delay: 0s;
   }
 
   .orb-2 {
-    width: 600px;
-    height: 600px;
+    width: 700px;
+    height: 700px;
     background: radial-gradient(circle, #ec4899 0%, transparent 70%);
     top: 20%;
-    right: -15%;
+    right: -20%;
     animation-delay: 7s;
   }
 
   .orb-3 {
-    width: 450px;
-    height: 450px;
+    width: 550px;
+    height: 550px;
     background: radial-gradient(circle, #14b8a6 0%, transparent 70%);
-    bottom: -10%;
-    left: 30%;
+    bottom: -15%;
+    left: 25%;
     animation-delay: 14s;
   }
 
   .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 10;
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
