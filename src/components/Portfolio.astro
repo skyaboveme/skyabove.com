@@ -38,6 +38,25 @@ const projects = [
 
 <section id="portfolio" class="portfolio">
   <div class="container">
+    <div class="stats-banner">
+      <div class="stat-box">
+        <span class="stat-big">455%</span>
+        <span class="stat-text">Average Revenue Growth</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-big">158%</span>
+        <span class="stat-text">ROAS Improvement</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-big">72%</span>
+        <span class="stat-text">Cost Reduction</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-big">17.2%</span>
+        <span class="stat-text">Marketing AI Adoption</span>
+      </div>
+    </div>
+
     <div class="section-header">
       <span class="section-label">Case Studies</span>
       <h2 class="section-title">Real Results from Real Businesses</h2>
@@ -100,6 +119,42 @@ const projects = [
 <style>
   .portfolio {
     background: var(--bg-dark);
+  }
+
+  .stats-banner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 20px;
+  }
+
+  .stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .stat-big {
+    font-size: 3rem;
+    font-weight: 900;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-text {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
   }
 
   .portfolio-grid {
