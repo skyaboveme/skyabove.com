@@ -1,19 +1,37 @@
 ---
+import SEO from '../components/SEO.astro';
+
 export interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
 }
 
-const { title, description = "Complete AI-powered marketing solutions: Website design, SEO, social media, SEM, display advertising, and more. Everything your business needs to dominate online." } = Astro.props;
+const {
+  title,
+  description = "Complete AI-powered marketing solutions: Website design, SEO, social media, SEM, display advertising, and more. Everything your business needs to dominate online.",
+  ogImage,
+  ogType,
+  noindex
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <title>{title}</title>
+
+    <!-- SEO Component -->
+    <SEO
+      title={title}
+      description={description}
+      canonical={Astro.url.href}
+      ogType={ogType}
+      ogImage={ogImage}
+      noindex={noindex}
+    />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
