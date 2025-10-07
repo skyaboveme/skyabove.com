@@ -48,6 +48,10 @@
           <li>Dedicated Account Management</li>
           <li>Monthly Performance Reporting</li>
         </ul>
+
+        <a href="/monthly-services-breakdown" class="detailed-breakdown-link">
+          View Complete Services Breakdown →
+        </a>
       </div>
     </div>
 
@@ -196,6 +200,28 @@
     color: var(--accent-color);
     font-weight: bold;
     font-size: 1.2rem;
+  }
+
+  .detailed-breakdown-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--primary-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .detailed-breakdown-link:hover {
+    background: var(--gradient-1);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
   }
 
   .pricing-faq {
