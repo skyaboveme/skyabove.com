@@ -1,4 +1,5 @@
 ---
+import Logo from './Logo.astro';
 ---
 
 <footer class="footer">
@@ -6,6 +7,7 @@
     <div class="footer-content">
       <div class="footer-brand">
         <div class="logo">
+          <Logo size={45} />
           <span class="logo-text">Sky<span class="highlight">above</span></span>
         </div>
         <p class="footer-tagline">Your complete AI-powered marketing partner—from websites to advertising and everything in between</p>
@@ -67,6 +69,13 @@
 
   .footer-brand {
     max-width: 400px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .logo-text {

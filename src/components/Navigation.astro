@@ -1,11 +1,13 @@
 ---
+import Logo from './Logo.astro';
 ---
 
 <nav class="navbar">
   <div class="container">
     <div class="nav-wrapper">
       <div class="logo">
-        <a href="/" style="text-decoration: none;">
+        <a href="/" class="logo-link">
+          <Logo size={40} />
           <span class="logo-text">Sky<span class="highlight">above</span></span>
         </a>
       </div>
@@ -77,6 +79,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.2rem 0;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
   }
 
   .logo-text {
