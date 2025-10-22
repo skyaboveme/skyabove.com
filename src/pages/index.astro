@@ -63,6 +63,16 @@ import Footer from '../components/Footer.astro';
         </p>
       </div>
 
+      <div class="ai-team-banner">
+        <div class="banner-icon">🤖✨👥</div>
+        <div class="banner-content">
+          <h3 class="banner-title">You Get a Team of Human AI Experts Utilizing Agentic AI for Your Business</h3>
+          <p class="banner-description">
+            Not just software. Not just consultants. You get dedicated AI specialists who leverage cutting-edge Agentic AI systems to deliver results that neither humans nor AI could achieve alone.
+          </p>
+        </div>
+      </div>
+
       <div class="packages-grid">
         <!-- Startup Package -->
         <div class="package-card startup">
@@ -666,6 +676,64 @@ import Footer from '../components/Footer.astro';
     background: var(--bg-darker);
   }
 
+  .ai-team-banner {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-team-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shine 3s infinite;
+  }
+
+  @keyframes shine {
+    to {
+      left: 100%;
+    }
+  }
+
+  .banner-icon {
+    font-size: 3rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .banner-content {
+    flex: 1;
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .banner-description {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
   .packages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -1167,6 +1235,20 @@ import Footer from '../components/Footer.astro';
   @media (max-width: 968px) {
     .hero-title {
       font-size: 3rem;
+    }
+
+    .ai-team-banner {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .banner-title {
+      font-size: 1.3rem;
+    }
+
+    .banner-description {
+      font-size: 1rem;
     }
 
     .packages-grid {
