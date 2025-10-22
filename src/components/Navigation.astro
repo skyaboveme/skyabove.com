@@ -13,6 +13,7 @@ import Logo from './Logo.astro';
       </div>
       <ul class="nav-menu">
         <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/startup-package" class="nav-link startup-highlight">🚀 Startup Package</a></li>
         <li><a href="/services" class="nav-link">Monthly Services</a></li>
         <li><a href="/#portfolio" class="nav-link">Portfolio</a></li>
         <li><a href="/blog" class="nav-link">Blog</a></li>
@@ -142,6 +143,15 @@ import Logo from './Logo.astro';
 
   .nav-link.active::after {
     width: 100%;
+  }
+
+  .nav-link.startup-highlight {
+    color: var(--primary-light);
+    font-weight: 600;
+  }
+
+  .nav-link.startup-highlight:hover {
+    color: var(--accent-color);
   }
 
   .nav-link.cta-button {
