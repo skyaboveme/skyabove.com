@@ -1,24 +1,1163 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
-import Hero from '../components/Hero.astro';
-import Services from '../components/Services.astro';
-import EverythingIncluded from '../components/EverythingIncluded.astro';
 import Portfolio from '../components/Portfolio.astro';
 import Testimonials from '../components/Testimonials.astro';
-import Pricing from '../components/Pricing.astro';
-import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Skyabove - Complete AI Marketing Agency | Everything Included, One Flat Fee" description="Bleeding-edge AI marketing. Everything included—websites, SEO, social media, PPC, email, content, automation. One flat monthly fee. 455% avg revenue growth. Schedule free consultation.">
+<Layout
+  title="Skyabove - AI-Powered Business Solutions | Startup & Transformation Packages"
+  description="Launch your startup or transform your existing business with enterprise AI. Two comprehensive packages: Startup Package ($2,500/mo) and AI Makeover ($3,500/mo). 259% avg efficiency gain."
+>
   <Navigation />
-  <Hero />
-  <Services />
-  <EverythingIncluded />
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Transform Your Business<br/>
+          <span class="gradient-text">With Enterprise AI</span>
+        </h1>
+        <p class="hero-subtitle">
+          Whether you're launching a startup or scaling an existing business,<br/>
+          we integrate enterprise-level AI throughout your entire operation.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">$7,500</div>
+            <div class="stat-label">AI Tools Included</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">259%</div>
+            <div class="stat-label">Avg Efficiency Gain</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">127</div>
+            <div class="stat-label">Businesses Launched</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Package Selector -->
+  <section class="packages">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Choose Your Path</span>
+        <h2 class="section-title">Two Comprehensive AI Packages</h2>
+        <p class="section-description">
+          Everything you need to succeed, powered by the world's most advanced AI platforms
+        </p>
+      </div>
+
+      <div class="packages-grid">
+        <!-- Startup Package -->
+        <div class="package-card startup">
+          <div class="package-badge">🚀 For New Businesses</div>
+          <h3 class="package-name">Startup Package</h3>
+          <p class="package-tagline">Launch your business from idea to revenue</p>
+
+          <div class="package-price">
+            <span class="currency">$</span>
+            <span class="amount">2,500</span>
+            <span class="period">/month</span>
+          </div>
+          <p class="package-commitment">3-month minimum • Cancel after</p>
+
+          <div class="package-ideal">
+            <strong>Perfect for:</strong>
+            <ul>
+              <li>Pre-launch startups</li>
+              <li>New entrepreneurs</li>
+              <li>Ideas ready to execute</li>
+              <li>First-time founders</li>
+            </ul>
+          </div>
+
+          <div class="package-features">
+            <h4>Everything to Launch:</h4>
+            <ul>
+              <li>Complete business planning & strategy</li>
+              <li>Full-stack website development</li>
+              <li>Brand identity & design</li>
+              <li>Content creation (daily)</li>
+              <li>Marketing automation & ads</li>
+              <li>Enterprise AI tools ($7,500 value)</li>
+              <li>Technical infrastructure</li>
+              <li>90-day launch timeline</li>
+            </ul>
+          </div>
+
+          <div class="package-result">
+            <strong>What You Get:</strong> Revenue-generating business in 90 days
+          </div>
+
+          <a href="/startup-package" class="btn btn-primary btn-block">
+            Learn More About Startup Package →
+          </a>
+        </div>
+
+        <!-- AI Makeover Package -->
+        <div class="package-card makeover featured">
+          <div class="package-badge popular">⚡ Most Popular</div>
+          <h3 class="package-name">AI Makeover</h3>
+          <p class="package-tagline">Transform your existing business with AI</p>
+
+          <div class="package-price">
+            <span class="currency">$</span>
+            <span class="amount">3,500</span>
+            <span class="period">/month</span>
+          </div>
+          <p class="package-commitment">No long-term contract • Cancel anytime</p>
+
+          <div class="package-ideal">
+            <strong>Perfect for:</strong>
+            <ul>
+              <li>$500K - $10M revenue</li>
+              <li>10-100 employees</li>
+              <li>Proven business model</li>
+              <li>Ready to scale efficiently</li>
+            </ul>
+          </div>
+
+          <div class="package-features">
+            <h4>Complete AI Integration:</h4>
+            <ul>
+              <li>Operations & automation AI</li>
+              <li>Customer experience AI</li>
+              <li>Marketing & sales AI</li>
+              <li>Data & analytics AI</li>
+              <li>Content & creative AI</li>
+              <li>Enterprise AI tools ($7,500 value)</li>
+              <li>Custom AI model training</li>
+              <li>Team training & enablement</li>
+            </ul>
+          </div>
+
+          <div class="package-result">
+            <strong>Average Results:</strong> $180K annual savings, 259% efficiency gain
+          </div>
+
+          <a href="/ai-makeover" class="btn btn-primary btn-block">
+            Learn More About AI Makeover →
+          </a>
+        </div>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="comparison-section">
+        <h3 class="comparison-title">Side-by-Side Comparison</h3>
+        <div class="comparison-table">
+          <div class="comparison-row header">
+            <div class="comparison-cell feature-name"></div>
+            <div class="comparison-cell">🚀 Startup Package</div>
+            <div class="comparison-cell featured">⚡ AI Makeover</div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comparison-cell feature-name">Monthly Investment</div>
+            <div class="comparison-cell">$2,500/month</div>
+            <div class="comparison-cell featured">$3,500/month</div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comparison-cell feature-name">Commitment</div>
+            <div class="comparison-cell">3 months minimum</div>
+            <div class="comparison-cell featured">None • Cancel anytime</div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comparison-cell feature-name">Ideal For</div>
+            <div class="comparison-cell">New startups (pre-revenue)</div>
+            <div class="comparison-cell featured">Existing businesses ($500K+)</div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comparison-cell feature-name">Enterprise AI Tools</div>
+            <div class="comparison-cell">✓ Included ($7,500 value)</div>
+            <div class="comparison-cell featured">✓ Included ($7,500 value)</div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comparison-cell feature-name">Business Planning</div>
+            <div class="comparison-cell">✓ Complete plan</div>
+            <div class="comparison-cell featured">✓ AI integration strategy</div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comparison-cell feature-name">Website Development</div>
+            <div class="comparison-cell">✓ Full custom build</div>
+            <div class="comparison-cell featured">✓ AI enhancement</div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comparison-cell feature-name">Marketing & Ads</div>
+            <div class="comparison-cell">✓ Complete setup</div>
+            <div class="comparison-cell featured">✓ AI-powered optimization</div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comparison-cell feature-name">Operations Automation</div>
+            <div class="comparison-cell">○ Basic</div>
+            <div class="comparison-cell featured">✓ Advanced AI automation</div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comparison-cell feature-name">Custom AI Models</div>
+            <div class="comparison-cell">○ Not included</div>
+            <div class="comparison-cell featured">✓ Business-specific training</div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comparison-cell feature-name">Team Training</div>
+            <div class="comparison-cell">○ Basic onboarding</div>
+            <div class="comparison-cell featured">✓ Comprehensive enablement</div>
+          </div>
+
+          <div class="comparison-row">
+            <div class="comparison-cell feature-name">Expected Timeline</div>
+            <div class="comparison-cell">90-day launch</div>
+            <div class="comparison-cell featured">30 days to first results</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Enterprise AI -->
+  <section class="why-ai">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Enterprise AI Advantage</span>
+        <h2 class="section-title">$7,500/Month in AI Tools Included</h2>
+        <p class="section-description">
+          Access the same AI platforms used by Fortune 500 companies—included in both packages
+        </p>
+      </div>
+
+      <div class="ai-tools-grid">
+        <div class="ai-tool">
+          <div class="tool-logo">🤖</div>
+          <h4>ChatGPT Enterprise</h4>
+          <p>Automation & content</p>
+        </div>
+        <div class="ai-tool">
+          <div class="tool-logo">⚡</div>
+          <h4>Claude Pro Teams</h4>
+          <p>Analysis & reasoning</p>
+        </div>
+        <div class="ai-tool">
+          <div class="tool-logo">🔮</div>
+          <h4>Google Gemini</h4>
+          <p>Search & productivity</p>
+        </div>
+        <div class="ai-tool">
+          <div class="tool-logo">✨</div>
+          <h4>Midjourney</h4>
+          <p>Image generation</p>
+        </div>
+        <div class="ai-tool">
+          <div class="tool-logo">🎬</div>
+          <h4>HeyGen</h4>
+          <p>Video AI</p>
+        </div>
+        <div class="ai-tool">
+          <div class="tool-logo">🎵</div>
+          <h4>Suno AI</h4>
+          <p>Music & audio</p>
+        </div>
+        <div class="ai-tool">
+          <div class="tool-logo">🔍</div>
+          <h4>Perplexity Pro</h4>
+          <p>Research</p>
+        </div>
+        <div class="ai-tool">
+          <div class="tool-logo">🛠️</div>
+          <h4>+ Many More</h4>
+          <p>10+ platforms</p>
+        </div>
+      </div>
+
+      <div class="ai-value-prop">
+        <div class="value-item">
+          <span class="value-label">If purchased separately:</span>
+          <span class="value-amount">$7,500/month</span>
+        </div>
+        <div class="value-item highlight">
+          <span class="value-label">Included in both packages:</span>
+          <span class="value-amount">FREE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
   <Portfolio />
+
+  <!-- Testimonials -->
   <Testimonials />
-  <Pricing />
-  <Contact />
+
+  <!-- Results Section -->
+  <section class="results">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Proven Results</span>
+        <h2 class="section-title">Real Numbers from Real Businesses</h2>
+      </div>
+
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-stat">259%</div>
+          <div class="result-label">Average Efficiency Gain</div>
+          <p class="result-desc">AI automation reduces manual work by over 2.5x</p>
+        </div>
+
+        <div class="result-card">
+          <div class="result-stat">$180K</div>
+          <div class="result-label">Average Annual Savings</div>
+          <p class="result-desc">From reduced labor, improved efficiency, and AI tools</p>
+        </div>
+
+        <div class="result-card">
+          <div class="result-stat">455%</div>
+          <div class="result-label">Average Revenue Growth</div>
+          <p class="result-desc">Startups and transformations combined</p>
+        </div>
+
+        <div class="result-card">
+          <div class="result-stat">30 Days</div>
+          <div class="result-label">Time to First Results</div>
+          <p class="result-desc">See measurable improvements in your first month</p>
+        </div>
+
+        <div class="result-card">
+          <div class="result-stat">127</div>
+          <div class="result-label">Businesses Launched</div>
+          <p class="result-desc">Successful startups and transformations</p>
+        </div>
+
+        <div class="result-card">
+          <div class="result-stat">98%</div>
+          <div class="result-label">Client Satisfaction</div>
+          <p class="result-desc">Based on 500+ reviews and testimonials</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to Transform Your Business?</h2>
+        <p class="cta-description">
+          Schedule a free consultation to discuss which package is right for you
+        </p>
+        <div class="cta-buttons">
+          <a href="/startup-package" class="btn btn-primary btn-large">🚀 Startup Package</a>
+          <a href="/ai-makeover" class="btn btn-primary btn-large">⚡ AI Makeover</a>
+        </div>
+        <p class="cta-contact">
+          Or call us at <a href="tel:+19517600896">(951) 760-0896</a> • Available 9 AM - 6 PM PST
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <span class="section-label">Get Started</span>
+          <h2 class="section-title">Let's Discuss Your Needs</h2>
+          <p class="contact-description">
+            Schedule a free consultation and we'll help you choose the right package for your business.
+          </p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div>
+                <h4>Phone</h4>
+                <p><a href="tel:+19517600896">(951) 760-0896</a></p>
+                <p class="hours">Available 9 AM - 6 PM PST</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📧</div>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:hello@skyabove.com">hello@skyabove.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+              <label for="package">Interested In</label>
+              <select id="package" name="package" required>
+                <option value="">Select package</option>
+                <option value="startup">🚀 Startup Package ($2,500/mo)</option>
+                <option value="makeover">⚡ AI Makeover ($3,500/mo)</option>
+                <option value="unsure">Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell us about your business</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Schedule Free Consultation
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <Footer />
 </Layout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 0 4rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float 20s ease-in-out infinite;
+  }
+
+  .orb-1 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    top: -10%;
+    right: -10%;
+  }
+
+  .orb-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    bottom: -10%;
+    left: -5%;
+    animation-delay: 5s;
+  }
+
+  .orb-3 {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    top: 40%;
+    left: 50%;
+    animation-delay: 10s;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(30px, -30px) scale(1.1); }
+    50% { transform: translate(-20px, 20px) scale(0.9); }
+    75% { transform: translate(40px, 10px) scale(1.05); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+  }
+
+  /* Packages Section */
+  .packages {
+    padding: 6rem 0;
+    background: var(--bg-darker);
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+  }
+
+  .package-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid var(--border-color);
+    border-radius: 24px;
+    padding: 3rem;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .package-card.featured {
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+  }
+
+  .package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 70px rgba(99, 102, 241, 0.4);
+  }
+
+  .package-badge {
+    display: inline-block;
+    background: rgba(99, 102, 241, 0.15);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: var(--primary-light);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .package-badge.popular {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border: none;
+    color: white;
+  }
+
+  .package-name {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .package-tagline {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .package-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .currency {
+    font-size: 2rem;
+    color: var(--primary-light);
+  }
+
+  .amount {
+    font-size: 4.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .period {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+  }
+
+  .package-commitment {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  .package-ideal {
+    background: rgba(99, 102, 241, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+
+  .package-ideal strong {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: var(--primary-light);
+  }
+
+  .package-ideal ul {
+    list-style: none;
+  }
+
+  .package-ideal li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+  }
+
+  .package-ideal li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+
+  .package-features {
+    margin-bottom: 2rem;
+  }
+
+  .package-features h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .package-features ul {
+    list-style: none;
+  }
+
+  .package-features li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .package-features li:last-child {
+    border-bottom: none;
+  }
+
+  .package-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .package-result {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .package-result strong {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-block {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Comparison Table */
+  .comparison-section {
+    margin-top: 5rem;
+    padding-top: 4rem;
+    border-top: 2px solid var(--border-color);
+  }
+
+  .comparison-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  .comparison-table {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .comparison-row:last-child {
+    border-bottom: none;
+  }
+
+  .comparison-row.header {
+    background: rgba(99, 102, 241, 0.1);
+    font-weight: 700;
+  }
+
+  .comparison-cell {
+    padding: 1.5rem;
+    text-align: center;
+    border-right: 1px solid var(--border-color);
+  }
+
+  .comparison-cell:last-child {
+    border-right: none;
+  }
+
+  .comparison-cell.feature-name {
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .comparison-cell.featured {
+    background: rgba(99, 102, 241, 0.05);
+  }
+
+  /* Why AI Section */
+  .why-ai {
+    padding: 6rem 0;
+    background: var(--bg-dark);
+  }
+
+  .ai-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+
+  .ai-tool {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .ai-tool:hover {
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+  }
+
+  .tool-logo {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .ai-tool h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .ai-tool p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .ai-value-prop {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 16px;
+    padding: 3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .value-item {
+    text-align: center;
+  }
+
+  .value-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .value-amount {
+    display: block;
+    font-size: 3rem;
+    font-weight: 900;
+  }
+
+  .value-item.highlight .value-amount {
+    font-size: 4rem;
+  }
+
+  /* Results Section */
+  .results {
+    padding: 6rem 0;
+    background: var(--bg-darker);
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .result-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .result-stat {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+  }
+
+  .result-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .result-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+
+  .cta-description {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .btn-large {
+    padding: 1.25rem 3rem;
+    font-size: 1.2rem;
+  }
+
+  .cta-contact {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+
+  .cta-contact a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .cta-contact a:hover {
+    border-bottom-color: white;
+  }
+
+  /* Contact Section */
+  .contact {
+    padding: 6rem 0;
+    background: var(--bg-dark);
+  }
+
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-details {
+    margin-top: 2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+  }
+
+  .contact-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .contact-item p {
+    color: var(--text-secondary);
+  }
+
+  .contact-item a {
+    color: var(--primary-light);
+    text-decoration: none;
+  }
+
+  .contact-item a:hover {
+    text-decoration: underline;
+  }
+
+  .hours {
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+
+  .contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.875rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1rem;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+
+  .btn-full {
+    width: 100%;
+  }
+
+  /* Responsive */
+  @media (max-width: 968px) {
+    .hero-title {
+      font-size: 3rem;
+    }
+
+    .packages-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-row {
+      grid-template-columns: 1fr;
+    }
+
+    .comparison-cell {
+      border-right: none;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .contact-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .btn-large {
+      width: 100%;
+    }
+
+    .ai-value-prop {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+  // GA4 Event Tracking
+  function trackEvent(eventName: string, params = {}) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', eventName, params);
+    }
+  }
+
+  // Track page view
+  trackEvent('page_view', {
+    page_title: 'Homepage - Package Selector',
+    page_location: window.location.href
+  });
+
+  // Form submission
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form as HTMLFormElement);
+      const packageChoice = formData.get('package');
+
+      trackEvent('generate_lead', {
+        event_category: 'Form',
+        event_label: 'Homepage Contact Form',
+        package_interest: packageChoice
+      });
+
+      alert('Thank you! We\'ll be in touch within 24 hours to discuss your needs.');
+      form.reset();
+    });
+  }
+
+  // Track package link clicks
+  document.querySelectorAll('a[href="/startup-package"], a[href="/ai-makeover"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+      const packageType = href === '/startup-package' ? 'Startup' : 'AI Makeover';
+
+      trackEvent('package_view_intent', {
+        event_category: 'Navigation',
+        event_label: packageType,
+        link_location: 'Homepage'
+      });
+    });
+  });
+
+  // Track phone clicks
+  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', () => {
+      trackEvent('phone_click', {
+        event_category: 'Contact',
+        event_label: 'Homepage Phone Click'
+      });
+    });
+  });
+</script>
