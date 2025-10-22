@@ -15,6 +15,7 @@ import Footer from '../components/Footer.astro';
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-background">
+      <canvas id="gridCanvas" class="grid-canvas"></canvas>
       <div class="gradient-orb orb-1"></div>
       <div class="gradient-orb orb-2"></div>
       <div class="gradient-orb orb-3"></div>
@@ -22,11 +23,11 @@ import Footer from '../components/Footer.astro';
     <div class="container">
       <div class="hero-content">
         <h1 class="hero-title">
-          Transform Your Business<br/>
-          <span class="gradient-text">With Enterprise AI</span>
+          <span class="title-line">Transform Your Business</span>
+          <span class="title-line"><span class="gradient-text">With Enterprise AI</span></span>
         </h1>
         <p class="hero-subtitle">
-          Whether you're launching a startup or scaling an existing business,<br/>
+          Whether you're launching a startup or scaling an existing business,
           we integrate enterprise-level AI throughout your entire operation.
         </p>
         <div class="hero-stats">
@@ -44,6 +45,10 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
       </div>
+    </div>
+    <div class="scroll-indicator">
+      <span class="scroll-text">Scroll to explore</span>
+      <div class="scroll-arrow"></div>
     </div>
   </section>
 
@@ -458,40 +463,54 @@ import Footer from '../components/Footer.astro';
     width: 100%;
     height: 100%;
     pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.8) 0%, var(--bg-darker) 100%);
+  }
+
+  .grid-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
   }
 
   .gradient-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.3;
-    animation: float 20s ease-in-out infinite;
+    filter: blur(100px);
+    opacity: 0.2;
+    animation: float 20s infinite ease-in-out;
+    z-index: 2;
+    pointer-events: none;
   }
 
   .orb-1 {
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    top: -10%;
-    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+    top: -15%;
+    left: -15%;
+    animation-delay: 0s;
   }
 
   .orb-2 {
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
-    bottom: -10%;
-    left: -5%;
-    animation-delay: 5s;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, #ec4899 0%, transparent 70%);
+    top: 20%;
+    right: -20%;
+    animation-delay: 7s;
   }
 
   .orb-3 {
-    width: 350px;
-    height: 350px;
-    background: linear-gradient(135deg, #8b5cf6, #ec4899);
-    top: 40%;
-    left: 50%;
-    animation-delay: 10s;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, #14b8a6 0%, transparent 70%);
+    bottom: -15%;
+    left: 25%;
+    animation-delay: 14s;
   }
 
   @keyframes float {
@@ -503,10 +522,11 @@ import Footer from '../components/Footer.astro';
 
   .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 10;
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
+    animation: fadeInUp 1s ease-out;
   }
 
   .hero-title {
@@ -515,6 +535,20 @@ import Footer from '../components/Footer.astro';
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  .title-line {
+    display: block;
+    animation: fadeInUp 1s ease-out backwards;
+  }
+
+  .title-line:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .title-line:nth-child(2) {
+    animation-delay: 0.2s;
   }
 
   .gradient-text {
@@ -522,6 +556,8 @@ import Footer from '../components/Footer.astro';
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    position: relative;
+    display: inline-block;
   }
 
   .hero-subtitle {
@@ -561,6 +597,67 @@ import Footer from '../components/Footer.astro';
   .stat-label {
     font-size: 1rem;
     color: var(--text-secondary);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: fadeInUp 1s ease-out 0.7s backwards;
+    z-index: 10;
+  }
+
+  .scroll-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .scroll-arrow {
+    width: 2px;
+    height: 30px;
+    background: var(--text-muted);
+    margin: 0 auto;
+    position: relative;
+    animation: scrollArrow 2s infinite ease-in-out;
+  }
+
+  .scroll-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--text-muted);
+    border-bottom: 2px solid var(--text-muted);
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scrollArrow {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translateY(10px);
+      opacity: 1;
+    }
   }
 
   /* Packages Section */
@@ -1160,4 +1257,161 @@ import Footer from '../components/Footer.astro';
       });
     });
   });
+
+  // Animated Grid Background
+  const canvas = document.getElementById('gridCanvas') as HTMLCanvasElement;
+  const ctx = canvas?.getContext('2d');
+
+  if (canvas && ctx) {
+    // Set canvas size
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Grid settings
+    const gridSize = 50;
+    const dotSize = 2;
+    const connectionDistance = 150;
+    const particles: Array<{x: number, y: number, vx: number, vy: number}> = [];
+
+    // Create particles
+    const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5
+      });
+    }
+
+    // Mouse position
+    let mouseX = canvas.width / 2;
+    let mouseY = canvas.height / 2;
+
+    canvas.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    });
+
+    function drawGrid() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw grid dots
+      ctx.fillStyle = 'rgba(99, 102, 241, 0.15)';
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        for (let y = 0; y < canvas.height; y += gridSize) {
+          const distToMouse = Math.hypot(mouseX - x, mouseY - y);
+          const opacity = Math.max(0.05, Math.min(0.3, 1 - distToMouse / 300));
+          ctx.globalAlpha = opacity;
+          ctx.beginPath();
+          ctx.arc(x, y, dotSize, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      ctx.globalAlpha = 1;
+
+      // Update and draw particles
+      particles.forEach((particle, i) => {
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        // Bounce off edges
+        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+
+        // Draw particle
+        const distToMouse = Math.hypot(mouseX - particle.x, mouseY - particle.y);
+        const size = Math.max(2, Math.min(5, 5 - distToMouse / 200));
+
+        ctx.fillStyle = 'rgba(99, 102, 241, 0.8)';
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, size, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Draw connections
+        particles.slice(i + 1).forEach(otherParticle => {
+          const dist = Math.hypot(particle.x - otherParticle.x, particle.y - otherParticle.y);
+          if (dist < connectionDistance) {
+            const opacity = (1 - dist / connectionDistance) * 0.3;
+            ctx.strokeStyle = `rgba(99, 102, 241, ${opacity})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.stroke();
+          }
+        });
+      });
+
+      requestAnimationFrame(drawGrid);
+    }
+
+    drawGrid();
+  }
+
+  // Animated Counters for Hero Stats
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const stats = entry.target.querySelectorAll('.stat-number');
+        stats.forEach(stat => {
+          const text = stat.textContent || '';
+
+          if (text.includes('$')) {
+            // For $7,500 format
+            const target = parseFloat(text.replace(/[$,]/g, ''));
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                stat.textContent = '$' + target.toLocaleString();
+                clearInterval(timer);
+              } else {
+                stat.textContent = '$' + Math.floor(current).toLocaleString();
+              }
+            }, 30);
+          } else if (text.includes('%')) {
+            const target = parseInt(text.replace('%', ''));
+            let current = 0;
+            const timer = setInterval(() => {
+              if (current >= target) {
+                stat.textContent = target + '%';
+                clearInterval(timer);
+              } else {
+                current += Math.ceil(target / 50);
+                stat.textContent = Math.min(current, target) + '%';
+              }
+            }, 30);
+          } else {
+            // For plain numbers like 127
+            const target = parseInt(text);
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                stat.textContent = target.toString();
+                clearInterval(timer);
+              } else {
+                stat.textContent = Math.floor(current).toString();
+              }
+            }, 30);
+          }
+        });
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const heroStats = document.querySelector('.hero-stats');
+  if (heroStats) {
+    statsObserver.observe(heroStats);
+  }
 </script>
