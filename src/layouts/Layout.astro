@@ -1,5 +1,6 @@
 ---
 import SEO from '../components/SEO.astro';
+import WebVitals from '../components/WebVitals.astro';
 
 export interface Props {
   title: string;
@@ -22,6 +23,7 @@ const {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Component -->
     <SEO
@@ -33,28 +35,37 @@ const {
       noindex={noindex}
     />
 
-    <!-- Fonts -->
+    <!-- Resource Hints for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Optimized Font Loading with font-display: swap -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - Async loading for better performance -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6CMBQ25C2Y"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-6CMBQ25C2Y');
     </script>
   </head>
   <body>
     <slot />
 
+    <!-- Core Web Vitals Monitoring -->
+    <WebVitals />
+
     <script>
+      // Optimized scroll handling with requestAnimationFrame for better INP
+      let ticking = false;
+      let lastScroll = 0;
+
       // Smooth Scrolling
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -69,23 +80,57 @@ const {
         });
       });
 
-      // Navbar Scroll Effect
-      const navbar = document.querySelector('.navbar');
-      let lastScroll = 0;
-
-      window.addEventListener('scroll', () => {
+      // Throttled scroll handler for better performance
+      function handleScroll() {
         const currentScroll = window.pageYOffset;
+        const navbar = document.querySelector('.navbar');
 
+        // Navbar scroll effect
         if (currentScroll > 100) {
           navbar?.classList.add('scrolled');
         } else {
           navbar?.classList.remove('scrolled');
         }
 
-        lastScroll = currentScroll;
-      });
+        // Parallax effect for orbs (optimized)
+        const orbs = document.querySelectorAll('.gradient-orb');
+        orbs.forEach((orb, index) => {
+          const speed = 0.3 + (index * 0.1);
+          (orb as HTMLElement).style.transform = `translateY(${currentScroll * speed}px)`;
+        });
 
-      // Intersection Observer for Scroll Animations
+        // Active navigation link
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        let current = '';
+
+        sections.forEach(section => {
+          const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+          if (window.pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id') || '';
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+
+        lastScroll = currentScroll;
+        ticking = false;
+      }
+
+      // Use requestAnimationFrame for scroll performance
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(handleScroll);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      // Intersection Observer for Scroll Animations (lazy loading animations)
       const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
@@ -99,48 +144,15 @@ const {
         });
       }, observerOptions);
 
-      // Observe all sections and cards
-      const animatedElements = document.querySelectorAll(
-        '.service-card, .portfolio-card, .testimonial-card, .section-header'
-      );
+      // Defer animation setup to after page load
+      window.addEventListener('load', () => {
+        const animatedElements = document.querySelectorAll(
+          '.service-card, .portfolio-card, .testimonial-card, .section-header'
+        );
 
-      animatedElements.forEach(el => {
-        el.classList.add('fade-in');
-        observer.observe(el);
-      });
-
-      // Parallax Effect for Hero Orbs
-      window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const orbs = document.querySelectorAll('.gradient-orb');
-
-        orbs.forEach((orb, index) => {
-          const speed = 0.3 + (index * 0.1);
-          (orb as HTMLElement).style.transform = `translateY(${scrolled * speed}px)`;
-        });
-      });
-
-      // Active Navigation Link Based on Scroll
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
-
-      window.addEventListener('scroll', () => {
-        let current = '';
-
-        sections.forEach(section => {
-          const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-          const sectionHeight = section.clientHeight;
-
-          if (window.pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id') || '';
-          }
-        });
-
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-          }
+        animatedElements.forEach(el => {
+          el.classList.add('fade-in');
+          observer.observe(el);
         });
       });
 

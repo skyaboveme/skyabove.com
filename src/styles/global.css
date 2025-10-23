@@ -34,6 +34,22 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    /* Prevent font size adjustments on orientation change */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* Image optimization for CLS prevention */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Lazy loading images */
+img[loading="lazy"] {
+    content-visibility: auto;
 }
 
 .container {
@@ -118,7 +134,7 @@ section {
     width: 100%;
 }
 
-/* Animations */
+/* Animations - Optimized for performance */
 @keyframes float {
     0%, 100% {
         transform: translate(0, 0) scale(1);
@@ -140,6 +156,15 @@ section {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Performance hints for animated elements */
+.gradient-orb,
+.portfolio-card,
+.service-card {
+    will-change: transform;
+    /* Only apply will-change when animating */
+    contain: layout style paint;
 }
 
 @keyframes scrollArrow {

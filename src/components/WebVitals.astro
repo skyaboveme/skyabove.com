@@ -1,0 +1,168 @@
+---
+// Web Vitals monitoring component for Core Web Vitals tracking
+---
+
+<script>
+  // Web Vitals monitoring - tracks LCP, INP, and CLS
+  // Reports to Google Analytics for analysis
+
+  function sendToAnalytics(metric: any) {
+    // Send to Google Analytics if available
+    if (typeof gtag !== 'undefined') {
+      gtag('event', metric.name, {
+        event_category: 'Web Vitals',
+        value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+        event_label: metric.id,
+        non_interaction: true,
+      });
+    }
+
+    // Log to console in development
+    if (import.meta.env.DEV) {
+      console.log('Web Vitals:', metric.name, metric.value);
+    }
+  }
+
+  // Track Largest Contentful Paint (LCP)
+  function observeLCP() {
+    const observer = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const lastEntry = entries[entries.length - 1];
+
+      sendToAnalytics({
+        name: 'LCP',
+        value: lastEntry.renderTime || lastEntry.loadTime,
+        id: `v3-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      });
+    });
+
+    try {
+      observer.observe({ type: 'largest-contentful-paint', buffered: true });
+    } catch (e) {
+      // LCP not supported
+    }
+  }
+
+  // Track Cumulative Layout Shift (CLS)
+  function observeCLS() {
+    let clsValue = 0;
+    let sessionValue = 0;
+    let sessionEntries: any[] = [];
+
+    const observer = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries() as any[]) {
+        if (!entry.hadRecentInput) {
+          const firstSessionEntry = sessionEntries[0];
+          const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
+
+          if (
+            sessionValue &&
+            entry.startTime - lastSessionEntry.startTime < 1000 &&
+            entry.startTime - firstSessionEntry.startTime < 5000
+          ) {
+            sessionValue += entry.value;
+            sessionEntries.push(entry);
+          } else {
+            sessionValue = entry.value;
+            sessionEntries = [entry];
+          }
+
+          if (sessionValue > clsValue) {
+            clsValue = sessionValue;
+          }
+        }
+      }
+    });
+
+    try {
+      observer.observe({ type: 'layout-shift', buffered: true });
+
+      // Report on page hide
+      addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+          sendToAnalytics({
+            name: 'CLS',
+            value: clsValue,
+            id: `v3-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+          });
+        }
+      });
+    } catch (e) {
+      // CLS not supported
+    }
+  }
+
+  // Track Interaction to Next Paint (INP)
+  function observeINP() {
+    let maxDuration = 0;
+
+    const observer = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries() as any[]) {
+        if (entry.duration > maxDuration) {
+          maxDuration = entry.duration;
+        }
+      }
+    });
+
+    try {
+      observer.observe({ type: 'event', buffered: true, durationThreshold: 16 });
+
+      // Report on page hide
+      addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden' && maxDuration > 0) {
+          sendToAnalytics({
+            name: 'INP',
+            value: maxDuration,
+            id: `v3-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+          });
+        }
+      });
+    } catch (e) {
+      // Try alternative method with First Input Delay (FID)
+      try {
+        const fidObserver = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries() as any[]) {
+            sendToAnalytics({
+              name: 'FID',
+              value: entry.processingStart - entry.startTime,
+              id: `v3-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+            });
+          }
+        });
+        fidObserver.observe({ type: 'first-input', buffered: true });
+      } catch (e2) {
+        // INP/FID not supported
+      }
+    }
+  }
+
+  // Track Time to First Byte (TTFB)
+  function observeTTFB() {
+    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+
+    if (navigationEntry) {
+      const ttfb = navigationEntry.responseStart - navigationEntry.requestStart;
+
+      sendToAnalytics({
+        name: 'TTFB',
+        value: ttfb,
+        id: `v3-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      });
+    }
+  }
+
+  // Initialize all observers when DOM is ready
+  if (document.readyState === 'complete') {
+    observeLCP();
+    observeCLS();
+    observeINP();
+    observeTTFB();
+  } else {
+    addEventListener('load', () => {
+      observeLCP();
+      observeCLS();
+      observeINP();
+      observeTTFB();
+    });
+  }
+</script>
