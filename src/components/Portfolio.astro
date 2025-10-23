@@ -31,7 +31,8 @@ const projects = [
       { value: "-58%", label: "Cost Per Lead" },
       { value: "Page 1", label: "All Keywords" }
     ],
-    gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"
+    gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
+    image: "/images/law-firm-professional.jpg"
   }
 ];
 ---
@@ -63,7 +64,7 @@ const projects = [
     <div class="portfolio-grid">
       {projects.map((project) => (
         <div class="portfolio-card">
-          <div class="portfolio-image" style={`background: ${project.gradient}`}>
+          <div class="portfolio-image" style={project.image ? `background: url(${project.image}) center/cover, ${project.gradient}` : `background: ${project.gradient}`}>
             <div class="portfolio-overlay">
               <span class="portfolio-category">{project.category}</span>
             </div>
