@@ -72,7 +72,20 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="ai-team-banner">
-        <div class="banner-icon">🚀💻🎨</div>
+        <div class="banner-icon">
+          <!-- Growth/Marketing Icon -->
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L19.71 9.71L22 12V6H16Z" fill="currentColor"/>
+          </svg>
+          <!-- Development Icon -->
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.4 16.6L4.8 12L9.4 7.4L8 6L2 12L8 18L9.4 16.6ZM14.6 16.6L19.2 12L14.6 7.4L16 6L22 12L16 18L14.6 16.6Z" fill="currentColor"/>
+          </svg>
+          <!-- Design/Creative Icon -->
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2ZM12 4L20 12L12 20L4 12L12 4ZM12 7C10.9 7 10 7.9 10 9C10 10.1 10.9 11 12 11C13.1 11 14 10.1 14 9C14 7.9 13.1 7 12 7Z" fill="currentColor"/>
+          </svg>
+        </div>
         <div class="banner-content">
           <h3 class="banner-title">Your Complete Growth Team: Marketing, Development, AI & Automation</h3>
           <p class="banner-description">
@@ -725,9 +738,21 @@ import Footer from '../components/Footer.astro';
   }
 
   .banner-icon {
-    font-size: 3rem;
-    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     flex-shrink: 0;
+    color: var(--primary-light);
+  }
+
+  .banner-icon svg {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+
+  .banner-icon svg:hover {
+    transform: scale(1.1);
   }
 
   .banner-content {
