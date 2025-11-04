@@ -7,8 +7,8 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="Skyabove - Complete Marketing Department | Strategy, Creative, Growth & AI"
-  description="Your full-service marketing team. Strategy, creative production, paid ads, social media, video, content, SEO, conversions—everything marketing. 3.8x average ROAS. Two packages: Startup ($3,000/mo) & Growth ($4,000/mo)."
+  title="Skyabove - Complete Marketing & Development Agency | Marketing, AI, Full-Stack Development"
+  description="Your complete marketing and development team. Marketing strategy, content creation, AI optimization, SEO, full-stack development, marketing automation. 3.8x average ROAS. One comprehensive package: $3,500/month."
 >
   <Navigation />
 
@@ -23,12 +23,21 @@ import Footer from '../components/Footer.astro';
     <div class="container">
       <div class="hero-content">
         <h1 class="hero-title">
-          <span class="title-line">Your Complete Marketing Department</span>
-          <span class="title-line"><span class="gradient-text">Strategy • Creative • Growth • AI-Powered</span></span>
+          <span class="title-line">Complete Marketing & Development Agency</span>
+          <span class="title-line"><span class="gradient-text">Marketing • AI • Full-Stack Development</span></span>
         </h1>
         <p class="hero-subtitle">
-          Everything marketing. One team. Strategy, creative, paid ads, social media, video, content, SEO, conversions—all powered by enterprise AI to deliver exceptional ROAS and rapid growth.
+          Everything you need to grow. Marketing strategy, content creation, AI optimization, SEO, full-stack development, marketing automation—all in one comprehensive package powered by enterprise AI.
         </p>
+        <div class="hero-price-card">
+          <div class="price-badge">One Comprehensive Package</div>
+          <div class="hero-price">
+            <span class="price-currency">$</span>
+            <span class="price-amount">3,500</span>
+            <span class="price-period">/month</span>
+          </div>
+          <p class="price-commitment">3-month minimum • Month to month after</p>
+        </div>
         <div class="hero-stats">
           <div class="stat">
             <div class="stat-number">3.8x</div>
@@ -51,195 +60,157 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- Package Selector -->
-  <section class="packages">
+  <!-- Comprehensive Package Section -->
+  <section id="packages" class="packages">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Choose Your Path</span>
-        <h2 class="section-title">Two Complete Marketing Packages</h2>
+        <span class="section-label">Everything You Need</span>
+        <h2 class="section-title">One Comprehensive Package: $3,500/Month</h2>
         <p class="section-description">
-          Every aspect of your marketing—from strategy to execution—powered by AI for maximum ROI
+          Marketing, content, AI, SEO, development, and automation—all working together to drive growth
         </p>
       </div>
 
       <div class="ai-team-banner">
-        <div class="banner-icon">🎯📈🎨</div>
+        <div class="banner-icon">🚀💻🎨</div>
         <div class="banner-content">
-          <h3 class="banner-title">Your Full-Service Marketing Team: Strategy, Creative, Media Buying, Content & AI</h3>
+          <h3 class="banner-title">Your Complete Growth Team: Marketing, Development, AI & Automation</h3>
           <p class="banner-description">
-            Not just ads. Not just content. You get a complete marketing department—strategists, designers, copywriters, video producers, media buyers, and AI specialists—all working together to drive measurable growth.
+            Not just marketing. Not just development. You get a complete growth team—marketers, developers, designers, content creators, SEO specialists, and AI experts—all working together to scale your business.
           </p>
         </div>
       </div>
 
-      <div class="packages-grid">
-        <!-- Startup Package -->
-        <div class="package-card startup">
-          <div class="package-badge">🚀 For New Businesses</div>
-          <h3 class="package-name">Startup Package</h3>
-          <p class="package-tagline">Launch your business from idea to revenue</p>
-
-          <div class="package-price">
-            <span class="currency">$</span>
-            <span class="amount">3,000</span>
-            <span class="period">/month</span>
+      <!-- Single Comprehensive Package -->
+      <div class="single-package">
+        <div class="package-hero">
+          <div class="package-pricing">
+            <div class="pricing-badge">⚡ Everything Included</div>
+            <div class="price-display">
+              <span class="price-currency">$</span>
+              <span class="price-number">3,500</span>
+              <span class="price-period">/month</span>
+            </div>
+            <p class="pricing-note">3-month minimum • Month to month after • Cancel anytime</p>
           </div>
-          <p class="package-commitment">3-month minimum • Month to month after</p>
+        </div>
 
-          <div class="package-ideal">
-            <strong>Perfect for:</strong>
-            <ul>
-              <li>Pre-launch startups</li>
-              <li>New entrepreneurs</li>
-              <li>Ideas ready to execute</li>
-              <li>First-time founders</li>
-            </ul>
-          </div>
-
-          <div class="package-features">
-            <h4>Complete Marketing Launch:</h4>
-            <ul>
+        <div class="package-services">
+          <!-- Marketing Services -->
+          <div class="service-category">
+            <div class="category-header">
+              <div class="category-icon">📈</div>
+              <h3>Marketing & Growth</h3>
+            </div>
+            <ul class="service-list">
               <li>Marketing strategy & positioning</li>
-              <li>Website design & development</li>
-              <li>Brand identity & creative assets</li>
-              <li>Content marketing (blog, social, email)</li>
-              <li>Paid ads (Google, Meta, LinkedIn)</li>
-              <li>Video production & editing</li>
-              <li>SEO & conversion optimization</li>
-              <li>Analytics & ROAS tracking</li>
-            </ul>
-          </div>
-
-          <div class="package-result">
-            <strong>What You Get:</strong> Revenue-generating marketing engine in 90 days
-          </div>
-
-          <a href="/startup-package" class="btn btn-primary btn-block">
-            Learn More About Startup Package →
-          </a>
-        </div>
-
-        <!-- AI Makeover Package -->
-        <div class="package-card makeover featured">
-          <div class="package-badge popular">⚡ Most Popular</div>
-          <h3 class="package-name">AI Makeover</h3>
-          <p class="package-tagline">Transform your existing business with AI</p>
-
-          <div class="package-price">
-            <span class="currency">$</span>
-            <span class="amount">4,000</span>
-            <span class="period">/month</span>
-          </div>
-          <p class="package-commitment">3-month minimum • Month to month after</p>
-
-          <div class="package-ideal">
-            <strong>Perfect for:</strong>
-            <ul>
-              <li>$500K - $10M revenue</li>
-              <li>10-100 employees</li>
-              <li>Proven business model</li>
-              <li>Ready to scale efficiently</li>
-            </ul>
-          </div>
-
-          <div class="package-features">
-            <h4>Full Marketing Transformation:</h4>
-            <ul>
-              <li>Omnichannel marketing strategy</li>
-              <li>Creative production (ads, video, design)</li>
-              <li>Paid media management & optimization</li>
-              <li>Social media management (all platforms)</li>
-              <li>Email & SMS marketing automation</li>
-              <li>Content creation & SEO</li>
+              <li>Paid advertising (Google, Meta, LinkedIn)</li>
+              <li>Social media management & growth</li>
+              <li>Email & SMS marketing campaigns</li>
+              <li>Marketing automation workflows</li>
               <li>Conversion rate optimization</li>
-              <li>Advanced analytics & reporting</li>
+              <li>Analytics & ROAS tracking</li>
+              <li>Customer acquisition funnels</li>
             </ul>
           </div>
 
-          <div class="package-result">
-            <strong>Average Results:</strong> 3.8x ROAS, 259% revenue growth, 127% more leads
+          <!-- Content Creation -->
+          <div class="service-category">
+            <div class="category-header">
+              <div class="category-icon">✍️</div>
+              <h3>Content Creation</h3>
+            </div>
+            <ul class="service-list">
+              <li>Blog posts & articles (SEO-optimized)</li>
+              <li>Social media content daily</li>
+              <li>Video production & editing</li>
+              <li>Graphic design & creative assets</li>
+              <li>Email copywriting</li>
+              <li>Ad creative & variations</li>
+              <li>Product descriptions</li>
+              <li>Brand messaging & voice</li>
+            </ul>
           </div>
 
-          <a href="/ai-makeover" class="btn btn-primary btn-block">
-            Learn More About AI Makeover →
-          </a>
+          <!-- AI Optimization -->
+          <div class="service-category">
+            <div class="category-header">
+              <div class="category-icon">🤖</div>
+              <h3>AI Optimization</h3>
+            </div>
+            <ul class="service-list">
+              <li>Enterprise AI tools (ChatGPT, Claude, Gemini)</li>
+              <li>AI-powered content generation</li>
+              <li>Automated workflow optimization</li>
+              <li>Predictive analytics & insights</li>
+              <li>AI chatbots & customer service</li>
+              <li>Intelligent automation systems</li>
+              <li>AI image & video generation</li>
+              <li>Process automation with AI</li>
+            </ul>
+          </div>
+
+          <!-- SEO & Optimization -->
+          <div class="service-category">
+            <div class="category-header">
+              <div class="category-icon">🔍</div>
+              <h3>SEO & Optimization</h3>
+            </div>
+            <ul class="service-list">
+              <li>Technical SEO optimization</li>
+              <li>On-page & off-page SEO</li>
+              <li>Keyword research & targeting</li>
+              <li>Local SEO & Google Business Profile</li>
+              <li>Schema markup & rich snippets</li>
+              <li>Core Web Vitals optimization</li>
+              <li>Backlink building strategy</li>
+              <li>SEO analytics & reporting</li>
+            </ul>
+          </div>
+
+          <!-- Full-Stack Development -->
+          <div class="service-category">
+            <div class="category-header">
+              <div class="category-icon">💻</div>
+              <h3>Full-Stack Development</h3>
+            </div>
+            <ul class="service-list">
+              <li>Custom website development</li>
+              <li>Web application development</li>
+              <li>E-commerce solutions</li>
+              <li>API development & integrations</li>
+              <li>Database design & optimization</li>
+              <li>Mobile-responsive design</li>
+              <li>Performance optimization</li>
+              <li>Ongoing maintenance & updates</li>
+            </ul>
+          </div>
+
+          <!-- Marketing Automation -->
+          <div class="service-category">
+            <div class="category-header">
+              <div class="category-icon">⚙️</div>
+              <h3>Marketing Automation</h3>
+            </div>
+            <ul class="service-list">
+              <li>CRM setup & automation</li>
+              <li>Email marketing automation</li>
+              <li>Lead nurturing sequences</li>
+              <li>Sales funnel automation</li>
+              <li>Customer journey mapping</li>
+              <li>Zapier/Make.com workflows</li>
+              <li>Automated reporting dashboards</li>
+              <li>Integration management</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <!-- Comparison Table -->
-      <div class="comparison-section">
-        <h3 class="comparison-title">Side-by-Side Comparison</h3>
-        <div class="comparison-table">
-          <div class="comparison-row header">
-            <div class="comparison-cell feature-name"></div>
-            <div class="comparison-cell">🚀 Startup Package</div>
-            <div class="comparison-cell featured">⚡ AI Makeover</div>
-          </div>
-
-          <div class="comparison-row">
-            <div class="comparison-cell feature-name">Monthly Investment</div>
-            <div class="comparison-cell">$3,000/month</div>
-            <div class="comparison-cell featured">$4,000/month</div>
-          </div>
-
-          <div class="comparison-row">
-            <div class="comparison-cell feature-name">Commitment</div>
-            <div class="comparison-cell">3 months minimum</div>
-            <div class="comparison-cell featured">3 months minimum</div>
-          </div>
-
-          <div class="comparison-row">
-            <div class="comparison-cell feature-name">Ideal For</div>
-            <div class="comparison-cell">New startups (pre-revenue)</div>
-            <div class="comparison-cell featured">Existing businesses ($500K+)</div>
-          </div>
-
-          <div class="comparison-row">
-            <div class="comparison-cell feature-name">Marketing Strategy</div>
-            <div class="comparison-cell">✓ Complete plan</div>
-            <div class="comparison-cell featured">✓ Omnichannel strategy</div>
-          </div>
-
-          <div class="comparison-row">
-            <div class="comparison-cell feature-name">Creative Production</div>
-            <div class="comparison-cell">✓ Ads, graphics, video</div>
-            <div class="comparison-cell featured">✓ High-volume production</div>
-          </div>
-
-          <div class="comparison-row">
-            <div class="comparison-cell feature-name">Paid Advertising</div>
-            <div class="comparison-cell">✓ Google, Meta, LinkedIn</div>
-            <div class="comparison-cell featured">✓ Advanced optimization</div>
-          </div>
-
-          <div class="comparison-row">
-            <div class="comparison-cell feature-name">Social Media Management</div>
-            <div class="comparison-cell">✓ 3-5 posts/week</div>
-            <div class="comparison-cell featured">✓ Daily content + engagement</div>
-          </div>
-
-          <div class="comparison-row">
-            <div class="comparison-cell feature-name">Content Marketing</div>
-            <div class="comparison-cell">✓ Blog + email</div>
-            <div class="comparison-cell featured">✓ Multi-format content</div>
-          </div>
-
-          <div class="comparison-row">
-            <div class="comparison-cell feature-name">Conversion Optimization</div>
-            <div class="comparison-cell">✓ Basic CRO</div>
-            <div class="comparison-cell featured">✓ Advanced A/B testing</div>
-          </div>
-
-          <div class="comparison-row">
-            <div class="comparison-cell feature-name">Marketing Automation</div>
-            <div class="comparison-cell">○ Email sequences</div>
-            <div class="comparison-cell featured">✓ Full automation suite</div>
-          </div>
-
-          <div class="comparison-row">
-            <div class="comparison-cell feature-name">Expected Timeline</div>
-            <div class="comparison-cell">90-day launch</div>
-            <div class="comparison-cell featured">30 days to first results</div>
+        <div class="package-cta">
+          <h3>Ready to Transform Your Business?</h3>
+          <p>Get everything you need to grow in one comprehensive package</p>
+          <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary btn-large">Get Started Today</a>
+            <a href="tel:+19517600896" class="btn btn-secondary btn-large">📞 (951) 760-0896</a>
           </div>
         </div>
       </div>
@@ -367,16 +338,23 @@ import Footer from '../components/Footer.astro';
   <section class="final-cta">
     <div class="container">
       <div class="cta-content">
-        <h2 class="cta-title">Ready to Scale Your Marketing?</h2>
+        <h2 class="cta-title">Ready to Scale Your Business?</h2>
         <p class="cta-description">
-          Get a complete marketing department working for you—schedule a free consultation
+          Get marketing, development, AI, and automation—all in one package at $3,500/month
         </p>
+        <div class="cta-price-highlight">
+          <div class="cta-price">
+            <span class="cta-price-amount">$3,500</span>
+            <span class="cta-price-period">/month</span>
+          </div>
+          <p class="cta-price-note">Everything included • 3-month minimum</p>
+        </div>
         <div class="cta-buttons">
-          <a href="/startup-package" class="btn btn-primary btn-large">🚀 Startup Package</a>
-          <a href="/ai-makeover" class="btn btn-primary btn-large">⚡ AI Makeover</a>
+          <a href="#contact" class="btn btn-primary btn-large">Get Started Today</a>
+          <a href="tel:+19517600896" class="btn btn-secondary btn-large">📞 (951) 760-0896</a>
         </div>
         <p class="cta-contact">
-          Or call us at <a href="tel:+19517600896">(951) 760-0896</a> • Available 9 AM - 6 PM PST
+          Available 9 AM - 6 PM PST • <a href="mailto:hello@skyabove.com">hello@skyabove.com</a>
         </p>
       </div>
     </div>
@@ -388,9 +366,9 @@ import Footer from '../components/Footer.astro';
       <div class="contact-wrapper">
         <div class="contact-info">
           <span class="section-label">Get Started</span>
-          <h2 class="section-title">Let's Build Your Marketing Engine</h2>
+          <h2 class="section-title">Let's Build Your Growth Engine</h2>
           <p class="contact-description">
-            Schedule a free consultation to discuss your marketing goals and get a custom strategy.
+            Schedule a free consultation to discuss your goals. We'll show you exactly how our comprehensive package can transform your business.
           </p>
           <div class="contact-details">
             <div class="contact-item">
@@ -425,13 +403,8 @@ import Footer from '../components/Footer.astro';
               <input type="tel" id="phone" name="phone">
             </div>
             <div class="form-group">
-              <label for="package">Interested In</label>
-              <select id="package" name="package" required>
-                <option value="">Select package</option>
-                <option value="startup">🚀 Startup Package ($3,000/mo)</option>
-                <option value="makeover">⚡ AI Makeover ($4,000/mo)</option>
-                <option value="unsure">Not sure yet</option>
-              </select>
+              <label for="company">Company Name (optional)</label>
+              <input type="text" id="company" name="company">
             </div>
             <div class="form-group">
               <label for="message">Tell us about your business</label>
@@ -601,6 +574,56 @@ import Footer from '../components/Footer.astro';
 
   .stat-label {
     font-size: 1rem;
+    color: var(--text-secondary);
+  }
+
+  .hero-price-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    padding: 2rem 3rem;
+    margin: 2.5rem auto;
+    max-width: 600px;
+  }
+
+  .price-badge {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    margin-bottom: 1rem;
+  }
+
+  .hero-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .price-currency {
+    font-size: 2rem;
+    color: var(--primary-light);
+  }
+
+  .price-amount {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .price-period {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+  }
+
+  .price-commitment {
+    text-align: center;
+    font-size: 0.95rem;
     color: var(--text-secondary);
   }
 
@@ -961,6 +984,138 @@ import Footer from '../components/Footer.astro';
     background: rgba(99, 102, 241, 0.05);
   }
 
+  /* Single Package Styles */
+  .single-package {
+    margin-top: 4rem;
+  }
+
+  .package-hero {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .package-pricing {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid var(--primary-color);
+    border-radius: 24px;
+    padding: 3rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .pricing-badge {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .price-display {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .price-number {
+    font-size: 5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .pricing-note {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+  }
+
+  .package-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .service-category {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .service-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+    border-color: var(--primary-color);
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .category-icon {
+    font-size: 2.5rem;
+  }
+
+  .category-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .service-list {
+    list-style: none;
+  }
+
+  .service-list li {
+    padding: 0.75rem 0;
+    padding-left: 1.75rem;
+    position: relative;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .service-list li:last-child {
+    border-bottom: none;
+  }
+
+  .service-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .package-cta {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .package-cta h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .package-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+  }
+
   /* Why AI Section */
   .why-ai {
     padding: 6rem 0;
@@ -1100,8 +1255,42 @@ import Footer from '../components/Footer.astro';
 
   .cta-description {
     font-size: 1.3rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     opacity: 0.95;
+  }
+
+  .cta-price-highlight {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-price-amount {
+    font-size: 3.5rem;
+    font-weight: 900;
+  }
+
+  .cta-price-period {
+    font-size: 1.5rem;
+    opacity: 0.8;
+  }
+
+  .cta-price-note {
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.9;
   }
 
   .cta-buttons {
@@ -1298,12 +1487,13 @@ import Footer from '../components/Footer.astro';
       e.preventDefault();
 
       const formData = new FormData(form as HTMLFormElement);
-      const packageChoice = formData.get('package');
+      const company = formData.get('company');
 
       trackEvent('generate_lead', {
         event_category: 'Form',
         event_label: 'Homepage Contact Form',
-        package_interest: packageChoice
+        company_name: company,
+        package_price: 3500
       });
 
       alert('Thank you! We\'ll be in touch within 24 hours to discuss your needs.');
@@ -1311,15 +1501,15 @@ import Footer from '../components/Footer.astro';
     });
   }
 
-  // Track package link clicks
-  document.querySelectorAll('a[href="/startup-package"], a[href="/ai-makeover"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
-      const packageType = href === '/startup-package' ? 'Startup' : 'AI Makeover';
+  // Track CTA button clicks
+  document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+    button.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLElement;
+      const buttonText = target.textContent?.trim() || '';
 
-      trackEvent('package_view_intent', {
-        event_category: 'Navigation',
-        event_label: packageType,
+      trackEvent('cta_click', {
+        event_category: 'Engagement',
+        event_label: buttonText,
         link_location: 'Homepage'
       });
     });
