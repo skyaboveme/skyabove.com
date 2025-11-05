@@ -7,64 +7,17 @@ interface Props {
 const { size = 40, className = '' } = Astro.props;
 ---
 
-<svg
+<img
+  src="/logo.png"
+  alt="Skyabove Logo"
   width={size}
   height={size}
-  viewBox="0 0 100 100"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
   class={className}
->
-  <!-- Circular Swoosh -->
-  <path
-    d="M 20 25 A 30 30 0 1 1 20 75"
-    stroke="url(#blueGradient)"
-    stroke-width="12"
-    stroke-linecap="round"
-    fill="none"
-  />
-
-  <!-- Upward Arrow -->
-  <g transform="translate(50, 30) rotate(45)">
-    <!-- Arrow shaft -->
-    <path
-      d="M 0 30 L 0 -10"
-      stroke="url(#orangeGradient)"
-      stroke-width="10"
-      stroke-linecap="round"
-    />
-
-    <!-- Arrow head -->
-    <path
-      d="M -12 2 L 0 -10 L 12 2"
-      stroke="url(#orangeGradient)"
-      stroke-width="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      fill="none"
-    />
-  </g>
-
-  <!-- Gradients -->
-  <defs>
-    <!-- Blue gradient for circular swoosh -->
-    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
-    </linearGradient>
-
-    <!-- Orange gradient for arrow -->
-    <linearGradient id="orangeGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#fb923c;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-</svg>
+/>
 
 <style>
-  svg {
-    filter: drop-shadow(0 2px 6px rgba(59, 130, 246, 0.25));
+  img {
+    display: block;
+    object-fit: contain;
   }
 </style>
