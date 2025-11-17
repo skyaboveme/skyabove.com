@@ -1,0 +1,83 @@
+---
+interface Props {
+  selector?: string;
+}
+
+const { selector = '.hero-stats' } = Astro.props;
+---
+
+<script define:vars={{ selector }}>
+  // Animated Counters - Shared Component
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const stats = entry.target.querySelectorAll('.stat-number');
+        stats.forEach(stat => {
+          const text = stat.textContent || '';
+          let target;
+
+          if (text.includes('+')) {
+            target = parseInt(text.replace('+', ''));
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                stat.textContent = target + '+';
+                clearInterval(timer);
+              } else {
+                stat.textContent = Math.floor(current) + '+';
+              }
+            }, 30);
+          } else if (text.includes('%')) {
+            target = parseInt(text.replace('%', ''));
+            let current = 0;
+            const timer = setInterval(() => {
+              if (current >= target) {
+                stat.textContent = target + '%';
+                clearInterval(timer);
+              } else {
+                current += Math.ceil(target / 50);
+                stat.textContent = Math.min(current, target) + '%';
+              }
+            }, 30);
+          } else if (text.includes('x')) {
+            const targetVal = parseFloat(text.replace('x', ''));
+            let current = 0;
+            const timer = setInterval(() => {
+              current += 0.1;
+              if (current >= targetVal) {
+                stat.textContent = targetVal + 'x';
+                clearInterval(timer);
+              } else {
+                stat.textContent = current.toFixed(1) + 'x';
+              }
+            }, 50);
+          } else {
+            // For plain numbers
+            target = parseInt(text);
+            if (!isNaN(target)) {
+              let current = 0;
+              const increment = target / 50;
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                  stat.textContent = target.toString();
+                  clearInterval(timer);
+                } else {
+                  stat.textContent = Math.floor(current).toString();
+                }
+              }, 30);
+            }
+          }
+        });
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const heroStats = document.querySelector(selector);
+  if (heroStats) {
+    statsObserver.observe(heroStats);
+  }
+</script>

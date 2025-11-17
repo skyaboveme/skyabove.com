@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Portfolio from '../components/Portfolio.astro';
 import Footer from '../components/Footer.astro';
+import GridAnimation from '../components/GridAnimation.astro';
+import AnimatedCounter from '../components/AnimatedCounter.astro';
 ---
 
 <Layout
@@ -551,7 +553,10 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
         <div class="contact-form-wrapper">
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdkyryrn" method="POST">
+            <input type="hidden" name="_subject" value="🚨 PRIORITY: New Lead from Skyabove Website">
+            <input type="hidden" name="_replyto" id="replyto">
+            <input type="hidden" name="_next" value="https://skyabove.com/#contact">
             <div class="form-group">
               <label for="name">Full Name</label>
               <input type="text" id="name" name="name" required>
@@ -1690,13 +1695,29 @@ import Footer from '../components/Footer.astro';
   });
 
   // Form submission
-  const form = document.getElementById('contactForm');
+  const form = document.getElementById('contactForm') as HTMLFormElement;
+  const emailInput = document.getElementById('email') as HTMLInputElement;
+  const replyToInput = document.getElementById('replyto') as HTMLInputElement;
+
+  // Sync reply-to field with email input
+  if (emailInput && replyToInput) {
+    emailInput.addEventListener('input', () => {
+      replyToInput.value = emailInput.value;
+    });
+  }
+
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const formData = new FormData(form as HTMLFormElement);
+      const formData = new FormData(form);
       const company = formData.get('company');
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      const originalText = submitBtn.textContent || '';
+
+      // Disable button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
 
       trackEvent('generate_lead', {
         event_category: 'Form',
@@ -1705,8 +1726,34 @@ import Footer from '../components/Footer.astro';
         package_price: 3500
       });
 
-      alert('Thank you! We\'ll be in touch within 24 hours to discuss your needs.');
-      form.reset();
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          submitBtn.textContent = 'Message Sent!';
+          submitBtn.style.background = '#10b981';
+          alert('Thank you! We\'ll be in touch within 24 hours to discuss your needs.');
+          form.reset();
+
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+            submitBtn.style.background = '';
+          }, 3000);
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (error) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        alert('There was an error sending your message. Please try again or call us at (951) 760-0896.');
+      }
     });
   }
 
@@ -1733,147 +1780,7 @@ import Footer from '../components/Footer.astro';
       });
     });
   });
-
-  // Animated Grid Background
-  const canvas = document.getElementById('gridCanvas') as HTMLCanvasElement;
-  const ctx = canvas?.getContext('2d');
-
-  if (canvas && ctx) {
-    // Set canvas size
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // Grid settings
-    const gridSize = 50;
-    const dotSize = 2;
-    const connectionDistance = 150;
-    const particles: Array<{x: number, y: number, vx: number, vy: number}> = [];
-
-    // Create particles
-    const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5
-      });
-    }
-
-    // Mouse position
-    let mouseX = canvas.width / 2;
-    let mouseY = canvas.height / 2;
-
-    canvas.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseX = e.clientX - rect.left;
-      mouseY = e.clientY - rect.top;
-    });
-
-    function drawGrid() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Draw grid dots
-      ctx.fillStyle = 'rgba(99, 102, 241, 0.15)';
-      for (let x = 0; x < canvas.width; x += gridSize) {
-        for (let y = 0; y < canvas.height; y += gridSize) {
-          const distToMouse = Math.hypot(mouseX - x, mouseY - y);
-          const opacity = Math.max(0.05, Math.min(0.3, 1 - distToMouse / 300));
-          ctx.globalAlpha = opacity;
-          ctx.beginPath();
-          ctx.arc(x, y, dotSize, 0, Math.PI * 2);
-          ctx.fill();
-        }
-      }
-      ctx.globalAlpha = 1;
-
-      // Update and draw particles
-      particles.forEach((particle, i) => {
-        // Update position
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-
-        // Bounce off edges
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
-
-        // Draw particle
-        const distToMouse = Math.hypot(mouseX - particle.x, mouseY - particle.y);
-        const size = Math.max(2, Math.min(5, 5 - distToMouse / 200));
-
-        ctx.fillStyle = 'rgba(99, 102, 241, 0.8)';
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, size, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Draw connections
-        particles.slice(i + 1).forEach(otherParticle => {
-          const dist = Math.hypot(particle.x - otherParticle.x, particle.y - otherParticle.y);
-          if (dist < connectionDistance) {
-            const opacity = (1 - dist / connectionDistance) * 0.3;
-            ctx.strokeStyle = `rgba(99, 102, 241, ${opacity})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.stroke();
-          }
-        });
-      });
-
-      requestAnimationFrame(drawGrid);
-    }
-
-    drawGrid();
-  }
-
-  // Animated Counters for Hero Stats
-  const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const stats = entry.target.querySelectorAll('.stat-number');
-        stats.forEach(stat => {
-          const text = stat.textContent || '';
-
-          if (text.includes('%')) {
-            const target = parseInt(text.replace('%', ''));
-            let current = 0;
-            const timer = setInterval(() => {
-              if (current >= target) {
-                stat.textContent = target + '%';
-                clearInterval(timer);
-              } else {
-                current += Math.ceil(target / 50);
-                stat.textContent = Math.min(current, target) + '%';
-              }
-            }, 30);
-          } else {
-            // For plain numbers like 127
-            const target = parseInt(text);
-            let current = 0;
-            const increment = target / 50;
-            const timer = setInterval(() => {
-              current += increment;
-              if (current >= target) {
-                stat.textContent = target.toString();
-                clearInterval(timer);
-              } else {
-                stat.textContent = Math.floor(current).toString();
-              }
-            }, 30);
-          }
-        });
-        statsObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  const heroStats = document.querySelector('.hero-stats');
-  if (heroStats) {
-    statsObserver.observe(heroStats);
-  }
 </script>
+
+<GridAnimation />
+<AnimatedCounter />
