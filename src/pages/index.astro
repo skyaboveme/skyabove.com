@@ -100,6 +100,7 @@ import AnimatedCounter from '../components/AnimatedCounter.astro';
         <div class="package-hero">
           <div class="package-pricing">
             <div class="pricing-badge">⚡ Everything Included</div>
+            <div class="starting-at">starting as low as</div>
             <div class="price-display">
               <span class="price-currency">$</span>
               <span class="price-number">3,500</span>
@@ -507,6 +508,7 @@ import AnimatedCounter from '../components/AnimatedCounter.astro';
           Get marketing, development, AI, and automation—all in one package starting at $3,500/month
         </p>
         <div class="cta-price-highlight">
+          <div class="cta-starting-at">starting as low as</div>
           <div class="cta-price">
             <span class="cta-price-amount">$3,500</span>
             <span class="cta-price-period">/month</span>
@@ -1186,7 +1188,14 @@ import AnimatedCounter from '../components/AnimatedCounter.astro';
     font-size: 1rem;
     font-weight: 700;
     color: var(--primary-light);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .starting-at {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
   }
 
   .price-display {
@@ -1481,6 +1490,13 @@ import AnimatedCounter from '../components/AnimatedCounter.astro';
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .cta-starting-at {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
   }
 
   .cta-price {
