@@ -1,0 +1,1189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="You Have Questions - FAQ & AI Assistant | Skyabove"
+  description="Get instant answers to your marketing questions. Browse our FAQ or chat with our AI assistant about pricing, services, and how we can help your business grow."
+>
+  <Navigation />
+
+  <!-- Hero Section -->
+  <section class="faq-hero">
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-label">Support & Answers</span>
+        <h1 class="hero-title">You Have Questions</h1>
+        <p class="hero-description">
+          We have answers. Browse our FAQ below or ask our AI assistant anything about our services,
+          pricing, and how we can help your business grow.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Chatbot Section -->
+  <section class="ai-chatbot-section">
+    <div class="container">
+      <div class="chatbot-container">
+        <div class="chatbot-header">
+          <div class="chatbot-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <h2>Ask Our AI Assistant</h2>
+          </div>
+          <p>Get instant answers to your questions about our services, pricing, and process</p>
+        </div>
+
+        <div class="chatbot-messages" id="chatMessages">
+          <div class="message bot-message">
+            <div class="message-avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div class="message-content">
+              <p>Hi! I'm Skyabove's AI assistant. I can answer questions about our services, pricing, process, and more. What would you like to know?</p>
+              <div class="quick-questions">
+                <button class="quick-question" data-question="What services do you offer?">What services do you offer?</button>
+                <button class="quick-question" data-question="How much does it cost?">How much does it cost?</button>
+                <button class="quick-question" data-question="How long does it take to see results?">How long to see results?</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chatbot-input-container">
+          <form id="chatForm" class="chatbot-form">
+            <input
+              type="text"
+              id="chatInput"
+              class="chatbot-input"
+              placeholder="Type your question here..."
+              autocomplete="off"
+            />
+            <button type="submit" class="chatbot-send-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              Send
+            </button>
+          </form>
+          <p class="chatbot-disclaimer">
+            Powered by AI • Responses are generated based on our services and may not be 100% accurate.
+            For specific questions, please <a href="#contact">contact us directly</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traditional FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-description">
+          Quick answers to common questions about our services, pricing, and process
+        </p>
+      </div>
+
+      <div class="faq-categories">
+
+        <!-- Pricing & Packages -->
+        <div class="faq-category">
+          <h3 class="category-title">Pricing & Packages</h3>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How much do your services cost?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Our comprehensive AI-powered marketing services start at $3,500/month. This includes:</p>
+              <ul>
+                <li>Marketing strategy and campaign management</li>
+                <li>AI-powered content creation</li>
+                <li>Website development and optimization</li>
+                <li>SEO and paid advertising</li>
+                <li>Social media marketing</li>
+                <li>Analytics and reporting</li>
+                <li>Business automation</li>
+              </ul>
+              <p>Pricing may vary based on your specific needs and scope. We require a 3-month minimum commitment, then services continue month-to-month.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Is there a setup fee or onboarding cost?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Setup fees vary based on the complexity of your project and specific requirements. This may include:</p>
+              <ul>
+                <li>Website development or migration</li>
+                <li>Initial campaign setup across platforms</li>
+                <li>AI system configuration and integration</li>
+                <li>Custom automation workflows</li>
+              </ul>
+              <p>We'll provide a detailed breakdown during your consultation so there are no surprises.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I cancel anytime?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Our services require a 3-month minimum commitment to ensure we have adequate time to implement strategies and see measurable results. After the initial 3 months, services continue month-to-month and you can cancel with 30 days' notice.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you offer payment plans?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, we accept monthly payments billed in advance. We accept credit card, ACH transfer, and wire transfer. Payment is due upon receipt of invoice.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services & Capabilities -->
+        <div class="faq-category">
+          <h3 class="category-title">Services & Capabilities</h3>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What exactly do you do?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>We're your complete AI-powered marketing department. Our services include:</p>
+              <ul>
+                <li><strong>Marketing Strategy:</strong> Comprehensive planning and campaign management</li>
+                <li><strong>AI Development:</strong> Custom AI implementations and automation</li>
+                <li><strong>Website Development:</strong> Design, development, and optimization</li>
+                <li><strong>SEO & Local Search:</strong> Organic visibility and local rankings</li>
+                <li><strong>Paid Advertising:</strong> Google Ads, Facebook, Instagram, LinkedIn, YouTube</li>
+                <li><strong>Social Media Marketing:</strong> Content, engagement, and growth</li>
+                <li><strong>Content Creation:</strong> AI-powered blogs, videos, graphics</li>
+                <li><strong>Email Marketing:</strong> Automation and personalized campaigns</li>
+                <li><strong>Analytics & Reporting:</strong> Data-driven insights and optimization</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What makes you different from other marketing agencies?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>We're not just marketers—we're AI experts with deep technical knowledge:</p>
+              <ul>
+                <li><strong>5+ years of AI mastery:</strong> We've been working with AI since before ChatGPT went mainstream</li>
+                <li><strong>25 years of marketing experience:</strong> We combine proven strategies with cutting-edge AI</li>
+                <li><strong>Global team:</strong> Experts across the US and Sri Lanka providing 24/7 coverage</li>
+                <li><strong>You own everything:</strong> All accounts, code, content, and data belong to you</li>
+                <li><strong>Human-centric AI:</strong> We use AI to amplify human creativity, not replace it</li>
+                <li><strong>Proven results:</strong> 3.8x average ROAS, 259% revenue growth for clients</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you work with businesses in my industry?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>We've successfully helped businesses across many industries including:</p>
+              <ul>
+                <li>Professional Services (law firms, consultants, financial advisors)</li>
+                <li>Real Estate (developers, agents, property management)</li>
+                <li>Healthcare (practices, clinics, medical devices)</li>
+                <li>B2B Services (SaaS, technology, consulting)</li>
+                <li>E-commerce and Retail</li>
+                <li>Home Services (contractors, HVAC, landscaping)</li>
+              </ul>
+              <p>Our AI-powered approach adapts to any industry. If you have questions about your specific market, let's talk.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What AI tools and platforms do you use?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>We're masters of all major AI platforms:</p>
+              <ul>
+                <li><strong>Generative AI:</strong> ChatGPT, Claude, Gemini, Perplexity</li>
+                <li><strong>AI Content:</strong> Midjourney, DALL-E, Runway ML, ElevenLabs</li>
+                <li><strong>AI Marketing:</strong> Smartly.io, Pattern89, Mutiny, Drift</li>
+                <li><strong>AI Analytics:</strong> Tableau AI, Looker, Pecan AI</li>
+                <li><strong>Custom Development:</strong> OpenAI API, Anthropic API, LangChain</li>
+              </ul>
+              <p>We stay on top of every new AI platform and capability, testing new tools as they launch.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Process & Timeline -->
+        <div class="faq-category">
+          <h3 class="category-title">Process & Timeline</h3>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How long does it take to see results?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Timeline varies by service and goals:</p>
+              <ul>
+                <li><strong>Paid Advertising:</strong> Initial results within 2-4 weeks, optimization ongoing</li>
+                <li><strong>Website Launch:</strong> New sites typically launch within 2-6 weeks</li>
+                <li><strong>SEO:</strong> Noticeable improvements in 60-90 days, significant results in 4-6 months</li>
+                <li><strong>Content Marketing:</strong> Traffic growth typically begins within 30-60 days</li>
+                <li><strong>AI Implementation:</strong> Custom systems deployed in 2-8 weeks depending on complexity</li>
+              </ul>
+              <p>We focus on quick wins while building long-term sustainable growth.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What's the onboarding process like?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Our onboarding process is designed to get you up and running quickly:</p>
+              <ol>
+                <li><strong>Discovery Call (30-45 min):</strong> Understand your business, goals, and challenges</li>
+                <li><strong>Strategy Session (60-90 min):</strong> Present custom plan and recommendations</li>
+                <li><strong>Agreement & Setup (1-2 days):</strong> Sign agreement and provide access to accounts</li>
+                <li><strong>Week 1-2:</strong> Account setup, research, strategy refinement</li>
+                <li><strong>Week 2-4:</strong> Implementation of initial campaigns and systems</li>
+                <li><strong>Week 4+:</strong> Active optimization and ongoing management</li>
+              </ol>
+              <p>You'll have a dedicated point of contact throughout the entire process.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How involved do I need to be?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>We handle the heavy lifting, but your input is valuable:</p>
+              <ul>
+                <li><strong>Initial setup (Week 1-2):</strong> 2-4 hours for discovery, approvals, and account access</li>
+                <li><strong>Ongoing (Monthly):</strong> 1-2 hours for strategy reviews and feedback</li>
+                <li><strong>As needed:</strong> Quick approvals on content, creative, major decisions</li>
+              </ul>
+              <p>We're proactive and autonomous, but we keep you informed and involved in key decisions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you provide reporting and analytics?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Transparency is core to how we work:</p>
+              <ul>
+                <li><strong>Real-time dashboards:</strong> 24/7 access to performance metrics</li>
+                <li><strong>Weekly updates:</strong> Performance summaries and key insights</li>
+                <li><strong>Monthly reports:</strong> Comprehensive analysis and strategic recommendations</li>
+                <li><strong>Quarterly reviews:</strong> Strategy sessions to discuss results and plan ahead</li>
+              </ul>
+              <p>All data and analytics remain in your accounts—you own everything.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Questions -->
+        <div class="faq-category">
+          <h3 class="category-title">Technical Questions</h3>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do I own my website and all accounts?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Absolutely. You own everything:</strong></p>
+              <ul>
+                <li>Website code and design</li>
+                <li>Domain name and hosting</li>
+                <li>All social media accounts</li>
+                <li>Advertising accounts (Google Ads, Meta, LinkedIn, etc.)</li>
+                <li>Email marketing lists and CRM data</li>
+                <li>Analytics accounts and historical data</li>
+                <li>Developed audiences and custom segments</li>
+                <li>All content created for your brand</li>
+              </ul>
+              <p>If you ever leave, you take everything with you. No vendor lock-in.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What if I already have a website?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>No problem! We can work with your existing website in several ways:</p>
+              <ul>
+                <li><strong>Optimization:</strong> Improve speed, SEO, and conversion rates</li>
+                <li><strong>Enhancement:</strong> Add new features, AI capabilities, integrations</li>
+                <li><strong>Redesign:</strong> Complete overhaul while preserving SEO value</li>
+                <li><strong>Migration:</strong> Move to a better platform or hosting solution</li>
+              </ul>
+              <p>We'll assess your current site and recommend the best path forward during our discovery call.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can you work with my existing marketing tools?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! We integrate with virtually all marketing platforms:</p>
+              <ul>
+                <li>CRM systems (HubSpot, Salesforce, Zoho, etc.)</li>
+                <li>Email platforms (Mailchimp, Constant Contact, ActiveCampaign, etc.)</li>
+                <li>Analytics tools (Google Analytics, Mixpanel, Heap, etc.)</li>
+                <li>E-commerce platforms (Shopify, WooCommerce, BigCommerce, etc.)</li>
+                <li>Project management tools (Asana, Monday, ClickUp, etc.)</li>
+              </ul>
+              <p>If you have specific tools you love, we'll make them work together seamlessly.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Is my data secure?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Security and privacy are paramount:</p>
+              <ul>
+                <li>All data encrypted in transit (SSL/TLS) and at rest</li>
+                <li>Secure authentication and access controls</li>
+                <li>Regular security audits and updates</li>
+                <li>GDPR and CCPA compliant data practices</li>
+                <li>Confidentiality agreements in place</li>
+                <li>Team trained on data protection best practices</li>
+              </ul>
+              <p>See our <a href="/privacy-policy">Privacy Policy</a> for complete details.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="faq-category">
+          <h3 class="category-title">Getting Started</h3>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>How do I get started?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Getting started is easy:</p>
+              <ol>
+                <li><strong>Schedule a free consultation:</strong> Use our contact form or call (951) 760-0896</li>
+                <li><strong>Discovery call:</strong> We'll discuss your business, goals, and challenges (30-45 minutes)</li>
+                <li><strong>Custom proposal:</strong> We'll create a tailored strategy and pricing for your needs</li>
+                <li><strong>Agreement & kickoff:</strong> Sign the agreement and we begin onboarding</li>
+              </ol>
+              <p>From first contact to active campaigns typically takes 2-3 weeks.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Do you have a minimum company size or budget requirement?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>Our services start at $3,500/month, which works best for businesses with:</p>
+              <ul>
+                <li>Annual revenue of $500K+ (or funded startups with growth plans)</li>
+                <li>Marketing budget of $5,000+/month (including our services and ad spend)</li>
+                <li>Serious growth goals and commitment to execution</li>
+              </ul>
+              <p>If you're earlier stage but have strong fundamentals and funding, let's talk. We sometimes make exceptions for businesses with exceptional potential.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>What information do you need from me to get started?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>During onboarding, we'll need:</p>
+              <ul>
+                <li>Business overview (products/services, target audience, competitors)</li>
+                <li>Current marketing efforts and results (if applicable)</li>
+                <li>Access to existing accounts (website, analytics, social media, ads)</li>
+                <li>Brand assets (logos, colors, fonts, photos)</li>
+                <li>Goals and success metrics</li>
+                <li>Budget and timeline expectations</li>
+              </ul>
+              <p>Don't worry if you don't have everything—we'll guide you through the process.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Can I try your services before committing?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>We don't offer free trials, but our 3-month minimum commitment is designed to give you enough time to see real results while limiting your risk. Here's why we require this minimum:</p>
+              <ul>
+                <li>Month 1: Strategy, setup, and initial implementation</li>
+                <li>Month 2: Data collection and early optimization</li>
+                <li>Month 3: Meaningful results and performance validation</li>
+              </ul>
+              <p>Marketing takes time to work. We'd rather not take your money than take it knowing you won't see the results you deserve in less than 3 months.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Still Have Questions CTA -->
+  <section class="final-cta" id="contact">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Still Have Questions?</h2>
+        <p>
+          Let's talk. Schedule a free consultation to discuss your specific needs and how we can help.
+        </p>
+        <div class="cta-buttons">
+          <a href="tel:+19517600896" class="btn btn-primary btn-large">Call (951) 760-0896</a>
+          <a href="mailto:hello@skyabove.com" class="btn btn-secondary btn-large">Email Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .faq-hero {
+    background: var(--bg-darker);
+    padding: 8rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .faq-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 1200px;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    background: var(--bg-card);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-description {
+    font-size: 1.3rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  /* AI Chatbot Styles */
+  .ai-chatbot-section {
+    padding: 6rem 0;
+    background: var(--bg-primary);
+  }
+
+  .chatbot-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+  }
+
+  .chatbot-header {
+    background: var(--bg-darker);
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .chatbot-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .chatbot-title svg {
+    color: var(--primary-light);
+  }
+
+  .chatbot-title h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .chatbot-header p {
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .chatbot-messages {
+    padding: 2rem;
+    min-height: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+  }
+
+  .message {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .message:last-child {
+    margin-bottom: 0;
+  }
+
+  .message-avatar {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .user-message .message-avatar {
+    background: var(--bg-darker);
+    color: var(--text-primary);
+  }
+
+  .message-content {
+    flex: 1;
+  }
+
+  .message-content p {
+    background: var(--bg-darker);
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0 0 0.75rem 0;
+  }
+
+  .user-message .message-content p {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    margin-left: auto;
+  }
+
+  .quick-questions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .quick-question {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .quick-question:hover {
+    border-color: var(--primary);
+    color: var(--primary-light);
+    background: var(--bg-card);
+  }
+
+  .chatbot-input-container {
+    padding: 1.5rem 2rem;
+    background: var(--bg-darker);
+    border-top: 1px solid var(--border-color);
+  }
+
+  .chatbot-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .chatbot-input {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 1rem;
+  }
+
+  .chatbot-input:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+
+  .chatbot-send-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .chatbot-send-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  }
+
+  .chatbot-send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .chatbot-disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 0;
+  }
+
+  .chatbot-disclaimer a {
+    color: var(--primary-light);
+    text-decoration: none;
+  }
+
+  /* FAQ Section Styles */
+  .faq-section {
+    padding: 6rem 0;
+    background: var(--bg-darker);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+
+  .section-description {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .faq-categories {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .faq-category {
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-light);
+    margin-bottom: 1.5rem;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.25rem 0;
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .faq-question:hover {
+    color: var(--primary-light);
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    color: var(--primary-light);
+    transition: transform 0.3s ease;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 2000px;
+    padding-top: 1rem;
+  }
+
+  .faq-answer p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .faq-answer ul,
+  .faq-answer ol {
+    margin: 1rem 0 1rem 1.5rem;
+  }
+
+  .faq-answer li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-answer strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .faq-answer a {
+    color: var(--primary-light);
+    text-decoration: none;
+  }
+
+  .faq-answer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Final CTA */
+  .final-cta {
+    padding: 6rem 0;
+    background: var(--bg-primary);
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta-content > p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: #ff8542;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 107, 53, 0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--primary);
+    background: var(--bg-card);
+  }
+
+  .btn-large {
+    padding: 1.25rem 3rem;
+    font-size: 1.15rem;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-title {
+      font-size: 2.8rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .faq-hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+    }
+
+    .chatbot-messages {
+      min-height: 300px;
+    }
+
+    .message {
+      gap: 0.75rem;
+    }
+
+    .message-avatar {
+      width: 32px;
+      height: 32px;
+    }
+
+    .chatbot-form {
+      flex-direction: column;
+    }
+
+    .chatbot-send-btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .faq-category {
+      padding: 1.5rem;
+    }
+
+    .faq-question {
+      font-size: 1.05rem;
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .btn-large {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  // FAQ Accordion functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const faqItem = question.parentElement;
+        const isActive = faqItem?.classList.contains('active');
+
+        // Close all other FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        // Toggle current item
+        if (!isActive && faqItem) {
+          faqItem.classList.add('active');
+        }
+      });
+    });
+
+    // Chatbot functionality
+    const chatForm = document.getElementById('chatForm') as HTMLFormElement;
+    const chatInput = document.getElementById('chatInput') as HTMLInputElement;
+    const chatMessages = document.getElementById('chatMessages');
+    const quickQuestions = document.querySelectorAll('.quick-question');
+
+    // Knowledge base for AI responses
+    const knowledgeBase: Record<string, string> = {
+      'services': 'We offer comprehensive AI-powered marketing services including marketing strategy, AI development, website development, SEO, paid advertising (Google Ads, Facebook, Instagram, LinkedIn), social media marketing, content creation, email marketing, and analytics. Our services start at $3,500/month with a 3-month minimum commitment.',
+      'cost': 'Our services start at $3,500/month with a 3-month minimum commitment. After 3 months, services continue month-to-month. This includes complete marketing strategy, AI-powered content, website development, SEO, paid ads, social media, and analytics. Setup fees may apply based on project complexity.',
+      'results': 'Timeline varies by service: Paid advertising shows results in 2-4 weeks, websites launch in 2-6 weeks, SEO improvements appear in 60-90 days, and content marketing builds traffic in 30-60 days. Our clients average 3.8x ROAS and 259% revenue growth.',
+      'own': 'Yes! You own everything: your website code, domain, hosting, all social media accounts, advertising accounts, email lists, CRM data, analytics, developed audiences, and all content created. No vendor lock-in.',
+      'ai': 'We master all major AI platforms including ChatGPT, Claude, Gemini, Midjourney, DALL-E, Runway ML, and custom API integrations. We have 5+ years of deep AI expertise and stay on top of every new platform and capability.',
+      'start': 'Getting started is easy: 1) Schedule a free consultation at (951) 760-0896 or via our contact form, 2) Discovery call (30-45 min), 3) Custom proposal, 4) Agreement & kickoff. From first contact to active campaigns typically takes 2-3 weeks.',
+      'team': 'We have a global team of AI experts across the United States and Sri Lanka, providing 24/7 coverage. We combine 25 years of marketing experience with 5+ years of AI mastery.',
+      'industries': 'We work with professional services, law firms, real estate, healthcare, B2B/SaaS, e-commerce, home services, and more. Our AI-powered approach adapts to any industry.',
+      'guarantee': 'While we can\'t guarantee specific results (marketing depends on many factors), our clients average 3.8x ROAS, 259% revenue growth, and 127% more leads. We focus on data-driven optimization to maximize your outcomes.',
+      'cancel': 'We require a 3-month minimum commitment to ensure adequate time for strategy implementation and results. After 3 months, services continue month-to-month and you can cancel with 30 days\' notice.',
+    };
+
+    function getAIResponse(question: string): string {
+      const lowerQuestion = question.toLowerCase();
+
+      // Match keywords to responses
+      if (lowerQuestion.includes('service') || lowerQuestion.includes('what do you do') || lowerQuestion.includes('offer')) {
+        return knowledgeBase['services'];
+      } else if (lowerQuestion.includes('cost') || lowerQuestion.includes('price') || lowerQuestion.includes('pricing') || lowerQuestion.includes('much')) {
+        return knowledgeBase['cost'];
+      } else if (lowerQuestion.includes('result') || lowerQuestion.includes('how long') || lowerQuestion.includes('timeline') || lowerQuestion.includes('when')) {
+        return knowledgeBase['results'];
+      } else if (lowerQuestion.includes('own') || lowerQuestion.includes('ownership') || lowerQuestion.includes('mine')) {
+        return knowledgeBase['own'];
+      } else if (lowerQuestion.includes('ai') || lowerQuestion.includes('tools') || lowerQuestion.includes('platform')) {
+        return knowledgeBase['ai'];
+      } else if (lowerQuestion.includes('start') || lowerQuestion.includes('begin') || lowerQuestion.includes('get started')) {
+        return knowledgeBase['start'];
+      } else if (lowerQuestion.includes('team') || lowerQuestion.includes('who') || lowerQuestion.includes('experience')) {
+        return knowledgeBase['team'];
+      } else if (lowerQuestion.includes('industry') || lowerQuestion.includes('industries') || lowerQuestion.includes('work with')) {
+        return knowledgeBase['industries'];
+      } else if (lowerQuestion.includes('guarantee') || lowerQuestion.includes('promise') || lowerQuestion.includes('assure')) {
+        return knowledgeBase['guarantee'];
+      } else if (lowerQuestion.includes('cancel') || lowerQuestion.includes('commitment') || lowerQuestion.includes('contract')) {
+        return knowledgeBase['cancel'];
+      } else {
+        return `Great question! While I can answer general questions about our services, pricing, and process, I'd recommend browsing the FAQ below or contacting us directly at (951) 760-0896 or hello@skyabove.com for specific questions. We're happy to help!`;
+      }
+    }
+
+    function addMessage(content: string, isUser: boolean = false) {
+      if (!chatMessages) return;
+
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+
+      const avatarDiv = document.createElement('div');
+      avatarDiv.className = 'message-avatar';
+      avatarDiv.innerHTML = isUser
+        ? '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>'
+        : '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>';
+
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'message-content';
+
+      const p = document.createElement('p');
+      p.textContent = content;
+      contentDiv.appendChild(p);
+
+      if (isUser) {
+        messageDiv.appendChild(contentDiv);
+        messageDiv.appendChild(avatarDiv);
+      } else {
+        messageDiv.appendChild(avatarDiv);
+        messageDiv.appendChild(contentDiv);
+      }
+
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function handleQuestion(question: string) {
+      if (!question.trim()) return;
+
+      // Add user message
+      addMessage(question, true);
+
+      // Disable input temporarily
+      if (chatInput) chatInput.disabled = true;
+      const sendBtn = chatForm?.querySelector('.chatbot-send-btn') as HTMLButtonElement;
+      if (sendBtn) sendBtn.disabled = true;
+
+      // Simulate thinking delay
+      setTimeout(() => {
+        const response = getAIResponse(question);
+        addMessage(response, false);
+
+        // Re-enable input
+        if (chatInput) {
+          chatInput.disabled = false;
+          chatInput.value = '';
+          chatInput.focus();
+        }
+        if (sendBtn) sendBtn.disabled = false;
+      }, 800);
+    }
+
+    // Handle form submission
+    chatForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (chatInput) {
+        handleQuestion(chatInput.value);
+      }
+    });
+
+    // Handle quick questions
+    quickQuestions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const question = btn.getAttribute('data-question');
+        if (question) {
+          handleQuestion(question);
+        }
+      });
+    });
+  });
+</script>
