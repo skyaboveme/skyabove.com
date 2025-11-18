@@ -183,6 +183,18 @@ import Footer from '../components/Footer.astro';
               <p>The result? You get the firepower of a 10-person marketing team for the cost of one employee—without sacrificing quality.</p>
             </div>
           </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Are there additional fees?</span>
+              <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-answer">
+              <p>It depends on what systems you want to integrate with. Third-party systems or existing apps are sometimes better to utilize as they have more users or a bigger established base. These external platforms may have their own subscription fees, but we'll work with you to choose the most cost-effective solutions that deliver the best results for your business.</p>
+            </div>
+          </div>
         </div>
 
         <!-- Services & Capabilities -->
@@ -1101,6 +1113,7 @@ import Footer from '../components/Footer.astro';
       'industries': 'We work with professional services, law firms, real estate, healthcare, B2B/SaaS, e-commerce, home services, and more. Our AI-powered approach adapts to any industry.',
       'guarantee': 'While we can\'t guarantee specific results (marketing depends on many factors), our clients average 3.8x ROAS, 259% revenue growth, and 127% more leads. We focus on data-driven optimization to maximize your outcomes.',
       'cancel': 'We require a 3-month minimum commitment to ensure adequate time for strategy implementation and results. After 3 months, services continue month-to-month and you can cancel with 30 days\' notice.',
+      'fees': 'It depends on what systems you want to integrate with. Third-party systems or existing apps are sometimes better to utilize as they have more users or a bigger established base. These external platforms may have their own subscription fees, but we\'ll work with you to choose the most cost-effective solutions that deliver the best results for your business.',
     };
 
     function getAIResponse(question: string): string {
@@ -1129,6 +1142,8 @@ import Footer from '../components/Footer.astro';
         return knowledgeBase['guarantee'];
       } else if (lowerQuestion.includes('cancel') || lowerQuestion.includes('commitment') || lowerQuestion.includes('contract')) {
         return knowledgeBase['cancel'];
+      } else if (lowerQuestion.includes('fee') || lowerQuestion.includes('additional') || lowerQuestion.includes('extra cost') || lowerQuestion.includes('hidden') || lowerQuestion.includes('other cost')) {
+        return knowledgeBase['fees'];
       } else {
         return `Great question! While I can answer general questions about our services, pricing, and process, I'd recommend browsing the FAQ below or contacting us directly at (951) 760-0896 or hello@skyabove.com for specific questions. We're happy to help!`;
       }
