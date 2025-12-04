@@ -916,7 +916,7 @@ import AnimatedCounter from '../components/AnimatedCounter.astro';
 
   .packages-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
     gap: 3rem;
     margin-top: 4rem;
     margin-bottom: 5rem;
@@ -1626,7 +1626,7 @@ import AnimatedCounter from '../components/AnimatedCounter.astro';
     width: 100%;
   }
 
-  /* Responsive */
+  /* Responsive - Tablet */
   @media (max-width: 968px) {
     .hero-title {
       font-size: 3rem;
@@ -1648,6 +1648,10 @@ import AnimatedCounter from '../components/AnimatedCounter.astro';
 
     .packages-grid {
       grid-template-columns: 1fr;
+    }
+
+    .package-services {
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .comparison-row {
@@ -1673,6 +1677,208 @@ import AnimatedCounter from '../components/AnimatedCounter.astro';
 
     .ai-value-prop {
       flex-direction: column;
+    }
+  }
+
+  /* Responsive - Mobile */
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding: 8rem 0 4rem;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      padding: 0 0.5rem;
+    }
+
+    .hero-price-card {
+      padding: 1.5rem;
+      margin: 2rem auto;
+    }
+
+    .price-amount {
+      font-size: 3rem;
+    }
+
+    .price-currency {
+      font-size: 1.5rem;
+    }
+
+    .price-period {
+      font-size: 1.2rem;
+    }
+
+    .ai-team-banner {
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .banner-icon {
+      gap: 0.5rem;
+    }
+
+    .banner-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .banner-title {
+      font-size: 1.1rem;
+    }
+
+    .banner-description {
+      font-size: 0.95rem;
+    }
+
+    .package-services {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .service-category {
+      padding: 1.5rem;
+    }
+
+    .category-header h3 {
+      font-size: 1.1rem;
+    }
+
+    .service-list li {
+      font-size: 0.9rem;
+      padding: 0.5rem 0;
+    }
+
+    .single-package {
+      padding: 1.5rem;
+      border-radius: 16px;
+    }
+
+    .package-hero {
+      padding: 1.5rem;
+    }
+
+    .price-number {
+      font-size: 3rem;
+    }
+
+    .pricing-badge {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+    }
+
+    .result-stat {
+      font-size: 2.5rem;
+    }
+
+    .result-label {
+      font-size: 1rem;
+    }
+
+    .ai-value-prop {
+      padding: 2rem 1.5rem;
+    }
+
+    .value-amount {
+      font-size: 2rem;
+    }
+
+    .value-item.highlight .value-amount {
+      font-size: 2.5rem;
+    }
+
+    .cta-content h2 {
+      font-size: 2rem;
+    }
+
+    .cta-content p {
+      font-size: 1rem;
+    }
+
+    .btn-large {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  /* Responsive - Small Mobile */
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+    }
+
+    .hero-price-card {
+      padding: 1.25rem;
+    }
+
+    .price-amount {
+      font-size: 2.5rem;
+    }
+
+    .price-commitment {
+      font-size: 0.85rem;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .ai-team-banner {
+      padding: 1.25rem;
+    }
+
+    .banner-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .banner-title {
+      font-size: 1rem;
+    }
+
+    .service-category {
+      padding: 1.25rem;
+    }
+
+    .category-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .single-package {
+      padding: 1rem;
+    }
+
+    .package-hero {
+      padding: 1.25rem;
+    }
+
+    .price-number {
+      font-size: 2.5rem;
+    }
+
+    .result-card {
+      padding: 1.5rem;
+    }
+
+    .result-stat {
+      font-size: 2rem;
+    }
+
+    .contact-form {
+      padding: 1.5rem;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
     }
   }
 </style>
