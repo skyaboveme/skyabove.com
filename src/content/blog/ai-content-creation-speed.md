@@ -188,4 +188,4 @@ At Skyabove, we help businesses implement AI-powered marketing workflows that de
 **Call us**: (951) 760-0896
 **Email**: hello@skyabove.com
 
-*Starting at $3,500/month for comprehensive AI-powered marketing services including strategy, content creation, AI optimization, and automation.*
+*Starting at $3,000/month for comprehensive AI-powered marketing services including strategy, content creation, AI optimization, and automation.*

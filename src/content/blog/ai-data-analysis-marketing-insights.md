@@ -320,7 +320,7 @@ Skyabove helps businesses implement AI analytics that deliver:
 **Call us**: (951) 760-0896
 **Email**: hello@skyabove.com
 
-*Comprehensive AI marketing and analytics services starting at $3,500/month. 3-month minimum, month-to-month after.*
+*Comprehensive AI marketing and analytics services starting at $3,000/month. 3-month minimum, month-to-month after.*
 
 ---
 
