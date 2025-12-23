@@ -3,37 +3,46 @@ const projects = [
   {
     category: "Professional Services",
     title: "Risk Management Services",
-    description: "Complete digital transformation for iptalons.com with new website, SEO, PPC, and social media campaigns driving significant business growth.",
+    description:
+      "Complete digital transformation for iptalons.com with new website, SEO, PPC, and social media campaigns driving significant business growth.",
     metrics: [
       { value: "340%", label: "Sales Increase" },
       { value: "4.2x", label: "ROAS" },
-      { value: "#1", label: "Google Rankings" }
+      { value: "#1", label: "Google Rankings" },
     ],
-    gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+    // High-tech dashboard grid pattern
+    gradient: `
+      radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, rgba(15, 23, 42, 0.4) 100%),
+      linear-gradient(0deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)),
+      repeating-linear-gradient(45deg, rgba(99, 102, 241, 0.1) 0px, rgba(99, 102, 241, 0.1) 1px, transparent 1px, transparent 10px),
+      linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)
+    `,
   },
   {
     category: "Real Estate",
     title: "Home Developer",
-    description: "Full-service marketing for Theprairiesmithville.com including website redesign, local SEO, social media, and display ads resulted in massive growth.",
+    description:
+      "Full-service marketing for Theprairiesmithville.com including website redesign, local SEO, social media, and display ads resulted in massive growth.",
     metrics: [
       { value: "11x", label: "Viewership" },
-      { value: "50%", label: "More Leads" }
+      { value: "50%", label: "More Leads" },
     ],
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-    image: "/images/home-developer.png"
+    image: "/images/home-developer.png",
   },
   {
     category: "Professional Services",
     title: "Law Firm Marketing",
-    description: "Comprehensive strategy for fullmanfirm.com with new website, SEO, Google Ads, and content marketing to dominate local search.",
+    description:
+      "Comprehensive strategy for fullmanfirm.com with new website, SEO, Google Ads, and content marketing to dominate local search.",
     metrics: [
       { value: "35%", label: "Lead Growth" },
       { value: "-40%", label: "Lower CPL" },
-      { value: "75%", label: "AIO Visibility" }
+      { value: "75%", label: "AIO Visibility" },
     ],
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    image: "/images/law-firm-professional.jpg"
-  }
+    image: "/images/law-firm-professional.jpg",
+  },
 ];
 ---
 
@@ -58,41 +67,51 @@ const projects = [
       <span class="section-label">Case Studies</span>
       <h2 class="section-title">Real Results from Real Businesses</h2>
       <p class="section-description">
-        See how our complete marketing solutions have transformed businesses across industries
+        See how our complete marketing solutions have transformed businesses
+        across industries
       </p>
     </div>
     <div class="portfolio-grid">
-      {projects.map((project) => (
-        <div class="portfolio-card">
-          <div class="portfolio-image" style={project.image ? `background: url(${project.image}) center/cover, ${project.gradient}` : `background: ${project.gradient}`}>
-            <div class="portfolio-overlay">
-              <span class="portfolio-category">{project.category}</span>
+      {
+        projects.map((project) => (
+          <div class="portfolio-card">
+            <div
+              class="portfolio-image"
+              style={
+                project.image
+                  ? `background: url(${project.image}) center/cover, ${project.gradient}`
+                  : `background: ${project.gradient}`
+              }
+            >
+              <div class="portfolio-overlay">
+                <span class="portfolio-category">{project.category}</span>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">{project.title}</h3>
+              <p class="portfolio-description">{project.description}</p>
+              <div class="portfolio-metrics">
+                {project.metrics.map((metric) => (
+                  <div class="metric">
+                    <span class="metric-value">{metric.value}</span>
+                    <span class="metric-label">{metric.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          <div class="portfolio-content">
-            <h3 class="portfolio-title">{project.title}</h3>
-            <p class="portfolio-description">{project.description}</p>
-            <div class="portfolio-metrics">
-              {project.metrics.map((metric) => (
-                <div class="metric">
-                  <span class="metric-value">{metric.value}</span>
-                  <span class="metric-label">{metric.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
 
 <script>
   // Portfolio Card 3D Hover Effect
-  const portfolioCards = document.querySelectorAll('.portfolio-card');
+  const portfolioCards = document.querySelectorAll(".portfolio-card");
 
-  portfolioCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
+  portfolioCards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -103,11 +122,13 @@ const projects = [
       const rotateX = (y - centerY) / 20;
       const rotateY = (centerX - x) / 20;
 
-      (card as HTMLElement).style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+      (card as HTMLElement).style.transform =
+        `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
     });
 
-    card.addEventListener('mouseleave', () => {
-      (card as HTMLElement).style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+    card.addEventListener("mouseleave", () => {
+      (card as HTMLElement).style.transform =
+        "perspective(1000px) rotateX(0) rotateY(0) translateY(0)";
     });
   });
 </script>
@@ -123,7 +144,11 @@ const projects = [
     gap: 2rem;
     margin-bottom: 4rem;
     padding: 3rem;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    background: linear-gradient(
+      135deg,
+      rgba(99, 102, 241, 0.1) 0%,
+      rgba(139, 92, 246, 0.1) 100%
+    );
     border: 1px solid rgba(99, 102, 241, 0.2);
     border-radius: 20px;
   }
