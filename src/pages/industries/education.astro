@@ -2,13 +2,121 @@
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+import IndustryTabs from "../../components/IndustryTabs.astro";
 
 const industry = {
     name: "Education",
-    title: "AI Marketing for Schools & EdTech",
+    title: "Fill Your Classrooms with AI-Driven Enrollment Engines",
+    subtitle:
+        "From private schools to online courses—automate your student recruitment and cut acquisition costs by 40%.",
     description:
-        "Boost enrollment and student engagement with AI-driven marketing strategies tailored for educational institutions and EdTech platforms.",
+        "Skyabove helps educational institutions and EdTech platforms scale enrollment through AI-powered targeting and automated nurture sequences.",
 };
+
+const painPoints = [
+    {
+        title: "Seasonal Slumps",
+        description:
+            "Empty seats during off-peak windows hurt your bottom line. We smooth the curve.",
+        icon: "calendar-off",
+    },
+    {
+        title: "Ghosting Applicants",
+        description:
+            "Leads inquire but never enroll. Our AI re-engages them automatically.",
+        icon: "ghost",
+    },
+    {
+        title: "Ad Spend Waste",
+        description:
+            "Paying for clicks from students who aren't qualified? We fix your targeting.",
+        icon: "dollar-sign",
+    },
+];
+
+const solutions = [
+    {
+        title: "Automated Admissions Agent",
+        description:
+            "AI agents that answer parent FAQs, qualify students, and book campus tours 24/7.",
+        icon: "bot",
+    },
+    {
+        title: "Long-Term Nurture Sequences",
+        description:
+            "Automated email & SMS campaigns that keep your school top-of-mind during long decision cycles.",
+        icon: "mail-plus",
+    },
+    {
+        title: "Alumni Success Showcases",
+        description:
+            "Automatically aggregate and display success stories to build trust with prospective families.",
+        icon: "graduation-cap",
+    },
+    {
+        title: "Geo-Fenced District Targeting",
+        description:
+            "Precision ad campaigns targeting families within specific school districts and feeder zones.",
+        icon: "map",
+    },
+];
+
+const educationTabs = [
+    {
+        id: "websites",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+        title: "High-Performance Websites",
+        headline: "Enrollment-Focused School Websites",
+        description:
+            "First impressions matter for parents and students. We design school websites that are fast, accessible, and optimized for enrollment. From virtual tours to easy application portals, we ensure your digital campus reflects the quality of your education.",
+        image: "/images/education-website-mockup.png",
+    },
+    {
+        id: "seo",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>`,
+        title: "Search Engine Optimization",
+        headline: "Rank for 'Best Private School' & More",
+        description:
+            "Ensure your institution appears when parents are researching local education options. Our SEO strategies target high-intent keywords like 'private high schools near me' and 'STEM programs', driving organic traffic from families actively looking to enroll.",
+        image: "/images/seo-dashboard.png",
+    },
+    {
+        id: "ppc",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>`,
+        title: "PPC | Search Engine Marketing",
+        headline: "Targeted Enrollment Campaigns",
+        description:
+            "Fill your open house events with qualified families. We run precise PPC campaigns on Google and social media, targeting specific demographics and geographic areas to maximize your admission inquiries.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
+    },
+    {
+        id: "content",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>`,
+        title: "Content Marketing",
+        headline: "Thought Leadership for Educators",
+        description:
+            "Establish your school as an authority. We create blog posts, white papers, and guides that address parent concerns and highlight your unique educational philosophy, nurturing prospective families through the decision process.",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000",
+    },
+    {
+        id: "social",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" /></svg>`,
+        title: "Social Media Marketing",
+        headline: "Showcase Student Life & Success",
+        description:
+            "Engage your community with vibrant social media content. We manage your presence on platforms like Instagram and LinkedIn, sharing student achievements, campus events, and alumni stories to build a strong school brand.",
+        image: "/images/social-media-dashboard.png",
+    },
+    {
+        id: "analytics",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>`,
+        title: "Reporting & Analytics",
+        headline: "Track Enrollment ROI",
+        description:
+            "See clearly how your marketing impacts enrollment numbers. Our dashboards track inquiries, applications, and tour bookings, allowing you to optimize your budget for the most effective channels.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
+    },
+];
 ---
 
 <Layout
@@ -17,110 +125,378 @@ const industry = {
 >
     <Navigation />
 
+    <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
-            <h1 class="page-title">
-                <span class="gradient-text">{industry.title}</span>
-            </h1>
-            <p class="page-subtitle">{industry.description}</p>
-            <div class="cta-wrapper">
-                <a href="/#contact" class="btn btn-primary"
-                    >Get Your Growth Plan</a
-                >
+        <div class="hero-bg-overlay"></div>
+        <div class="container relative z-10">
+            <div class="hero-content">
+                <span class="hero-label">AI for Education & EdTech</span>
+                <h1 class="page-title">
+                    Fill Your Classrooms with <span class="gradient-text"
+                        >Enrolled Students</span
+                    >
+                </h1>
+                <p class="page-subtitle">{industry.subtitle}</p>
+                <div class="cta-wrapper">
+                    <a href="/#contact" class="btn btn-primary"
+                        >Start Your Enrollment Engine</a
+                    >
+                    <span class="cta-note"
+                        >Compliance Ready (COPPA/FERPA Aware Marketing)</span
+                    >
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="content-section">
+    <!-- The Trap (Problem) Section -->
+    <section class="problem-section">
         <div class="container">
-            <div class="content-wrapper">
-                <h2>Dominate Your Local {industry.name} Market</h2>
-                <p>
-                    In the competitive world of {industry.name}, speed and
-                    visibility are everything. Our autonomous AI agents work
-                    24/7 to ensure your business ranks at the top when customers
-                    need you most.
+            <div class="section-header text-center">
+                <h2 class="section-title">The Enrollment Gap</h2>
+                <p class="section-desc">
+                    Why traditional "open house" marketing isn't enough anymore.
                 </p>
-                <p>
-                    We don't just generate leads; we build a complete brand
-                    asset that you own. From captured searches to automated
-                    follow-ups, we handle the entire lifecycle.
-                </p>
+            </div>
+            <div class="pain-points-grid">
+                {
+                    painPoints.map((point) => (
+                        <div class="pain-card">
+                            <div class="pain-icon-wrapper">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class={`lucide lucide-${point.icon}`}
+                                >
+                                    <path d="M12 12h.01" />
+                                </svg>
+                            </div>
+                            <h3>{point.title}</h3>
+                            <p>{point.description}</p>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     </section>
 
-    <Footer />
+    <!-- The Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">The Skyabove Syllabus</span>
+                <h2 class="section-title">A Modern Curriculum for Growth</h2>
+            </div>
+
+            <div class="solutions-grid">
+                {
+                    solutions.map((solution) => (
+                        <div class="solution-card">
+                            <div class="solution-icon">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide-check-circle"
+                                >
+                                    <>
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </>
+                                </svg>
+                            </div>
+                            <div class="solution-content">
+                                <h3>{solution.title}</h3>
+                                <p>{solution.description}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    ---
+
+    <Layout
+        title={`${industry.name} Marketing - Skyabove`}
+        description={industry.description}
+    >
+        <!-- ... existing layout content ... -->
+
+        <!-- Replaced <IndustryTabs /> with customized one -->
+        <IndustryTabs tabs={educationTabs} />
+
+        <section class="final-cta">
+            <div class="container">
+                <div class="cta-box">
+                    <h2>Ready to Scale Your Institution?</h2>
+                    <p>Don't let another semester start with empty seats.</p>
+                    <a href="/#contact" class="btn btn-primary btn-large"
+                        >Schedule Admissions Audit</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <Footer />
+    </Layout>
+
+    <style>
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: 12rem 0 8rem;
+            text-align: center;
+            background: url("/images/education-hero-tech.png") no-repeat center
+                center/cover;
+            overflow: hidden;
+        }
+
+        .hero-bg-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(15, 23, 42, 0.75),
+                #0f172a
+            );
+            z-index: 1;
+        }
+
+        .relative {
+            position: relative;
+        }
+        .z-10 {
+            z-index: 10;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: rgba(99, 102, 241, 0.15);
+            color: var(--primary-light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: white;
+        }
+
+        .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+
+        .cta-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cta-note {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 6rem 0;
+            background: #0f172a;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 4rem;
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pain-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .pain-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .pain-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            background: rgba(239, 68, 68, 0.1);
+            color: #f87171;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .pain-card h3 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .pain-card p {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 6rem 0;
+            background: #1e293b;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .solution-card {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 1rem;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .solution-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .solution-content h3 {
+            color: white;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .solution-content p {
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 6rem 0;
+            background: #0f172a;
+        }
+
+        .cta-box {
+            background: radial-gradient(
+                circle at center,
+                #1e1b4b 0%,
+                #0f172a 100%
+            );
+            border: 1px solid var(--primary-color);
+            padding: 4rem 2rem;
+            border-radius: 2rem;
+            text-align: center;
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            margin-bottom: 2.5rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
 </Layout>
-
-<style>
-    .hero-section {
-        padding: 10rem 0 6rem;
-        text-align: center;
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-    }
-
-    .page-title {
-        font-size: 3.5rem;
-        font-weight: 800;
-        margin-bottom: 1.5rem;
-        line-height: 1.2;
-    }
-
-    .gradient-text {
-        background: var(--gradient-1, linear-gradient(45deg, #4f46e5, #ec4899));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    .page-subtitle {
-        font-size: 1.25rem;
-        color: #94a3b8;
-        max-width: 800px;
-        margin: 0 auto 3rem;
-    }
-
-    .content-section {
-        padding: 4rem 0 8rem;
-        background: #0f172a;
-        color: #e2e8f0;
-    }
-
-    .content-wrapper {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .content-wrapper h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        color: #f8fafc;
-    }
-
-    .content-wrapper p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 2rem;
-        color: #cbd5e1;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 1rem 2rem;
-        border-radius: 0.5rem;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .btn-primary {
-        background: var(--gradient-1, linear-gradient(45deg, #4f46e5, #ec4899));
-        color: white;
-    }
-
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
-    }
-</style>
