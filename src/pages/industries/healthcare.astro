@@ -1,0 +1,126 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+
+const industry = {
+    name: "Healthcare",
+    title: "AI Marketing for Healthcare",
+    description:
+        "Acquire more patients and build trust. We provide HIPAA-compliant marketing strategies that position you as the leading provider in your area.",
+};
+---
+
+<Layout
+    title={`${industry.name} Marketing - Skyabove`}
+    description={industry.description}
+>
+    <Navigation />
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="page-title">
+                <span class="gradient-text">{industry.title}</span>
+            </h1>
+            <p class="page-subtitle">{industry.description}</p>
+            <div class="cta-wrapper">
+                <a href="/#contact" class="btn btn-primary"
+                    >Get Your Growth Plan</a
+                >
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-wrapper">
+                <h2>Dominate Your Local {industry.name} Market</h2>
+                <p>
+                    In the competitive world of {industry.name}, speed and
+                    visibility are everything. Our autonomous AI agents work
+                    24/7 to ensure your business ranks at the top when customers
+                    need you most.
+                </p>
+                <p>
+                    We don't just generate leads; we build a complete brand
+                    asset that you own. From captured searches to automated
+                    follow-ups, we handle the entire lifecycle.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+</Layout>
+
+<style>
+    .hero-section {
+        padding: 10rem 0 6rem;
+        text-align: center;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .page-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+    }
+
+    .gradient-text {
+        background: var(--gradient-1, linear-gradient(45deg, #4f46e5, #ec4899));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .page-subtitle {
+        font-size: 1.25rem;
+        color: #94a3b8;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+    }
+
+    .content-section {
+        padding: 4rem 0 8rem;
+        background: #0f172a;
+        color: #e2e8f0;
+    }
+
+    .content-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .content-wrapper h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #f8fafc;
+    }
+
+    .content-wrapper p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 2rem;
+        color: #cbd5e1;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: var(--gradient-1, linear-gradient(45deg, #4f46e5, #ec4899));
+        color: white;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+    }
+</style>

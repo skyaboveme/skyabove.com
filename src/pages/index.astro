@@ -5,6 +5,8 @@ import Portfolio from "../components/Portfolio.astro";
 import Footer from "../components/Footer.astro";
 import GridAnimation from "../components/GridAnimation.astro";
 import AnimatedCounter from "../components/AnimatedCounter.astro";
+import MarketingPillars from "../components/MarketingPillars.astro";
+import MarketingApproach from "../components/MarketingApproach.astro";
 ---
 
 <Layout
@@ -23,6 +25,9 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
     </div>
     <div class="container">
       <div class="hero-content">
+        <div class="hero-slogan">
+          You run your business. We run your marketing.
+        </div>
         <h1 class="hero-title">
           <span class="title-line"
             ><span class="gradient-text">The AI Marketing Team</span></span
@@ -47,7 +52,7 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
     </div>
   </section>
 
-  <!-- Comprehensive Package Section -->
+  <!-- COMPREHENSIVE PACKAGE SECTION -->
   <section id="packages" class="packages">
     <div class="container">
       <div class="section-header">
@@ -63,41 +68,53 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
 
       <div class="ai-team-banner">
         <div class="banner-icon">
-          <!-- Growth/Marketing Icon -->
+          <!-- Growth/Marketing Icon - TrendingUp -->
           <svg
             width="48"
             height="48"
             viewBox="0 0 24 24"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path
-              d="M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L19.71 9.71L22 12V6H16Z"
-              fill="currentColor"></path>
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+            <polyline points="17 6 23 6 23 12"></polyline>
           </svg>
-          <!-- Development Icon -->
+          <!-- Development Icon - Code2 -->
           <svg
             width="48"
             height="48"
             viewBox="0 0 24 24"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path
-              d="M9.4 16.6L4.8 12L9.4 7.4L8 6L2 12L8 18L9.4 16.6ZM14.6 16.6L19.2 12L14.6 7.4L16 6L22 12L16 18L14.6 16.6Z"
-              fill="currentColor"></path>
+            <path d="m18 16 4-4-4-4"></path>
+            <path d="m6 8-4 4 4 4"></path>
+            <line x1="14.5" y1="4" x2="9.5" y2="20"></line>
           </svg>
-          <!-- Design/Creative Icon -->
+          <!-- Design/Creative Icon - Palette -->
           <svg
             width="48"
             height="48"
             viewBox="0 0 24 24"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
+            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
             <path
-              d="M12 2C11.5 2 11 2.19 10.59 2.59L2.59 10.59C1.8 11.37 1.8 12.63 2.59 13.41L10.59 21.41C11.37 22.2 12.63 22.2 13.41 21.41L21.41 13.41C22.2 12.63 22.2 11.37 21.41 10.59L13.41 2.59C13 2.19 12.5 2 12 2ZM12 4L20 12L12 20L4 12L12 4ZM12 7C10.9 7 10 7.9 10 9C10 10.1 10.9 11 12 11C13.1 11 14 10.1 14 9C14 7.9 13.1 7 12 7Z"
-              fill="currentColor"></path>
+              d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"
+            ></path>
           </svg>
         </div>
         <div class="banner-content">
@@ -138,11 +155,13 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
                   height="40"
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  <path
-                    d="M16 6L18.29 8.29L13.41 13.17L9.41 9.17L2 16.59L3.41 18L9.41 12L13.41 16L19.71 9.71L22 12V6H16Z"
-                    fill="currentColor"></path>
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
                 </svg>
               </div>
               <h3>Marketing & Growth</h3>
@@ -168,11 +187,17 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
                   height="40"
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
                   <path
-                    d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM18 20H6V4H13V9H18V20ZM8 15.5L9.5 14L11 15.5L14.5 12L16 13.5L11 18.5L8 15.5Z"
-                    fill="currentColor"></path>
+                    d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                  ></path>
+                  <path
+                    d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                  ></path>
                 </svg>
               </div>
               <h3>Content Creation</h3>
@@ -198,11 +223,13 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
                   height="40"
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  <path
-                    d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z"
-                    fill="currentColor"></path>
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
               </div>
               <h3>SEO, AI & LLM Optimization</h3>
@@ -228,11 +255,16 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
                   height="40"
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  <path
-                    d="M9.4 16.6L4.8 12L9.4 7.4L8 6L2 12L8 18L9.4 16.6ZM14.6 16.6L19.2 12L14.6 7.4L16 6L22 12L16 18L14.6 16.6Z"
-                    fill="currentColor"></path>
+                  <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"
+                  ></path>
+                  <path d="M8.5 15.5a4 4 0 1 0 7 0"></path>
+                  <path d="M15.5 8.5a4 4 0 1 0 0 7"></path>
+                  <path d="M8.5 8.5a4 4 0 1 0 0 7"></path>
                 </svg>
               </div>
               <h3>AI Development</h3>
@@ -258,11 +290,12 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
                   height="40"
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  <path
-                    d="M19.14 12.94C19.18 12.64 19.2 12.33 19.2 12C19.2 11.68 19.18 11.36 19.13 11.06L21.16 9.48C21.34 9.34 21.39 9.07 21.28 8.87L19.36 5.55C19.24 5.33 18.99 5.26 18.77 5.33L16.38 6.29C15.88 5.91 15.35 5.59 14.76 5.35L14.4 2.81C14.36 2.57 14.16 2.4 13.92 2.4H10.08C9.84 2.4 9.65 2.57 9.61 2.81L9.25 5.35C8.66 5.59 8.12 5.92 7.63 6.29L5.24 5.33C5.02 5.25 4.77 5.33 4.65 5.55L2.74 8.87C2.62 9.08 2.66 9.34 2.86 9.48L4.89 11.06C4.84 11.36 4.8 11.69 4.8 12C4.8 12.31 4.82 12.64 4.87 12.94L2.84 14.52C2.66 14.66 2.61 14.93 2.72 15.13L4.64 18.45C4.76 18.67 5.01 18.74 5.23 18.67L7.62 17.71C8.12 18.09 8.65 18.41 9.24 18.65L9.6 21.19C9.65 21.43 9.84 21.6 10.08 21.6H13.92C14.16 21.6 14.36 21.43 14.39 21.19L14.75 18.65C15.34 18.41 15.88 18.09 16.37 17.71L18.76 18.67C18.98 18.75 19.23 18.67 19.35 18.45L21.27 15.13C21.39 14.91 21.34 14.66 21.15 14.52L19.14 12.94ZM12 15.6C10.02 15.6 8.4 13.98 8.4 12C8.4 10.02 10.02 8.4 12 8.4C13.98 8.4 15.6 10.02 15.6 12C15.6 13.98 13.98 15.6 12 15.6Z"
-                    fill="currentColor"></path>
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
                 </svg>
               </div>
               <h3>Marketing Automation</h3>
@@ -288,11 +321,12 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
                   height="40"
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                  <path
-                    d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 11.99H19C18.47 16.11 15.72 19.78 12 20.93V12H5V6.3L12 3.19V11.99Z"
-                    fill="currentColor"></path>
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
               </div>
               <h3>You Own Everything</h3>
@@ -346,10 +380,14 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
               <circle cx="12" cy="12" r="10"></circle>
-              <circle cx="12" cy="12" r="6"></circle>
-              <circle cx="12" cy="12" r="2"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              ></path>
             </svg>
           </div>
           <h4>Marketing Strategy</h4>
@@ -362,11 +400,15 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <path d="M12 2a10 10 0 0 0 0 20 10 10 0 0 0 0-20z"></path>
-              <path d="M2 12h20"></path>
+              <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+              <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+              <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+              <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
               <path
-                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"
               ></path>
             </svg>
           </div>
@@ -380,12 +422,14 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <circle cx="18" cy="5" r="3"></circle>
-              <circle cx="6" cy="12" r="3"></circle>
-              <circle cx="18" cy="19" r="3"></circle>
-              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </div>
           <h4>Social Media</h4>
@@ -398,6 +442,8 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
               <polygon points="23 7 16 12 23 17 23 7"></polygon>
               <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
@@ -413,10 +459,12 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-              <path d="M2 17l10 5 10-5"></path>
-              <path d="M2 12l10 5 10-5"></path>
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+              ></path>
             </svg>
           </div>
           <h4>Paid Advertising</h4>
@@ -429,6 +477,8 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
               <path
                 d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
@@ -449,6 +499,8 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
               <line x1="18" y1="20" x2="18" y2="10"></line>
               <line x1="12" y1="20" x2="12" y2="4"></line>
@@ -465,11 +517,14 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"
+              <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"
               ></path>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-              <line x1="12" y1="19" x2="12" y2="22"></line>
+              <path d="M8.5 15.5a4 4 0 1 0 7 0"></path>
+              <path d="M15.5 8.5a4 4 0 1 0 0 7"></path>
+              <path d="M8.5 8.5a4 4 0 1 0 0 7"></path>
             </svg>
           </div>
           <h4>AI-Powered</h4>
@@ -482,9 +537,11 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
               <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.35-4.35"></path>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
           </div>
           <h4>SEO Optimization</h4>
@@ -497,9 +554,13 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              ></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
           </div>
           <h4>Email Marketing</h4>
@@ -512,10 +573,12 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-              ></polygon>
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
             </svg>
           </div>
           <h4>Brand Development</h4>
@@ -528,10 +591,11 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
             </svg>
           </div>
           <h4>Website Development</h4>
@@ -544,10 +608,10 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <circle cx="12" cy="12" r="3"></circle>
-              <path d="M12 1v6m0 6v6m9-9h-6m-6 0H3"></path>
-              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
             </svg>
           </div>
           <h4>Marketing Automation</h4>
@@ -560,8 +624,11 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
             </svg>
           </div>
           <h4>Conversion Rate Optimization</h4>
@@ -574,8 +641,12 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+              ></polygon>
             </svg>
           </div>
           <h4>Reputation Management</h4>
@@ -588,10 +659,12 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
               fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="12" y1="16" x2="12" y2="12"></line>
-              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
             </svg>
           </div>
           <h4>Strategy & Consulting</h4>
@@ -652,6 +725,11 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
       </div>
     </div>
   </section>
+
+  <MarketingApproach />
+
+  <!-- MARKETING PILLARS (Positioning) -->
+  <MarketingPillars />
 
   <!-- CTA Section -->
   <section class="final-cta">
@@ -767,1456 +845,1468 @@ import AnimatedCounter from "../components/AnimatedCounter.astro";
   </section>
 
   <Footer />
-</Layout>
 
-<style>
-  /* Hero Section */
-  .hero {
-    position: relative;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    padding: 8rem 0 4rem;
-    overflow: hidden;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  }
-
-  .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    background: radial-gradient(
-      ellipse at center,
-      rgba(15, 23, 42, 0.8) 0%,
-      var(--bg-darker) 100%
-    );
-  }
-
-  .grid-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-
-  .gradient-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.2;
-    animation: float 20s infinite ease-in-out;
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .orb-1 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, #6366f1 0%, transparent 70%);
-    top: -15%;
-    left: -15%;
-    animation-delay: 0s;
-  }
-
-  .orb-2 {
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, #ec4899 0%, transparent 70%);
-    top: 20%;
-    right: -20%;
-    animation-delay: 7s;
-  }
-
-  .orb-3 {
-    width: 550px;
-    height: 550px;
-    background: radial-gradient(circle, #14b8a6 0%, transparent 70%);
-    bottom: -15%;
-    left: 25%;
-    animation-delay: 14s;
-  }
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-    25% {
-      transform: translate(30px, -30px) scale(1.1);
-    }
-    50% {
-      transform: translate(-20px, 20px) scale(0.9);
-    }
-    75% {
-      transform: translate(40px, 10px) scale(1.05);
-    }
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 10;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-    animation: fadeInUp 1s ease-out;
-  }
-
-  .hero-title {
-    font-size: 4.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
-  }
-
-  .title-line {
-    display: block;
-    animation: fadeInUp 1s ease-out backwards;
-  }
-
-  .title-line:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-
-  .title-line:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  .gradient-text {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    position: relative;
-    display: inline-block;
-  }
-
-  .hero-subtitle {
-    font-size: 1.4rem;
-    line-height: 1.7;
-    color: var(--text-secondary);
-    margin-bottom: 3rem;
-  }
-
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .stat {
-    text-align: center;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-  }
-
-  .stat-number {
-    display: block;
-    font-size: 3rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.5rem;
-  }
-
-  .stat-label {
-    font-size: 1rem;
-    color: var(--text-secondary);
-  }
-
-  .hero-price-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid var(--primary-color);
-    border-radius: 20px;
-    padding: 2rem 3rem;
-    margin: 2.5rem auto;
-    max-width: 600px;
-  }
-
-  .price-badge {
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--primary-light);
-    margin-bottom: 1rem;
-  }
-
-  .hero-price {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .price-currency {
-    font-size: 2rem;
-    color: var(--primary-light);
-  }
-
-  .price-amount {
-    font-size: 4rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .price-period {
-    font-size: 1.5rem;
-    color: var(--text-muted);
-  }
-
-  .price-commitment {
-    text-align: center;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-  }
-
-  .scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    animation: fadeInUp 1s ease-out 0.7s backwards;
-    z-index: 10;
-  }
-
-  .scroll-text {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .scroll-arrow {
-    width: 2px;
-    height: 30px;
-    background: var(--text-muted);
-    margin: 0 auto;
-    position: relative;
-    animation: scrollArrow 2s infinite ease-in-out;
-  }
-
-  .scroll-arrow::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 8px;
-    height: 8px;
-    border-right: 2px solid var(--text-muted);
-    border-bottom: 2px solid var(--text-muted);
-    transform: translateX(-50%) rotate(45deg);
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes scrollArrow {
-    0%,
-    100% {
-      transform: translateY(0);
-      opacity: 0.5;
-    }
-    50% {
-      transform: translateY(10px);
-      opacity: 1;
-    }
-  }
-
-  /* Packages Section */
-  .packages {
-    padding: 6rem 0;
-    background: var(--bg-darker);
-  }
-
-  .ai-team-banner {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    background: linear-gradient(
-      135deg,
-      rgba(99, 102, 241, 0.15) 0%,
-      rgba(139, 92, 246, 0.15) 100%
-    );
-    border: 2px solid rgba(99, 102, 241, 0.3);
-    border-radius: 20px;
-    padding: 2.5rem 3rem;
-    margin: 3rem 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .ai-team-banner::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent
-    );
-    animation: shine 3s infinite;
-  }
-
-  @keyframes shine {
-    to {
-      left: 100%;
-    }
-  }
-
-  .banner-icon {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-shrink: 0;
-    color: var(--primary-light);
-  }
-
-  .banner-icon svg {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-  }
-
-  .banner-icon svg:hover {
-    transform: scale(1.1);
-  }
-
-  .banner-content {
-    flex: 1;
-  }
-
-  .banner-title {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    margin-bottom: 0.75rem;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .banner-description {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .packages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
-    gap: 3rem;
-    margin-top: 4rem;
-    margin-bottom: 5rem;
-  }
-
-  .package-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 2px solid var(--border-color);
-    border-radius: 24px;
-    padding: 3rem;
-    transition: all 0.3s ease;
-    position: relative;
-  }
-
-  .package-card.featured {
-    border-color: var(--primary-color);
-    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
-  }
-
-  .package-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 70px rgba(99, 102, 241, 0.4);
-  }
-
-  .package-badge {
-    display: inline-block;
-    background: rgba(99, 102, 241, 0.15);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    color: var(--primary-light);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-  }
-
-  .package-badge.popular {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    border: none;
-    color: white;
-  }
-
-  .package-name {
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin-bottom: 0.75rem;
-    color: var(--text-primary);
-  }
-
-  .package-tagline {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-  }
-
-  .package-price {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-  }
-
-  .currency {
-    font-size: 2rem;
-    color: var(--primary-light);
-  }
-
-  .amount {
-    font-size: 4.5rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .period {
-    font-size: 1.5rem;
-    color: var(--text-muted);
-  }
-
-  .package-commitment {
-    text-align: center;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    font-size: 0.95rem;
-  }
-
-  .package-ideal {
-    background: rgba(99, 102, 241, 0.1);
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-  }
-
-  .package-ideal strong {
-    display: block;
-    margin-bottom: 0.75rem;
-    color: var(--primary-light);
-  }
-
-  .package-ideal ul {
-    list-style: none;
-  }
-
-  .package-ideal li {
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    color: var(--text-secondary);
-  }
-
-  .package-ideal li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    font-weight: bold;
-  }
-
-  .package-features {
-    margin-bottom: 2rem;
-  }
-
-  .package-features h4 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-  }
-
-  .package-features ul {
-    list-style: none;
-  }
-
-  .package-features li {
-    padding: 0.75rem 0;
-    padding-left: 2rem;
-    position: relative;
-    color: var(--text-secondary);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .package-features li:last-child {
-    border-bottom: none;
-  }
-
-  .package-features li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-
-  .package-result {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    padding: 1.5rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-
-  .package-result strong {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .btn-block {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Comparison Table */
-  .comparison-section {
-    margin-top: 5rem;
-    padding-top: 4rem;
-    border-top: 2px solid var(--border-color);
-  }
-
-  .comparison-title {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-  }
-
-  .comparison-table {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    overflow: hidden;
-  }
-
-  .comparison-row {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  .comparison-row:last-child {
-    border-bottom: none;
-  }
-
-  .comparison-row.header {
-    background: rgba(99, 102, 241, 0.1);
-    font-weight: 700;
-  }
-
-  .comparison-cell {
-    padding: 1.5rem;
-    text-align: center;
-    border-right: 1px solid var(--border-color);
-  }
-
-  .comparison-cell:last-child {
-    border-right: none;
-  }
-
-  .comparison-cell.feature-name {
-    text-align: left;
-    font-weight: 600;
-  }
-
-  .comparison-cell.featured {
-    background: rgba(99, 102, 241, 0.05);
-  }
-
-  /* Single Package Styles */
-  .single-package {
-    margin-top: 4rem;
-  }
-
-  .package-hero {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-
-  .package-pricing {
-    background: rgba(255, 255, 255, 0.03);
-    border: 2px solid var(--primary-color);
-    border-radius: 24px;
-    padding: 3rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .pricing-badge {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--primary-light);
-    margin-bottom: 1rem;
-  }
-
-  .starting-at {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-
-  .price-display {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .price-number {
-    font-size: 5rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .pricing-note {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-  }
-
-  .package-services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-bottom: 4rem;
-  }
-
-  .service-category {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 2.5rem;
-    transition: all 0.3s ease;
-  }
-
-  .service-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
-    border-color: var(--primary-color);
-  }
-
-  .category-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .category-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-light);
-  }
-
-  .category-icon svg {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.3s ease;
-  }
-
-  .service-category:hover .category-icon svg {
-    transform: scale(1.1);
-  }
-
-  .category-header h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-  }
-
-  .service-list {
-    list-style: none;
-  }
-
-  .service-list li {
-    padding: 0.75rem 0;
-    padding-left: 1.75rem;
-    position: relative;
-    color: var(--text-secondary);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  }
-
-  .service-list li:last-child {
-    border-bottom: none;
-  }
-
-  .service-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-
-  .package-cta {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    border-radius: 20px;
-    padding: 3rem;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .package-cta h3 {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-  }
-
-  .package-cta p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-  }
-
-  /* Why AI Section */
-  .why-ai {
-    padding: 6rem 0;
-    background: var(--bg-dark);
-  }
-
-  .ai-tools-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    margin: 3rem 0;
-  }
-
-  @media (max-width: 968px) {
-    .ai-tools-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .ai-tools-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .ai-tool {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-
-  .ai-tool:hover {
-    border-color: var(--primary-color);
-    transform: scale(1.05);
-  }
-
-  .tool-logo {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-  }
-
-  .tool-logo svg {
-    width: 48px;
-    height: 48px;
-    color: var(--primary-color);
-  }
-
-  .ai-tool h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-  }
-
-  .ai-tool p {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-  }
-
-  .ai-value-prop {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    border-radius: 16px;
-    padding: 3rem;
-    max-width: 700px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2rem;
-  }
-
-  .value-item {
-    text-align: center;
-  }
-
-  .value-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-  }
-
-  .value-amount {
-    display: block;
-    font-size: 3rem;
-    font-weight: 900;
-  }
-
-  .value-item.highlight .value-amount {
-    font-size: 4rem;
-  }
-
-  /* Results Section */
-  .results {
-    padding: 6rem 0;
-    background: var(--bg-darker);
-  }
-
-  .results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .result-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 2.5rem;
-    text-align: center;
-  }
-
-  .result-stat {
-    font-size: 4rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.75rem;
-  }
-
-  .result-label {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-  }
-
-  .result-desc {
-    color: var(--text-secondary);
-    line-height: 1.6;
-  }
-
-  /* Final CTA */
-  .final-cta {
-    padding: 6rem 0;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  }
-
-  .cta-content {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .cta-title {
-    font-size: 3rem;
-    font-weight: 900;
-    margin-bottom: 1rem;
-  }
-
-  .cta-description {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-  }
-
-  .cta-price-highlight {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 2rem;
-    margin-bottom: 2.5rem;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .cta-starting-at {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-
-  .cta-price {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .cta-price-amount {
-    font-size: 3.5rem;
-    font-weight: 900;
-  }
-
-  .cta-price-period {
-    font-size: 1.5rem;
-    opacity: 0.8;
-  }
-
-  .cta-price-note {
-    text-align: center;
-    font-size: 1rem;
-    opacity: 0.9;
-  }
-
-  .cta-buttons {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-  }
-
-  .btn-large {
-    padding: 1.25rem 3rem;
-    font-size: 1.2rem;
-  }
-
-  .cta-contact {
-    font-size: 1.1rem;
-    opacity: 0.9;
-  }
-
-  .cta-contact a {
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-  }
-
-  .cta-contact a:hover {
-    border-bottom-color: white;
-  }
-
-  /* Contact Section */
-  .contact {
-    padding: 6rem 0;
-    background: var(--bg-dark);
-  }
-
-  .contact-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .contact-details {
-    margin-top: 2rem;
-  }
-
-  .contact-item {
-    display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .contact-icon {
-    font-size: 2rem;
-  }
-
-  .contact-item h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-  }
-
-  .contact-item p {
-    color: var(--text-secondary);
-  }
-
-  .contact-item a {
-    color: var(--primary-light);
-    text-decoration: none;
-  }
-
-  .contact-item a:hover {
-    text-decoration: underline;
-  }
-
-  .hours {
-    font-size: 0.9rem;
-    margin-top: 0.25rem;
-  }
-
-  .contact-form-wrapper {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 2.5rem;
-  }
-
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    padding: 0.875rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    color: var(--text-primary);
-    font-size: 1rem;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-  }
-
-  .btn-full {
-    width: 100%;
-  }
-
-  /* Responsive - Tablet */
-  @media (max-width: 968px) {
-    .hero-title {
-      font-size: 3rem;
+  <style>
+    /* Hero Slogan */
+    .hero-slogan {
+      font-size: 1.25rem;
+      color: var(--primary);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+      animation: fadeInDown 0.8s ease-out forwards;
     }
 
-    .ai-team-banner {
-      flex-direction: column;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .banner-title {
-      font-size: 1.3rem;
-    }
-
-    .banner-description {
-      font-size: 1rem;
-    }
-
-    .packages-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .package-services {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .comparison-row {
-      grid-template-columns: 1fr;
-    }
-
-    .comparison-cell {
-      border-right: none;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .contact-wrapper {
-      grid-template-columns: 1fr;
-    }
-
-    .cta-buttons {
-      flex-direction: column;
-    }
-
-    .btn-large {
-      width: 100%;
-    }
-
-    .ai-value-prop {
-      flex-direction: column;
-    }
-  }
-
-  /* Responsive - Mobile */
-  @media (max-width: 768px) {
+    /* Hero Section */
     .hero {
-      min-height: auto;
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
       padding: 8rem 0 4rem;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(15, 23, 42, 0.8) 0%,
+        var(--bg-darker) 100%
+      );
+    }
+
+    .grid-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .gradient-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.2;
+      animation: float 20s infinite ease-in-out;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .orb-1 {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, #6366f1 0%, transparent 70%);
+      top: -15%;
+      left: -15%;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, #ec4899 0%, transparent 70%);
+      top: 20%;
+      right: -20%;
+      animation-delay: 7s;
+    }
+
+    .orb-3 {
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, #14b8a6 0%, transparent 70%);
+      bottom: -15%;
+      left: 25%;
+      animation-delay: 14s;
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+      25% {
+        transform: translate(30px, -30px) scale(1.1);
+      }
+      50% {
+        transform: translate(-20px, 20px) scale(0.9);
+      }
+      75% {
+        transform: translate(40px, 10px) scale(1.05);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease-out;
     }
 
     .hero-title {
-      font-size: 2.5rem;
+      font-size: 4.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .title-line {
+      display: block;
+      animation: fadeInUp 1s ease-out backwards;
+    }
+
+    .title-line:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .title-line:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      display: inline-block;
     }
 
     .hero-subtitle {
+      font-size: 1.4rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 3rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
       font-size: 1rem;
-      padding: 0 0.5rem;
+      color: var(--text-secondary);
     }
 
     .hero-price-card {
-      padding: 1.5rem;
-      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid var(--primary-color);
+      border-radius: 20px;
+      padding: 2rem 3rem;
+      margin: 2.5rem auto;
+      max-width: 600px;
     }
 
-    .price-amount {
-      font-size: 3rem;
+    .price-badge {
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      margin-bottom: 1rem;
+    }
+
+    .hero-price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .price-currency {
-      font-size: 1.5rem;
-    }
-
-    .price-period {
-      font-size: 1.2rem;
-    }
-
-    .ai-team-banner {
-      padding: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .banner-icon {
-      gap: 0.5rem;
-    }
-
-    .banner-icon svg {
-      width: 28px;
-      height: 28px;
-    }
-
-    .banner-title {
-      font-size: 1.1rem;
-    }
-
-    .banner-description {
-      font-size: 0.95rem;
-    }
-
-    .package-services {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .service-category {
-      padding: 1.5rem;
-    }
-
-    .category-header h3 {
-      font-size: 1.1rem;
-    }
-
-    .service-list li {
-      font-size: 0.9rem;
-      padding: 0.5rem 0 0.5rem 2rem;
-    }
-
-    .service-list li::before {
-      font-size: 0.9rem;
-      top: 0.5rem;
-    }
-
-    .single-package {
-      padding: 1.5rem;
-      border-radius: 16px;
-    }
-
-    .package-hero {
-      padding: 1.5rem;
-    }
-
-    .price-number {
-      font-size: 3rem;
-    }
-
-    .pricing-badge {
-      font-size: 0.85rem;
-      padding: 0.4rem 0.8rem;
-    }
-
-    .result-stat {
-      font-size: 2.5rem;
-    }
-
-    .result-label {
-      font-size: 1rem;
-    }
-
-    .ai-value-prop {
-      padding: 2rem 1.5rem;
-    }
-
-    .value-amount {
       font-size: 2rem;
-    }
-
-    .value-item.highlight .value-amount {
-      font-size: 2.5rem;
-    }
-
-    .cta-content h2 {
-      font-size: 2rem;
-    }
-
-    .cta-content p {
-      font-size: 1rem;
-    }
-
-    .btn-large {
-      padding: 1rem 2rem;
-      font-size: 1rem;
-    }
-  }
-
-  /* Responsive - Small Mobile */
-  @media (max-width: 480px) {
-    .hero-title {
-      font-size: 2rem;
-    }
-
-    .hero-subtitle {
-      font-size: 0.95rem;
-    }
-
-    .hero-price-card {
-      padding: 1.25rem;
+      color: var(--primary-light);
     }
 
     .price-amount {
-      font-size: 2.5rem;
+      font-size: 4rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .price-period {
+      font-size: 1.5rem;
+      color: var(--text-muted);
     }
 
     .price-commitment {
-      font-size: 0.85rem;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
     }
 
-    .section-header {
-      margin-bottom: 2rem;
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      animation: fadeInUp 1s ease-out 0.7s backwards;
+      z-index: 10;
+    }
+
+    .scroll-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .scroll-arrow {
+      width: 2px;
+      height: 30px;
+      background: var(--text-muted);
+      margin: 0 auto;
+      position: relative;
+      animation: scrollArrow 2s infinite ease-in-out;
+    }
+
+    .scroll-arrow::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var(--text-muted);
+      border-bottom: 2px solid var(--text-muted);
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scrollArrow {
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+      50% {
+        transform: translateY(10px);
+        opacity: 1;
+      }
+    }
+
+    /* Packages Section */
+    .packages {
+      padding: 6rem 0;
+      background: var(--bg-darker);
     }
 
     .ai-team-banner {
-      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      background: linear-gradient(
+        135deg,
+        rgba(99, 102, 241, 0.15) 0%,
+        rgba(139, 92, 246, 0.15) 100%
+      );
+      border: 2px solid rgba(99, 102, 241, 0.3);
+      border-radius: 20px;
+      padding: 2.5rem 3rem;
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-team-banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+      );
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      to {
+        left: 100%;
+      }
+    }
+
+    .banner-icon {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+      color: var(--primary-light);
     }
 
     .banner-icon svg {
-      width: 24px;
-      height: 24px;
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .banner-icon svg:hover {
+      transform: scale(1.1);
+    }
+
+    .banner-content {
+      flex: 1;
     }
 
     .banner-title {
-      font-size: 1rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .service-category {
-      padding: 1.25rem;
+    .banner-description {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
     }
 
-    .category-icon svg {
-      width: 32px;
-      height: 32px;
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+      margin-bottom: 5rem;
     }
 
+    .package-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 2px solid var(--border-color);
+      border-radius: 24px;
+      padding: 3rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .package-card.featured {
+      border-color: var(--primary-color);
+      box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
+    }
+
+    .package-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 70px rgba(99, 102, 241, 0.4);
+    }
+
+    .package-badge {
+      display: inline-block;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: var(--primary-light);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .package-badge.popular {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border: none;
+      color: white;
+    }
+
+    .package-name {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .package-tagline {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .package-price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .currency {
+      font-size: 2rem;
+      color: var(--primary-light);
+    }
+
+    .amount {
+      font-size: 4.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .period {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .package-commitment {
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .package-ideal {
+      background: rgba(99, 102, 241, 0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .package-ideal strong {
+      display: block;
+      margin-bottom: 0.75rem;
+      color: var(--primary-light);
+    }
+
+    .package-ideal ul {
+      list-style: none;
+    }
+
+    .package-ideal li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--text-secondary);
+    }
+
+    .package-ideal li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .package-features {
+      margin-bottom: 2rem;
+    }
+
+    .package-features h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .package-features ul {
+      list-style: none;
+    }
+
+    .package-features li {
+      padding: 0.75rem 0;
+      padding-left: 2rem;
+      position: relative;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .package-features li:last-child {
+      border-bottom: none;
+    }
+
+    .package-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .package-result {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .package-result strong {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .btn-block {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Comparison Table */
+    .comparison-section {
+      margin-top: 5rem;
+      padding-top: 4rem;
+      border-top: 2px solid var(--border-color);
+    }
+
+    .comparison-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .comparison-table {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-row.header {
+      background: rgba(99, 102, 241, 0.1);
+      font-weight: 700;
+    }
+
+    .comparison-cell {
+      padding: 1.5rem;
+      text-align: center;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .comparison-cell:last-child {
+      border-right: none;
+    }
+
+    .comparison-cell.feature-name {
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .comparison-cell.featured {
+      background: rgba(99, 102, 241, 0.05);
+    }
+
+    /* Single Package Styles */
     .single-package {
-      padding: 1rem;
+      margin-top: 4rem;
     }
 
     .package-hero {
-      padding: 1.25rem;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .package-pricing {
+      background: rgba(255, 255, 255, 0.03);
+      border: 2px solid var(--primary-color);
+      border-radius: 24px;
+      padding: 3rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .pricing-badge {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin-bottom: 1rem;
+    }
+
+    .starting-at {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .price-display {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .price-number {
-      font-size: 2.5rem;
+      font-size: 5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .pricing-note {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+    }
+
+    .package-services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .service-category {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .service-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+      border-color: var(--primary-color);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .category-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-light);
+    }
+
+    .category-icon svg {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-category:hover .category-icon svg {
+      transform: scale(1.1);
+    }
+
+    .category-header h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .service-list {
+      list-style: none;
+    }
+
+    .service-list li {
+      padding: 0.75rem 0;
+      padding-left: 1.75rem;
+      position: relative;
+      color: var(--text-secondary);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .service-list li:last-child {
+      border-bottom: none;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .package-cta {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .package-cta h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .package-cta p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    /* Why AI Section */
+    .why-ai {
+      padding: 6rem 0;
+      background: var(--bg-dark);
+    }
+
+    .ai-tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    @media (max-width: 968px) {
+      .ai-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ai-tools-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ai-tool {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .ai-tool:hover {
+      border-color: var(--primary-color);
+      transform: scale(1.05);
+    }
+
+    .tool-logo {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+    }
+
+    .tool-logo svg {
+      width: 48px;
+      height: 48px;
+      color: var(--primary-color);
+    }
+
+    .ai-tool h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .ai-tool p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .ai-value-prop {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-radius: 16px;
+      padding: 3rem;
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .value-item {
+      text-align: center;
+    }
+
+    .value-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .value-amount {
+      display: block;
+      font-size: 3rem;
+      font-weight: 900;
+    }
+
+    .value-item.highlight .value-amount {
+      font-size: 4rem;
+    }
+
+    /* Results Section */
+    .results {
+      padding: 6rem 0;
+      background: var(--bg-darker);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
     .result-card {
-      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
     }
 
     .result-stat {
+      font-size: 4rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+
+    .result-label {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .result-desc {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    }
+
+    .cta-content {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .cta-description {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .cta-price-highlight {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-starting-at {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .cta-price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-price-amount {
+      font-size: 3.5rem;
+      font-weight: 900;
+    }
+
+    .cta-price-period {
+      font-size: 1.5rem;
+      opacity: 0.8;
+    }
+
+    .cta-price-note {
+      text-align: center;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .btn-large {
+      padding: 1.25rem 3rem;
+      font-size: 1.2rem;
+    }
+
+    .cta-contact {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .cta-contact a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .cta-contact a:hover {
+      border-bottom-color: white;
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 6rem 0;
+      background: var(--bg-dark);
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-details {
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-icon {
       font-size: 2rem;
     }
 
-    .contact-form {
-      padding: 1.5rem;
+    .contact-item h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
     }
 
-    .form-row {
-      grid-template-columns: 1fr;
+    .contact-item p {
+      color: var(--text-secondary);
     }
-  }
-</style>
 
-<script>
-  // GA4 Event Tracking
-  function trackEvent(eventName: string, params = {}) {
-    if (typeof gtag !== "undefined") {
-      gtag("event", eventName, params);
+    .contact-item a {
+      color: var(--primary-light);
+      text-decoration: none;
     }
-  }
 
-  // Track page view
-  trackEvent("page_view", {
-    page_title: "Homepage - Package Selector",
-    page_location: window.location.href,
-  });
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
 
-  // Form submission
-  const form = document.getElementById("contactForm") as HTMLFormElement;
-  const emailInput = document.getElementById("email") as HTMLInputElement;
-  const replyToInput = document.getElementById("replyto") as HTMLInputElement;
+    .hours {
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
 
-  // Sync reply-to field with email input
-  if (emailInput && replyToInput) {
-    emailInput.addEventListener("input", () => {
-      replyToInput.value = emailInput.value;
-    });
-  }
+    .contact-form-wrapper {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
 
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
 
-      const formData = new FormData(form);
-      const company = formData.get("company");
-      const submitBtn = form.querySelector(
-        'button[type="submit"]',
-      ) as HTMLButtonElement;
-      const originalText = submitBtn.textContent || "";
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
 
-      // Disable button and show loading state
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.875rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-size: 1rem;
+    }
 
-      trackEvent("generate_lead", {
-        event_category: "Form",
-        event_label: "Homepage Contact Form",
-        company_name: company,
-        package_price: 3000,
-      });
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
 
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        });
+    .btn-full {
+      width: 100%;
+    }
 
-        if (response.ok) {
-          submitBtn.textContent = "Message Sent!";
-          submitBtn.style.background = "#10b981";
-          alert(
-            "Thank you! We'll be in touch within 24 hours to discuss your needs.",
-          );
-          form.reset();
-
-          setTimeout(() => {
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
-            submitBtn.style.background = "";
-          }, 3000);
-        } else {
-          throw new Error("Form submission failed");
-        }
-      } catch (error) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-        alert(
-          "There was an error sending your message. Please try again or call us at (951) 760-0896.",
-        );
+    /* Responsive - Tablet */
+    @media (max-width: 968px) {
+      .hero-title {
+        font-size: 3rem;
       }
+
+      .ai-team-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .banner-title {
+        font-size: 1.3rem;
+      }
+
+      .banner-description {
+        font-size: 1rem;
+      }
+
+      .packages-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .package-services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .comparison-row {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn-large {
+        width: 100%;
+      }
+
+      .ai-value-prop {
+        flex-direction: column;
+      }
+    }
+
+    /* Responsive - Mobile */
+    @media (max-width: 768px) {
+      .hero {
+        min-height: auto;
+        padding: 8rem 0 4rem;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+      }
+
+      .hero-price-card {
+        padding: 1.5rem;
+        margin: 2rem auto;
+      }
+
+      .price-amount {
+        font-size: 3rem;
+      }
+
+      .price-currency {
+        font-size: 1.5rem;
+      }
+
+      .price-period {
+        font-size: 1.2rem;
+      }
+
+      .ai-team-banner {
+        padding: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .banner-icon {
+        gap: 0.5rem;
+      }
+
+      .banner-icon svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      .banner-title {
+        font-size: 1.1rem;
+      }
+
+      .banner-description {
+        font-size: 0.95rem;
+      }
+
+      .package-services {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .service-category {
+        padding: 1.5rem;
+      }
+
+      .category-header h3 {
+        font-size: 1.1rem;
+      }
+
+      .service-list li {
+        font-size: 0.9rem;
+        padding: 0.5rem 0 0.5rem 2rem;
+      }
+
+      .service-list li::before {
+        font-size: 0.9rem;
+        top: 0.5rem;
+      }
+
+      .single-package {
+        padding: 1.5rem;
+        border-radius: 16px;
+      }
+
+      .package-hero {
+        padding: 1.5rem;
+      }
+
+      .price-number {
+        font-size: 3rem;
+      }
+
+      .pricing-badge {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .result-stat {
+        font-size: 2.5rem;
+      }
+
+      .result-label {
+        font-size: 1rem;
+      }
+
+      .ai-value-prop {
+        padding: 2rem 1.5rem;
+      }
+
+      .value-amount {
+        font-size: 2rem;
+      }
+
+      .value-item.highlight .value-amount {
+        font-size: 2.5rem;
+      }
+
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+
+      .cta-content p {
+        font-size: 1rem;
+      }
+
+      .btn-large {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+      }
+    }
+
+    /* Responsive - Small Mobile */
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.95rem;
+      }
+
+      .hero-price-card {
+        padding: 1.25rem;
+      }
+
+      .price-amount {
+        font-size: 2.5rem;
+      }
+
+      .price-commitment {
+        font-size: 0.85rem;
+      }
+
+      .section-header {
+        margin-bottom: 2rem;
+      }
+
+      .ai-team-banner {
+        padding: 1.25rem;
+      }
+
+      .banner-icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .banner-title {
+        font-size: 1rem;
+      }
+
+      .service-category {
+        padding: 1.25rem;
+      }
+
+      .category-icon svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .single-package {
+        padding: 1rem;
+      }
+
+      .package-hero {
+        padding: 1.25rem;
+      }
+
+      .price-number {
+        font-size: 2.5rem;
+      }
+
+      .result-card {
+        padding: 1.5rem;
+      }
+
+      .result-stat {
+        font-size: 2rem;
+      }
+
+      .contact-form {
+        padding: 1.5rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script>
+    // GA4 Event Tracking
+    function trackEvent(eventName: string, params = {}) {
+      if (typeof gtag !== "undefined") {
+        gtag("event", eventName, params);
+      }
+    }
+
+    // Track page view
+    trackEvent("page_view", {
+      page_title: "Homepage - Package Selector",
+      page_location: window.location.href,
     });
-  }
 
-  // Track CTA button clicks
-  document
-    .querySelectorAll(".btn-primary, .btn-secondary")
-    .forEach((button) => {
-      button.addEventListener("click", (e) => {
-        const target = e.currentTarget as HTMLElement;
-        const buttonText = target.textContent?.trim() || "";
+    // Form submission
+    const form = document.getElementById("contactForm") as HTMLFormElement;
+    const emailInput = document.getElementById("email") as HTMLInputElement;
+    const replyToInput = document.getElementById("replyto") as HTMLInputElement;
 
-        trackEvent("cta_click", {
-          event_category: "Engagement",
-          event_label: buttonText,
-          link_location: "Homepage",
+    // Sync reply-to field with email input
+    if (emailInput && replyToInput) {
+      emailInput.addEventListener("input", () => {
+        replyToInput.value = emailInput.value;
+      });
+    }
+
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const company = formData.get("company");
+        const submitBtn = form.querySelector(
+          'button[type="submit"]',
+        ) as HTMLButtonElement;
+        const originalText = submitBtn.textContent || "";
+
+        // Disable button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Sending...";
+
+        trackEvent("generate_lead", {
+          event_category: "Form",
+          event_label: "Homepage Contact Form",
+          company_name: company,
+          package_price: 3000,
+        });
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json",
+            },
+          });
+
+          if (response.ok) {
+            submitBtn.textContent = "Message Sent!";
+            submitBtn.style.background = "#10b981";
+            alert(
+              "Thank you! We'll be in touch within 24 hours to discuss your needs.",
+            );
+            form.reset();
+
+            setTimeout(() => {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+              submitBtn.style.background = "";
+            }, 3000);
+          } else {
+            throw new Error("Form submission failed");
+          }
+        } catch (error) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+          alert(
+            "There was an error sending your message. Please try again or call us at (951) 760-0896.",
+          );
+        }
+      });
+    }
+
+    // Track CTA button clicks
+    document
+      .querySelectorAll(".btn-primary, .btn-secondary")
+      .forEach((button) => {
+        button.addEventListener("click", (e) => {
+          const target = e.currentTarget as HTMLElement;
+          const buttonText = target.textContent?.trim() || "";
+
+          trackEvent("cta_click", {
+            event_category: "Engagement",
+            event_label: buttonText,
+            link_location: "Homepage",
+          });
+        });
+      });
+
+    // Track phone clicks
+    document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+      link.addEventListener("click", () => {
+        trackEvent("phone_click", {
+          event_category: "Contact",
+          event_label: "Homepage Phone Click",
         });
       });
     });
+  </script>
 
-  // Track phone clicks
-  document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
-    link.addEventListener("click", () => {
-      trackEvent("phone_click", {
-        event_category: "Contact",
-        event_label: "Homepage Phone Click",
-      });
-    });
-  });
-</script>
-
-<GridAnimation />
-<AnimatedCounter />
+  <GridAnimation />
+  <AnimatedCounter />
+</Layout>

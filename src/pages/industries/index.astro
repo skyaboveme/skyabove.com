@@ -1,0 +1,228 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import IndustryTabs from "../../components/IndustryTabs.astro";
+
+const industries = [
+    {
+        name: "HVAC",
+        slug: "hvac",
+        color: "#3b82f6", // blue-500
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        name: "Roofing",
+        slug: "roofing",
+        color: "#f97316", // orange-500
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9M2 10h20v11a2 2 0 01-2 2H4a2 2 0 01-2-2V10z" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        name: "Education",
+        slug: "education",
+        color: "#eab308", // yellow-500
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 0 6 2.5 6 5s3-5 6-5v-5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        name: "Senior Living",
+        slug: "senior-living",
+        color: "#a855f7", // purple-500
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 12.5l5 5 10-10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        name: "Construction",
+        slug: "construction",
+        color: "#d97706", // amber-600
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 22h20M2 10l10-8 10 8v12H2V10z" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 18v-6M9 15h6" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        name: "B2B",
+        slug: "b2b",
+        color: "#2563eb", // blue-600
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+    {
+        name: "Plumbing",
+        slug: "plumbing",
+        icon: `<svg viewBox="0 0 24 24" fill="none" class="w-12 h-12" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`,
+        color: "#0ea5e9", // Sky blue
+    },
+    {
+        name: "Pest Control",
+        slug: "pest-control",
+        icon: `<svg viewBox="0 0 24 24" fill="none" class="w-12 h-12" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v1m6 11h2m-6 0a8.1 8.1 0 001-2.5 3.5 3.5 0 00-7 0 8.1 8.1 0 001 2.5m4 0v4m-4-4v4m6-5a8.1 8.1 0 001-2.5m-6 5a8.1 8.1 0 001-2.5M10 20l1-2" /></svg>`, // Generic bug/shield representation or similar
+        color: "#22c55e", // Green
+    },
+    {
+        name: "Landscaping",
+        slug: "landscaping",
+        icon: `<svg viewBox="0 0 24 24" fill="none" class="w-12 h-12" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+        color: "#16a34a", // Green
+    },
+    {
+        name: "Electrical",
+        slug: "electrical",
+        icon: `<svg viewBox="0 0 24 24" fill="none" class="w-12 h-12" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+        color: "#eab308", // Yellow
+    },
+    {
+        name: "Non-Profit",
+        slug: "non-profit",
+        icon: `<svg viewBox="0 0 24 24" fill="none" class="w-12 h-12" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>`,
+        color: "#a855f7", // Purple
+    },
+    {
+        name: "Healthcare",
+        slug: "healthcare",
+        color: "#ef4444", // red-500
+        icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    },
+];
+---
+
+<Layout
+    title="Industries We Serve - Skyabove"
+    description="Specialized AI marketing solutions for HVAC, Roofing, Education, Senior Living, Construction, B2B, and Healthcare."
+>
+    <Navigation />
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">
+                <span class="gradient-text">Industries We Serve</span>
+            </h1>
+            <p class="page-subtitle">
+                Tailored AI marketing strategies for your specific industry
+                needs.
+            </p>
+        </div>
+    </section>
+
+    <section class="industries-grid-section">
+        <div class="container">
+            <div class="industries-grid">
+                {
+                    industries.map((industry) => (
+                        <a
+                            href={`/industries/${industry.slug}`}
+                            class="industry-card"
+                        >
+                            <div
+                                class="industry-icon"
+                                style={`color: ${industry.color}`}
+                                set:html={industry.icon}
+                            />
+                            <h3 class="industry-name">{industry.name}</h3>
+                            <p class="industry-desc">
+                                AI-powered growth for {industry.name}{" "}
+                                businesses.
+                            </p>
+                            <span class="learn-more">Learn More &rarr;</span>
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</Layout>
+
+<IndustryTabs />
+
+<Footer />
+
+<style>
+    .page-header {
+        padding: 8rem 0 4rem;
+        text-align: center;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .page-title {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+
+    .gradient-text {
+        background: var(--gradient-1, linear-gradient(45deg, #4f46e5, #ec4899));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .page-subtitle {
+        font-size: 1.25rem;
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .industries-grid-section {
+        padding: 4rem 0 8rem;
+        background: #0f172a;
+    }
+
+    .industries-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .industry-card {
+        background: rgba(30, 41, 59, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        padding: 2rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .industry-card:hover {
+        transform: translateY(-5px);
+        background: rgba(30, 41, 59, 0.8);
+        border-color: rgba(99, 102, 241, 0.5);
+    }
+
+    .industry-icon {
+        width: 3rem;
+        height: 3rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .industry-icon :global(svg) {
+        width: 100%;
+        height: 100%;
+    }
+
+    .industry-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #f8fafc;
+        margin-bottom: 0.5rem;
+    }
+
+    .industry-desc {
+        color: #94a3b8;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .learn-more {
+        color: #818cf8;
+        font-weight: 600;
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .industry-card:hover .learn-more {
+        color: #a5b4fc;
+    }
+</style>
