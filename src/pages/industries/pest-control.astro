@@ -2,14 +2,121 @@
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+import IndustryTabs from "../../components/IndustryTabs.astro";
 
 const industry = {
     name: "Pest Control",
-    title: "Digital Marketing for Pest Control",
-    headline: "Get More Pest Control Jobs with Targeted Marketing",
+    title: "Dominate Your Local Pest Control Market with AI",
+    subtitle:
+        "Stop relying on aggressive door-to-door sales. Build an automated acquisition engine that fills your schedule with recurring revenue contracts.",
     description:
-        "We help pest control companies dominate their local market. From emergency residential treatments to recurring commercial contracts, we drive qualified leads that turn into booked service calls.",
+        "Skyabove provides specialized AI marketing for Pest Control companies, helping you rank #1 for termites, bed bugs, and seasonal treatments while automating your booking process.",
 };
+
+const painPoints = [
+    {
+        title: "The Seasonal Slump",
+        description:
+            "Revenue dives when the bugs disappear? We build year-round demand with commercial contracts and winter-proofing campaigns.",
+        icon: "calendar-off",
+    },
+    {
+        title: "Aggressive Price Shoppers",
+        description:
+            "Tired of customers haggling over $50? We target value-driven homeowners who want peace of mind, not just the lowest price.",
+        icon: "dollar-sign",
+    },
+    {
+        title: "Missed Emergency Calls",
+        description:
+            "If you don't answer the termite panic call instantly, the next guy will. Our AI books them 24/7.",
+        icon: "phone-missed",
+    },
+];
+
+const solutions = [
+    {
+        title: "Local SEO for Specific Pests",
+        description:
+            "Rank #1 for high-intent keywords like 'Termite Inspection' and 'Emergency Bed Bug Removal' in your specific zones.",
+        icon: "map-pin",
+    },
+    {
+        title: "Recurring Revenue Focus",
+        description:
+            "Our campaigns prioritize quarterly subscriptions and annual maintenance plans over one-off sprays.",
+        icon: "refresh-cw",
+    },
+    {
+        title: "Automated Review Generation",
+        description:
+            "Turn every service visit into a 5-star review automatically, building the trust needed to win high-ticket jobs.",
+        icon: "star",
+    },
+    {
+        title: "Seasonal Trigger Campaigns",
+        description:
+            "Automated emails and ads that launch exactly when mosquito or rodent season begins in your area.",
+        icon: "calendar",
+    },
+];
+
+const pestControlTabs = [
+    {
+        id: "websites",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+        title: "High-Performance Websites",
+        headline: "Websites That Turn Panic into Bookings",
+        description:
+            "When a customer finds bed bugs, they don't want to browse—they want a solution. We build fast, trust-focused websites that guide distressed homeowners immediately to a booking button or emergency number. With dedicated pages for every pest type, we capture traffic for specific problems.",
+        image: "/images/high-performance-website.png",
+    },
+    {
+        id: "seo",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>`,
+        title: "Search Engine Optimization",
+        headline: "Rank for Every Pest in Your City",
+        description:
+            "Dominate the search results for specific pest problems. Whether it's 'termite control', 'rodent exclusion', or 'mosquito fogging', our AI-driven SEO ensures you're the first authority they see. We build granular local pages that capture high-intent traffic right in your service area.",
+        image: "/images/pest-control-seo.png",
+    },
+    {
+        id: "ppc",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>`,
+        title: "PPC | Search Engine Marketing",
+        headline: "Capture Commercial & Residential Leads",
+        description:
+            "Target the high-value jobs you want. Our PPC campaigns separate the one-off ant sprays from the lucrative commercial contracts and whole-home termite treatments. We use negative keywords to filter out price shoppers and focus your budget on leads ready to sign annual agreements.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
+    },
+    {
+        id: "content",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>`,
+        title: "Content Marketing",
+        headline: "Educate to Eliminate Fear",
+        description:
+            "Pest control scares people. Your content shouldn't. We create helpful guides on prevention, identification, and safety that position you as the trusted local expert. By answering their questions before they call, we build the trust needed to close the sale.",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000",
+    },
+    {
+        id: "social",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" /></svg>`,
+        title: "Social Media Marketing",
+        headline: "Community Awareness & Trust",
+        description:
+            "Stay top-of-mind with seasonal reminders and success stories. We manage your presence on Facebook and Nextdoor (where neighbors ask for recommendations), ensuring your company is the one tagged when someone spots a mouse.",
+        image: "/images/social-media-dashboard.png",
+    },
+    {
+        id: "analytics",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>`,
+        title: "Reporting & Analytics",
+        headline: "Track Growth, Not Just Clicks",
+        description:
+            "Know your Cost Per Lead for every pest type. Our dashboards show you exactly which campaigns are driving the most profitable jobs, so you can double down on what works—whether that's termite inspections or recurring mosquito spraying.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
+    },
+];
 ---
 
 <Layout
@@ -18,35 +125,127 @@ const industry = {
 >
     <Navigation />
 
+    <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
-            <h1 class="page-title">
-                <span class="gradient-text">{industry.title}</span>
-            </h1>
-            <p class="page-subtitle">{industry.description}</p>
-            <div class="cta-wrapper">
-                <a href="/#contact" class="btn btn-primary"
-                    >Get Your Growth Plan</a
+        <div class="hero-bg-overlay"></div>
+        <div class="container relative z-10">
+            <div class="hero-content">
+                <span class="hero-label">Exclusively for Pest Control Pros</span
                 >
+                <h1 class="page-title">
+                    Dominate Your Local <span class="text-green-500"
+                        >Pest Control Market</span
+                    >
+                </h1>
+                <p class="page-subtitle">{industry.subtitle}</p>
+                <div class="cta-wrapper">
+                    <a href="/#contact" class="btn btn-primary"
+                        >Secure Your Territory</a
+                    >
+                    <span class="cta-note"
+                        >Strict exclusivity: We only partner with one pro per
+                        service area.</span
+                    >
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="content-section">
+    <!-- The Trap (Problem) Section -->
+    <section class="problem-section">
         <div class="container">
-            <div class="content-wrapper">
-                <h2>Dominate Your Local {industry.name} Market</h2>
-                <p>
-                    In the competitive world of {industry.name}, speed and
-                    visibility are everything. Our autonomous AI agents work
-                    24/7 to ensure your business ranks at the top when customers
-                    need you most.
+            <div class="section-header text-center">
+                <h2 class="section-title">Stop Chasing One-Off Sprays</h2>
+                <p class="section-desc">
+                    Why the old "door-knocker" model is failing in the digital
+                    age.
                 </p>
+            </div>
+            <div class="pain-points-grid">
+                {
+                    painPoints.map((point) => (
+                        <div class="pain-card">
+                            <div class="pain-icon-wrapper">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class={`lucide lucide-${point.icon}`}
+                                >
+                                    <path d="M12 12h.01" />
+                                </svg>
+                            </div>
+                            <h3>{point.title}</h3>
+                            <p>{point.description}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">The Skyabove System</span>
+                <h2 class="section-title">
+                    Built for Recurring Revenue & High-Ticket Jobs
+                </h2>
+            </div>
+
+            <div class="solutions-grid">
+                {
+                    solutions.map((solution) => (
+                        <div class="solution-card">
+                            <div class="solution-icon">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide-check-circle"
+                                >
+                                    <>
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </>
+                                </svg>
+                            </div>
+                            <div class="solution-content">
+                                <h3>{solution.title}</h3>
+                                <p>{solution.description}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <IndustryTabs tabs={pestControlTabs} />
+
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready to Own Your Market?</h2>
                 <p>
-                    We don't just generate leads; we build a complete brand
-                    asset that you own. From captured searches to automated
-                    follow-ups, we handle the entire lifecycle.
+                    Don't let the bugs (and the revenue) go to your competitors.
                 </p>
+                <a href="/#contact" class="btn btn-primary btn-large"
+                    >Schedule Your Strategy Call</a
+                >
             </div>
         </div>
     </section>
@@ -55,73 +254,239 @@ const industry = {
 </Layout>
 
 <style>
+    /* Hero Section */
     .hero-section {
-        padding: 10rem 0 6rem;
+        position: relative;
+        padding: 12rem 0 8rem;
         text-align: center;
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        background: url("/images/pest-control-hero.png") no-repeat center
+            center/cover;
+        overflow: hidden;
+    }
+
+    .hero-bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), #0f172a);
+        z-index: 1;
+    }
+
+    .relative {
+        position: relative;
+    }
+    .z-10 {
+        z-index: 10;
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: rgba(34, 197, 94, 0.15); /* Green tint */
+        color: #4ade80; /* Green-400 */
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(34, 197, 94, 0.3);
     }
 
     .page-title {
-        font-size: 3.5rem;
-        font-weight: 800;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 900;
         margin-bottom: 1.5rem;
-        line-height: 1.2;
+        line-height: 1.1;
+        color: white;
     }
 
-    .gradient-text {
-        background: var(--gradient-1, linear-gradient(45deg, #4f46e5, #ec4899));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+    .text-green-500 {
+        color: #22c55e;
     }
 
     .page-subtitle {
         font-size: 1.25rem;
-        color: #94a3b8;
+        color: #cbd5e1;
         max-width: 800px;
         margin: 0 auto 3rem;
+        line-height: 1.7;
     }
 
-    .content-section {
-        padding: 4rem 0 8rem;
-        background: #0f172a;
-        color: #e2e8f0;
+    .cta-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 
-    .content-wrapper {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .content-wrapper h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        color: #f8fafc;
-    }
-
-    .content-wrapper p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 2rem;
-        color: #cbd5e1;
+    .cta-note {
+        font-size: 0.85rem;
+        color: #94a3b8;
+        font-style: italic;
     }
 
     .btn {
         display: inline-block;
-        padding: 1rem 2rem;
+        padding: 1rem 2.5rem;
         border-radius: 0.5rem;
-        font-weight: 600;
+        font-weight: 700;
         text-decoration: none;
         transition: all 0.3s ease;
+        font-size: 1.1rem;
     }
 
     .btn-primary {
-        background: var(--gradient-1, linear-gradient(45deg, #4f46e5, #ec4899));
+        background: linear-gradient(
+            135deg,
+            #16a34a,
+            #22c55e
+        ); /* Green gradient */
         color: white;
+        box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
     }
 
     .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+        box-shadow: 0 8px 30px rgba(34, 197, 94, 0.5);
+    }
+
+    /* Problem Section */
+    .problem-section {
+        padding: 6rem 0;
+        background: #0f172a;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .section-desc {
+        font-size: 1.1rem;
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto 4rem;
+    }
+
+    .pain-points-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .pain-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .pain-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .pain-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        background: rgba(239, 68, 68, 0.1); /* Red tint for pain */
+        color: #f87171;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .pain-card h3 {
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .pain-card p {
+        color: #94a3b8;
+        line-height: 1.6;
+    }
+
+    /* Solution Section */
+    .solution-section {
+        padding: 6rem 0;
+        background: #1e293b;
+    }
+
+    .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+
+    .solution-card {
+        display: flex;
+        gap: 1.5rem;
+        padding: 2rem;
+        background: rgba(15, 23, 42, 0.5);
+        border-radius: 1rem;
+        border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .solution-icon {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #16a34a, #22c55e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .solution-content h3 {
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+
+    .solution-content p {
+        color: #cbd5e1;
+        line-height: 1.6;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        padding: 6rem 0;
+        background: #0f172a;
+    }
+
+    .cta-box {
+        background: radial-gradient(circle at center, #14532d 0%, #0f172a 100%);
+        border: 1px solid #22c55e;
+        padding: 4rem 2rem;
+        border-radius: 2rem;
+        text-align: center;
+    }
+
+    .cta-box h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+        font-size: 1.2rem;
+        color: #cbd5e1;
+        margin-bottom: 2.5rem;
+    }
+
+    .text-center {
+        text-align: center;
     }
 </style>

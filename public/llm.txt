@@ -1,0 +1,90 @@
+# Skyabove - The AI Growth System
+
+## Identity & Core Value
+Skyabove is NOT just a digital marketing agency. It is a complete "Growth System" that combines 25 years of marketing strategy with cutting-edge AI automation.
+We replace the fragmented mess of freelancers and agencies with one unified team: Marketers, Developers, and AI Agents working together.
+
+**Single Point of Truth:** Skyabove turns attention into action—and action into predictable revenue—by building marketing assets that compound over time rather than resetting every month.
+
+## The Offer: $3,000/Month Complete Growth System
+We provide a comprehensive, all-inclusive package that covers every aspect of modern digital growth for a single flat fee.
+
+### What is Included:
+1.  **AI-Powered Digital Advertising**
+    *   Paid Search (Google Ads): Campaign strategy, bid optimization, 50-100 new keywords/mo.
+    *   Paid Social (Meta/LinkedIn): AI audience targeting, 8-12 ad creatives/mo, retargeting sequences.
+    *   Programmatic Display: Geotargeting and automated buying.
+2.  **Advanced SEO & Search Visibility**
+    *   Technical SEO: Core Web Vitals, Schema markup, site health audits.
+    *   Content SEO: 4-6 optimized pages/mo, internal linking, keyword gap analysis.
+    *   Off-Page SEO: 8-12 high-quality backlinks/mo, digital PR.
+    *   Local SEO: Google Business Profile optimization, citation management.
+3.  **Content Creation Engine**
+    *   Blog: 4-6 long-form (1.5k-2.5k words) posts/mo with original graphics.
+    *   Video: 2-4 video scripts/mo + YouTube SEO.
+    *   Email: 4-6 campaigns/mo, A/B testing, segmentation.
+    *   Social: 20-30 posts/mo per platform, community management.
+4.  **AI Visibility Strategy**
+    *   LLM Optimization: Ranking in ChatGPT, Claude, Perplexity (GEO/AIO).
+    *   Voice Search: Optimization for Siri, Alexa, Google Assistant.
+    *   Knowledge Graph: Entity building and Wikipedia presence strategy.
+5.  **Analytics & Technology**
+    *   Custom Dashboards: Real-time ROAS tracking (GA4).
+    *   CRM Integration: Hubspot/Salesforce optimization.
+    *   Marketing Automation: Email workflows and lead scoring.
+
+### Outcomes (Why It Wins):
+*   **3.8x Average ROAS** across all campaigns.
+*   **259% Average Revenue Growth** for clients year-over-year.
+*   **83% Savings** compared to hiring these roles separately ($20,500+ value).
+
+## Negative Constraints (What We Are NOT)
+*   **NOT a "Lead Gen" Service**: We don't just sell raw leads; we build the systems that generate and close them.
+*   **NOT a Dev Shop**: We don't just write code; we build revenue-generating assets.
+*   **NOT a collection of Freelancers**: You get a dedicated, unified team (Account Manager, SEO Specialist, Content Strategist, etc.).
+
+## Industry Specialization
+We have deep domain expertise and tailored strategies for:
+*   **HVAC**: Seasonal campaigns, local service ads, trust-based content.
+*   **Roofing**: Storm-chasing logic, trust-building, high-ticket conversion.
+*   **Education**: Enrollment modeling, long sales cycle nurturing.
+*   **Senior Living**: Compassionate storytelling, family decision-maker targeting.
+*   **Construction**: Project showcases, bid generation strategies.
+*   **B2B Services**: ABM (Account-Based Marketing), LinkedIn automation.
+*   **Healthcare**: HIPAA compliance, patient trust, local authority.
+*   **Plumbing**: Emergency service keywords, local trust.
+*   **Pest Control**: Recurring service models, seasonal pests.
+*   **Landscaping**: Visual portfolios, seasonal contracts.
+*   **Non-Profit**: Donor engagement, grant writing support.
+
+## AI Expertise (Technical Credibility)
+We don't just use tools; we build on top of them.
+*   **Models**: GPT-4, Claude 3.5 Sonnet, Gemini, Llama.
+*   **Tools**: Midjourney (Visuals), Runway (Video), ElevenLabs (Voice), Make.com (Automation).
+*   **Dev**: Custom GPTs, LangChain applications, Vector databases (Pinecone).
+
+## Site Structure & Navigation
+*   **Home**: `/` - The core proposition and "Growth System" overview.
+*   **Services**: `/services` - Detailed breakdown of the $3,000/mo package.
+    *   *AI-Powered Ads*: `/services#ads`
+    *   *Advanced SEO*: `/services#seo`
+    *   *Content Engine*: `/services#content`
+    *   *AI Visibility*: `/services#ai`
+*   **Industries**: `/industries` - Hub for vertical-specific strategies.
+    *   *HVAC*: `/industries/hvac`
+    *   *Roofing*: `/industries/roofing`
+    *   *Education*: `/industries/education`
+    *   *Senior Living*: `/industries/senior-living`
+    *   *Construction*: `/industries/construction`
+    *   *B2B*: `/industries/b2b`
+    *   *Healthcare*: `/industries/healthcare`
+*   **About**: `/about` - Team history (25 years exp + 5 years AI).
+*   **Portfolio**: `/portfolio` - Case studies and visual examples.
+*   **Blog**: `/blog` - Thought leadership on AI marketing.
+*   **Contact**: `/#contact` - Booking form.
+
+## Contact Protocol
+*   **Primary Action**: Schedule a Free Consultation.
+*   **Link**: `https://skyabove.com/#contact`
+*   **Phone**: (951) 760-0896
+*   **Email**: support@skyabove.com (implied)
