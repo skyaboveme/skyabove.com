@@ -1,6 +1,6 @@
 ---
-import SEO from '../components/SEO.astro';
-import WebVitals from '../components/WebVitals.astro';
+import SEO from "../components/SEO.astro";
+import WebVitals from "../components/WebVitals.astro";
 
 export interface Props {
   title: string;
@@ -8,6 +8,9 @@ export interface Props {
   ogImage?: string;
   ogType?: string;
   noindex?: boolean;
+  serviceName?: string;
+  serviceDescription?: string;
+  keywords?: string;
 }
 
 const {
@@ -15,15 +18,33 @@ const {
   description = "Complete AI-powered marketing solutions: Website design, SEO, social media, SEM, display advertising, and more. Everything your business needs to dominate online.",
   ogImage,
   ogType,
-  noindex
+  noindex,
+  serviceName,
+  serviceDescription,
+  keywords,
 } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5KPVQ8KV");
+    </script>
+    <!-- End Google Tag Manager -->
 
     <!-- SEO Component -->
     <SEO
@@ -33,30 +54,48 @@ const {
       ogType={ogType}
       ogImage={ogImage}
       noindex={noindex}
+      serviceName={serviceName}
+      serviceDescription={serviceDescription}
+      keywords={keywords}
     />
 
     <!-- Resource Hints for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <!-- Optimized Font Loading with font-display: swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="128x128" href="/logo.png" />
 
     <!-- Google tag (gtag.js) - Async loading for better performance -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6CMBQ25C2Y"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6CMBQ25C2Y"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-6CMBQ25C2Y');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-6CMBQ25C2Y");
     </script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5KPVQ8KV"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
     <slot />
 
     <!-- Core Web Vitals Monitoring -->
@@ -68,14 +107,16 @@ const {
       let lastScroll = 0;
 
       // Smooth Scrolling
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
           e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href') as string);
+          const target = document.querySelector(
+            this.getAttribute("href") as string,
+          );
           if (target) {
             target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
+              behavior: "smooth",
+              block: "start",
             });
           }
         });
@@ -84,38 +125,40 @@ const {
       // Throttled scroll handler for better performance
       function handleScroll() {
         const currentScroll = window.pageYOffset;
-        const navbar = document.querySelector('.navbar');
+        const navbar = document.querySelector(".navbar");
 
         // Navbar scroll effect
         if (currentScroll > 100) {
-          navbar?.classList.add('scrolled');
+          navbar?.classList.add("scrolled");
         } else {
-          navbar?.classList.remove('scrolled');
+          navbar?.classList.remove("scrolled");
         }
 
         // Parallax effect for orbs (optimized)
-        const orbs = document.querySelectorAll('.gradient-orb');
+        const orbs = document.querySelectorAll(".gradient-orb");
         orbs.forEach((orb, index) => {
-          const speed = 0.3 + (index * 0.1);
-          (orb as HTMLElement).style.transform = `translateY(${currentScroll * speed}px)`;
+          const speed = 0.3 + index * 0.1;
+          (orb as HTMLElement).style.transform =
+            `translateY(${currentScroll * speed}px)`;
         });
 
         // Active navigation link
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-        let current = '';
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
+        let current = "";
 
-        sections.forEach(section => {
-          const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+        sections.forEach((section) => {
+          const sectionTop =
+            section.getBoundingClientRect().top + window.pageYOffset;
           if (window.pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id') || '';
+            current = section.getAttribute("id") || "";
           }
         });
 
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
           }
         });
 
@@ -124,46 +167,56 @@ const {
       }
 
       // Use requestAnimationFrame for scroll performance
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          window.requestAnimationFrame(handleScroll);
-          ticking = true;
-        }
-      }, { passive: true });
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (!ticking) {
+            window.requestAnimationFrame(handleScroll);
+            ticking = true;
+          }
+        },
+        { passive: true },
+      );
 
       // Intersection Observer for Scroll Animations (lazy loading animations)
       const observerOptions = {
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        rootMargin: "0px 0px -100px 0px",
       };
 
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add("visible");
           }
         });
       }, observerOptions);
 
       // Defer animation setup to after page load
-      window.addEventListener('load', () => {
+      window.addEventListener("load", () => {
         const animatedElements = document.querySelectorAll(
-          '.service-card, .portfolio-card, .testimonial-card, .section-header'
+          ".service-card, .portfolio-card, .testimonial-card, .section-header",
         );
 
-        animatedElements.forEach(el => {
-          el.classList.add('fade-in');
+        animatedElements.forEach((el) => {
+          el.classList.add("fade-in");
           observer.observe(el);
         });
       });
 
       // Console message for developers
-      console.log('%c🚀 Skyabove - AI Marketing Agency', 'color: #6366f1; font-size: 20px; font-weight: bold;');
-      console.log('%cWebsite built with Astro', 'color: #94a3b8; font-size: 12px;');
+      console.log(
+        "%c🚀 Skyabove - AI Marketing Agency",
+        "color: #6366f1; font-size: 20px; font-weight: bold;",
+      );
+      console.log(
+        "%cWebsite built with Astro",
+        "color: #94a3b8; font-size: 12px;",
+      );
     </script>
   </body>
 </html>
 
 <style is:global>
-  @import '../styles/global.css';
+  @import "../styles/global.css";
 </style>

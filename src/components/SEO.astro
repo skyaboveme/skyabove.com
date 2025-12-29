@@ -6,44 +6,97 @@ export interface Props {
   ogType?: string;
   ogImage?: string;
   noindex?: boolean;
+  serviceName?: string;
+  serviceDescription?: string;
+  keywords?: string;
 }
 
 const {
   title,
   description,
   canonical = Astro.url.href,
-  ogType = 'website',
-  ogImage = 'https://skyabove.com/og-image.jpg',
-  noindex = false
+  ogType = "website",
+  ogImage = "https://skyabove.com/og-image.jpg",
+  noindex = false,
+  serviceName,
+  serviceDescription,
+  keywords,
 } = Astro.props;
 
-const structuredData = {
-  "@context": "https://schema.org",
+// Base Schema for the Agency
+const organizationSchema = {
   "@type": "ProfessionalService",
-  "name": "Skyabove",
-  "description": "Complete AI-powered marketing solutions including website design, SEO, social media marketing, SEM, and display advertising.",
-  "url": "https://skyabove.com",
-  "logo": "https://skyabove.com/logo.png",
-  "telephone": "+1-951-760-0896",
-  "email": "hello@skyabove.com",
-  "address": {
+  "@id": "https://skyabove.com/#organization",
+  name: "Skyabove",
+  description:
+    "Complete AI-powered marketing solutions including website design, SEO, social media marketing, SEM, and display advertising.",
+  url: "https://skyabove.com",
+  logo: "https://skyabove.com/logo.png",
+  telephone: "+1-951-760-0896",
+  email: "hello@skyabove.com",
+  address: {
     "@type": "PostalAddress",
-    "addressLocality": "Austin",
-    "addressRegion": "TX",
-    "addressCountry": "US"
+    addressLocality: "Austin",
+    addressRegion: "TX",
+    addressCountry: "US",
   },
-  "sameAs": [
+  sameAs: [
     "https://twitter.com/skyabove",
     "https://linkedin.com/company/skyabove",
-    "https://facebook.com/skyabove"
+    "https://facebook.com/skyabove",
   ],
-  "priceRange": "$$",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "500"
-  }
+  priceRange: "$$",
 };
+
+// Dynamic Service Schema (if applicable)
+const serviceSchema = serviceName
+  ? {
+      "@type": "Service",
+      name: serviceName,
+      description: serviceDescription || description,
+      provider: {
+        "@id": "https://skyabove.com/#organization",
+      },
+      areaServed: "US",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Marketing Services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Marketing",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "SEO",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Web Design",
+            },
+          },
+        ],
+      },
+    }
+  : null;
+
+// Combined Schema Graph
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [organizationSchema, ...(serviceName ? [serviceSchema] : [])],
+};
+
+const baseKeywords =
+  "AI marketing agency, AI-powered digital marketing, AI marketing services, artificial intelligence marketing, digital marketing agency, SEO services, content creation services, custom website development, advanced SEO, predictive marketing";
+const pageKeywords = keywords ? `${keywords}, ${baseKeywords}` : baseKeywords;
 ---
 
 <!-- Primary Meta Tags -->
@@ -69,7 +122,7 @@ const structuredData = {
 <meta property="twitter:image" content={ogImage} />
 
 <!-- Additional SEO -->
-<meta name="keywords" content="AI marketing agency, AI-powered digital marketing, AI marketing services, artificial intelligence marketing, digital marketing agency, SEO services, content creation services, custom website development, advanced SEO, predictive marketing" />
+<meta name="keywords" content={pageKeywords} />
 <meta name="author" content="Skyabove" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
