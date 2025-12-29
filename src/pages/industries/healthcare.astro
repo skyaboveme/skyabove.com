@@ -2,13 +2,109 @@
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+import IndustryTabs from "../../components/IndustryTabs.astro";
 
 const industry = {
     name: "Healthcare",
-    title: "AI Marketing for Healthcare",
+    title: "Patient-First Marketing for Medical Practices",
+    subtitle:
+        "Build trust, ensure compliance, and fill your appointment book with our HIPAA-compliant, AI-powered healthcare marketing strategies.",
     description:
-        "Acquire more patients and build trust. We provide HIPAA-compliant marketing strategies that position you as the leading provider in your area.",
+        "Skyabove specializes in healthcare marketing, helping medical practices, clinics, and hospitals attract new patients while maintaining strict HIPAA compliance and building community trust.",
 };
+
+const painPoints = [
+    {
+        title: "Patient Trust",
+        description:
+            "In healthcare, reputation is everything. One bad review can hurt. We proactively manage your reputation and highlight your compassionate care.",
+        icon: "heart",
+    },
+    {
+        title: "HIPAA Compliance",
+        description:
+            "Scared of marketing violations? Our systems are built from the ground up to be secure and compliant, protecting you and your patients.",
+        icon: "shield",
+    },
+    {
+        title: "Appointment No-Shows",
+        description:
+            "Empty slots cost money. Our AI reminder systems reduce no-shows and automatically fill cancellations from your waitlist.",
+        icon: "calendar-x",
+    },
+    {
+        title: "Staff Burnout",
+        description:
+            "Front desk overwhelmed? Our AI agents handle routine inquiries, booking, and FAQs, letting your staff focus on patient care.",
+        icon: "activity",
+    },
+];
+
+const solutions = [
+    {
+        title: "Patient Acquisition",
+        description:
+            "We target patients searching for specific conditions and treatments in your area, connecting them with the right provider—you.",
+        icon: "user-plus",
+    },
+    {
+        title: "Reputation Management",
+        description:
+            "We automate the review collection process, generating a steady stream of 5-star reviews from happy patients to boost your local ranking.",
+        icon: "star",
+    },
+    {
+        title: "Telehealth Marketing",
+        description:
+            "Expand your reach beyond your physical location. We market your virtual care services to patients looking for convenient, remote options.",
+        icon: "video",
+    },
+    {
+        title: "Recruitment Marketing",
+        description:
+            "Need more nurses or doctors? We run targeted campaigns to attract top medical talent to join your growing practice.",
+        icon: "stethoscope",
+    },
+];
+
+const healthcareTabs = [
+    {
+        id: "websites",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+        title: "Medical Websites",
+        headline: "Trust Starts Online",
+        description:
+            "Patients research providers before booking. We build accessible, mobile-friendly websites that convey professionalism, warmth, and expertise, with easy online booking integrations.",
+        image: "/images/healthcare-website.png",
+    },
+    {
+        id: "seo",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>`,
+        title: "Local Patient SEO",
+        headline: "Be Found for Care",
+        description:
+            "When someone asks 'urgent care near me' or 'best pediatrician in [city]', you need to show up. We optimize your local presence to ensure you dominate these high-intent searches.",
+        image: "/images/healthcare-dashboard.png",
+    },
+    {
+        id: "ppc",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>`,
+        title: "Treatment Ads",
+        headline: "Target Specific Conditions",
+        description:
+            "We run compassionate, compliant ads targeting specific conditions and treatments, connecting patients in need with your specialized services.",
+        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=2000",
+    },
+    {
+        id: "content",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>`,
+        title: "Patient Education",
+        headline: "Empower Your Community",
+        description:
+            "We create easy-to-understand medical content that answers common patient questions, establishing your practice as a helpful resource and building long-term loyalty.",
+        image: "https://images.unsplash.com/photo-1576091160550-2187d80aeff2?auto=format&fit=crop&q=80&w=2000",
+    },
+];
 ---
 
 <Layout
@@ -17,35 +113,121 @@ const industry = {
 >
     <Navigation />
 
+    <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
-            <h1 class="page-title">
-                <span class="gradient-text">{industry.title}</span>
-            </h1>
-            <p class="page-subtitle">{industry.description}</p>
-            <div class="cta-wrapper">
-                <a href="/#contact" class="btn btn-primary"
-                    >Get Your Growth Plan</a
-                >
+        <div class="hero-bg-overlay"></div>
+        <div class="container relative z-10">
+            <div class="hero-content">
+                <span class="hero-label">Compassionate Growth</span>
+                <h1 class="page-title">
+                    Connect with Patients Who <span class="text-teal-400"
+                        >Need You Most</span
+                    >
+                </h1>
+                <p class="page-subtitle">{industry.subtitle}</p>
+                <div class="cta-wrapper">
+                    <a href="/#contact" class="btn btn-primary"
+                        >Grow Your Practice</a
+                    >
+                    <span class="cta-note"
+                        >HIPAA Compliant & Secure Strategies</span
+                    >
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="content-section">
+    <!-- The Problem Section -->
+    <section class="problem-section">
         <div class="container">
-            <div class="content-wrapper">
-                <h2>Dominate Your Local {industry.name} Market</h2>
-                <p>
-                    In the competitive world of {industry.name}, speed and
-                    visibility are everything. Our autonomous AI agents work
-                    24/7 to ensure your business ranks at the top when customers
-                    need you most.
+            <div class="section-header text-center">
+                <h2 class="section-title">More Than Just Appointments</h2>
+                <p class="section-desc">
+                    Why traditional marketing fails in the sensitive world of
+                    healthcare.
                 </p>
-                <p>
-                    We don't just generate leads; we build a complete brand
-                    asset that you own. From captured searches to automated
-                    follow-ups, we handle the entire lifecycle.
-                </p>
+            </div>
+            <div class="pain-points-grid">
+                {
+                    painPoints.map((point) => (
+                        <div class="pain-card">
+                            <div class="pain-icon-wrapper">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class={`lucide lucide-${point.icon}`}
+                                >
+                                    <path d="M12 12h.01" />
+                                </svg>
+                            </div>
+                            <h3>{point.title}</h3>
+                            <p>{point.description}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">The Skyabove Care Plan</span>
+                <h2 class="section-title">Trust, Retention, & Growth</h2>
+            </div>
+
+            <div class="solutions-grid">
+                {
+                    solutions.map((solution) => (
+                        <div class="solution-card">
+                            <div class="solution-icon">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide-check-circle"
+                                >
+                                    <>
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </>
+                                </svg>
+                            </div>
+                            <div class="solution-content">
+                                <h3>{solution.title}</h3>
+                                <p>{solution.description}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <IndustryTabs tabs={healthcareTabs} />
+
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready to Serve More Patients?</h2>
+                <p>Build a thriving practice centered on quality care.</p>
+                <a href="/#contact" class="btn btn-primary btn-large"
+                    >Book Your Strategy Session</a
+                >
             </div>
         </div>
     </section>
@@ -54,73 +236,247 @@ const industry = {
 </Layout>
 
 <style>
+    /* Hero Section */
     .hero-section {
-        padding: 10rem 0 6rem;
+        position: relative;
+        padding: 12rem 0 8rem;
         text-align: center;
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        background: url("/images/healthcare-hero.png") no-repeat center
+            center/cover;
+        overflow: hidden;
+    }
+
+    .hero-bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to bottom,
+            rgba(21, 94, 117, 0.75),
+            #0f172a
+        ); /* Cyan/Teal tint overlay */
+        z-index: 1;
+    }
+
+    .relative {
+        position: relative;
+    }
+    .z-10 {
+        z-index: 10;
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: rgba(8, 145, 178, 0.15); /* Cyan tint */
+        color: #22d3ee; /* Cyan-400 */
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(8, 145, 178, 0.3);
     }
 
     .page-title {
-        font-size: 3.5rem;
-        font-weight: 800;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 900;
         margin-bottom: 1.5rem;
-        line-height: 1.2;
+        line-height: 1.1;
+        color: white;
     }
 
-    .gradient-text {
-        background: var(--gradient-1, linear-gradient(45deg, #4f46e5, #ec4899));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+    .text-teal-400 {
+        color: #2dd4bf;
     }
 
     .page-subtitle {
         font-size: 1.25rem;
-        color: #94a3b8;
+        color: #cbd5e1;
         max-width: 800px;
         margin: 0 auto 3rem;
+        line-height: 1.7;
     }
 
-    .content-section {
-        padding: 4rem 0 8rem;
-        background: #0f172a;
-        color: #e2e8f0;
+    .cta-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 
-    .content-wrapper {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .content-wrapper h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        color: #f8fafc;
-    }
-
-    .content-wrapper p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 2rem;
-        color: #cbd5e1;
+    .cta-note {
+        font-size: 0.85rem;
+        color: #94a3b8;
+        font-style: italic;
     }
 
     .btn {
         display: inline-block;
-        padding: 1rem 2rem;
+        padding: 1rem 2.5rem;
         border-radius: 0.5rem;
-        font-weight: 600;
+        font-weight: 700;
         text-decoration: none;
         transition: all 0.3s ease;
+        font-size: 1.1rem;
     }
 
     .btn-primary {
-        background: var(--gradient-1, linear-gradient(45deg, #4f46e5, #ec4899));
+        background: linear-gradient(
+            135deg,
+            #0e7490,
+            #06b6d4
+        ); /* Cyan gradient */
         color: white;
+        box-shadow: 0 4px 20px rgba(8, 145, 178, 0.3);
     }
 
     .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+        box-shadow: 0 8px 30px rgba(8, 145, 178, 0.5);
+    }
+
+    /* Problem Section */
+    .problem-section {
+        padding: 6rem 0;
+        background: #0f172a;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .section-desc {
+        font-size: 1.1rem;
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto 4rem;
+    }
+
+    .pain-points-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .pain-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .pain-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .pain-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        background: rgba(239, 68, 68, 0.1); /* Red tint for pain */
+        color: #f87171;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .pain-card h3 {
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .pain-card p {
+        color: #94a3b8;
+        line-height: 1.6;
+    }
+
+    /* Solution Section */
+    .solution-section {
+        padding: 6rem 0;
+        background: #1e293b;
+    }
+
+    .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+
+    .solution-card {
+        display: flex;
+        gap: 1.5rem;
+        padding: 2rem;
+        background: rgba(15, 23, 42, 0.5);
+        border-radius: 1rem;
+        border: 1px solid rgba(8, 145, 178, 0.2);
+    }
+
+    .solution-icon {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #0e7490, #06b6d4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .solution-content h3 {
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+
+    .solution-content p {
+        color: #cbd5e1;
+        line-height: 1.6;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        padding: 6rem 0;
+        background: #0f172a;
+    }
+
+    .cta-box {
+        background: radial-gradient(
+            circle at center,
+            #164e63 0%,
+            #0f172a 100%
+        ); /* Cyan/Dark radial */
+        border: 1px solid #0891b2;
+        padding: 4rem 2rem;
+        border-radius: 2rem;
+        text-align: center;
+    }
+
+    .cta-box h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+        font-size: 1.2rem;
+        color: #cbd5e1;
+        margin-bottom: 2.5rem;
+    }
+
+    .text-center {
+        text-align: center;
     }
 </style>

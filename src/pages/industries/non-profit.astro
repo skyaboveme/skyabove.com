@@ -2,14 +2,109 @@
 import Layout from "../../layouts/Layout.astro";
 import Navigation from "../../components/Navigation.astro";
 import Footer from "../../components/Footer.astro";
+import IndustryTabs from "../../components/IndustryTabs.astro";
 
 const industry = {
     name: "Non-Profit",
-    title: "Digital Marketing for Non-Profits",
-    headline: "Amplify Your Mission with Targeted Marketing",
+    title: "Amplify Your Mission & Impact",
+    subtitle:
+        "Turn one-time donors into lifetime supporters. We help non-profits tell their story, secure grants, and build sustainable fundraising engines with AI.",
     description:
-        "We help non-profits increase donor engagement and volunteer support. Through storytelling, SEO, and strategic campaigns, we ensure your message reaches the people who care most about your cause.",
+        "Skyabove empowers non-profits with AI-driven fundraising strategies, helping you increase donor retention, manage volunteers, and maximize your community impact.",
 };
+
+const painPoints = [
+    {
+        title: "Donor Fatigue",
+        description:
+            "Supporters tuning out? We use AI to personalize communication, sending the right message at the right time to re-ignite their passion.",
+        icon: "battery-charging",
+    },
+    {
+        title: "Grant Eligibility",
+        description:
+            "Missing out on funding? We help you build the digital footprint and impact reporting required to win competitive grants.",
+        icon: "file-text",
+    },
+    {
+        title: "Limited Resources",
+        description:
+            "Wearing too many hats? Our AI agents handle donor thank-yous, event registrations, and social media, acting as a force multiplier for your team.",
+        icon: "users",
+    },
+    {
+        title: "Visibility",
+        description:
+            "Struggling to be seen? We optimize your Google Ad Grant and SEO to ensure your cause shows up when potential donors are searching.",
+        icon: "eye",
+    },
+];
+
+const solutions = [
+    {
+        title: "Storytelling at Scale",
+        description:
+            "We turn your impact data into compelling visual stories that resonate emotionally and drive action across every channel.",
+        icon: "book-open",
+    },
+    {
+        title: "Recurring Giving",
+        description:
+            "Move away from the fundraising hamster wheel. We implement strategies to convert one-time donors into monthly sustainers.",
+        icon: "repeat",
+    },
+    {
+        title: "Google Ad Grants",
+        description:
+            "Maximize your $10k/month grant. We manage your Google Ads to drive free traffic, volunteers, and awareness to your site.",
+        icon: "globe",
+    },
+    {
+        title: "Donor Analytics",
+        description:
+            "Understand your supporters. Our dashboards reveal who is giving, when, and why, helping you predict and prevent churn.",
+        icon: "pie-chart",
+    },
+];
+
+const nonProfitTabs = [
+    {
+        id: "websites",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+        title: "Impact Websites",
+        headline: "Inspire Action",
+        description:
+            "Your website should make giving easy and feeling good automatic. We build emotional, storytelling-focused sites with seamless donation flows.",
+        image: "/images/non-profit-website.png",
+    },
+    {
+        id: "seo",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>`,
+        title: "Impact Metrics",
+        headline: "Transparency Wins Trust",
+        description:
+            "Show donors exactly where their money goes. Our real-time impact dashboards visualize your success and build deep trust with your community.",
+        image: "/images/non-profit-dashboard.png",
+    },
+    {
+        id: "ppc",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>`,
+        title: "Awareness Campaigns",
+        headline: "Spread the Word",
+        description:
+            "We run multi-channel campaigns to raise awareness for your cause, utilizing Google Ad Grants and social media to reach new audiences for free or low cost.",
+        image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&q=80&w=2000",
+    },
+    {
+        id: "content",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>`,
+        title: "Virtual Events",
+        headline: "Engage Anywhere",
+        description:
+            "Host galas, auctions, and town halls online. We nurture your community with interactive virtual events that drive engagement and donations from home.",
+        image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=2000",
+    },
+];
 ---
 
 <Layout
@@ -18,35 +113,122 @@ const industry = {
 >
     <Navigation />
 
+    <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
-            <h1 class="page-title">
-                <span class="gradient-text">{industry.title}</span>
-            </h1>
-            <p class="page-subtitle">{industry.description}</p>
-            <div class="cta-wrapper">
-                <a href="/#contact" class="btn btn-primary"
-                    >Get Your Growth Plan</a
-                >
+        <div class="hero-bg-overlay"></div>
+        <div class="container relative z-10">
+            <div class="hero-content">
+                <span class="hero-label">Mission Driven Marketing</span>
+                <h1 class="page-title">
+                    Amplify Your <span class="text-rose-500">Global Impact</span
+                    >
+                </h1>
+                <p class="page-subtitle">{industry.subtitle}</p>
+                <div class="cta-wrapper">
+                    <a href="/#contact" class="btn btn-primary"
+                        >Boost Your Fundraising</a
+                    >
+                    <span class="cta-note"
+                        >Google Ad Grant Optimization Included</span
+                    >
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="content-section">
+    <!-- The Problem Section -->
+    <section class="problem-section">
         <div class="container">
-            <div class="content-wrapper">
-                <h2>Dominate Your Local {industry.name} Market</h2>
-                <p>
-                    In the competitive world of {industry.name}, speed and
-                    visibility are everything. Our autonomous AI agents work
-                    24/7 to ensure your business ranks at the top when customers
-                    need you most.
+            <div class="section-header text-center">
+                <h2 class="section-title">
+                    Focus on the Mission, Not the Admin
+                </h2>
+                <p class="section-desc">
+                    Let AI handle the fundraising grind while you change the
+                    world.
                 </p>
-                <p>
-                    We don't just generate leads; we build a complete brand
-                    asset that you own. From captured searches to automated
-                    follow-ups, we handle the entire lifecycle.
-                </p>
+            </div>
+            <div class="pain-points-grid">
+                {
+                    painPoints.map((point) => (
+                        <div class="pain-card">
+                            <div class="pain-icon-wrapper">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class={`lucide lucide-${point.icon}`}
+                                >
+                                    <path d="M12 12h.01" />
+                                </svg>
+                            </div>
+                            <h3>{point.title}</h3>
+                            <p>{point.description}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">The Skyabove Promise</span>
+                <h2 class="section-title">Sustainable Growth & Impact</h2>
+            </div>
+
+            <div class="solutions-grid">
+                {
+                    solutions.map((solution) => (
+                        <div class="solution-card">
+                            <div class="solution-icon">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide-check-circle"
+                                >
+                                    <>
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </>
+                                </svg>
+                            </div>
+                            <div class="solution-content">
+                                <h3>{solution.title}</h3>
+                                <p>{solution.description}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <IndustryTabs tabs={nonProfitTabs} />
+
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready to Change More Lives?</h2>
+                <p>Build a fundraising engine that runs itself.</p>
+                <a href="/#contact" class="btn btn-primary btn-large"
+                    >Book Your Strategy Session</a
+                >
             </div>
         </div>
     </section>
@@ -55,73 +237,247 @@ const industry = {
 </Layout>
 
 <style>
+    /* Hero Section */
     .hero-section {
-        padding: 10rem 0 6rem;
+        position: relative;
+        padding: 12rem 0 8rem;
         text-align: center;
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        background: url("/images/non-profit-hero.png") no-repeat center
+            center/cover;
+        overflow: hidden;
+    }
+
+    .hero-bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to bottom,
+            rgba(225, 29, 72, 0.65),
+            #0f172a
+        ); /* Rose/Red tint overlay */
+        z-index: 1;
+    }
+
+    .relative {
+        position: relative;
+    }
+    .z-10 {
+        z-index: 10;
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: rgba(225, 29, 72, 0.15); /* Rose tint */
+        color: #fb7185; /* Rose-400 */
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(225, 29, 72, 0.3);
     }
 
     .page-title {
-        font-size: 3.5rem;
-        font-weight: 800;
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 900;
         margin-bottom: 1.5rem;
-        line-height: 1.2;
+        line-height: 1.1;
+        color: white;
     }
 
-    .gradient-text {
-        background: var(--gradient-1, linear-gradient(45deg, #4f46e5, #ec4899));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+    .text-rose-500 {
+        color: #f43f5e;
     }
 
     .page-subtitle {
         font-size: 1.25rem;
-        color: #94a3b8;
+        color: #cbd5e1;
         max-width: 800px;
         margin: 0 auto 3rem;
+        line-height: 1.7;
     }
 
-    .content-section {
-        padding: 4rem 0 8rem;
-        background: #0f172a;
-        color: #e2e8f0;
+    .cta-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
     }
 
-    .content-wrapper {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .content-wrapper h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        color: #f8fafc;
-    }
-
-    .content-wrapper p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        margin-bottom: 2rem;
-        color: #cbd5e1;
+    .cta-note {
+        font-size: 0.85rem;
+        color: #fecdd3; /* Rose-200 */
+        font-style: italic;
     }
 
     .btn {
         display: inline-block;
-        padding: 1rem 2rem;
+        padding: 1rem 2.5rem;
         border-radius: 0.5rem;
-        font-weight: 600;
+        font-weight: 700;
         text-decoration: none;
         transition: all 0.3s ease;
+        font-size: 1.1rem;
     }
 
     .btn-primary {
-        background: var(--gradient-1, linear-gradient(45deg, #4f46e5, #ec4899));
+        background: linear-gradient(
+            135deg,
+            #e11d48,
+            #f43f5e
+        ); /* Rose gradient */
         color: white;
+        box-shadow: 0 4px 20px rgba(225, 29, 72, 0.3);
     }
 
     .btn-primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+        box-shadow: 0 8px 30px rgba(225, 29, 72, 0.5);
+    }
+
+    /* Problem Section */
+    .problem-section {
+        padding: 6rem 0;
+        background: #0f172a;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .section-desc {
+        font-size: 1.1rem;
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto 4rem;
+    }
+
+    .pain-points-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .pain-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .pain-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .pain-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        background: rgba(239, 68, 68, 0.1); /* Red tint for pain */
+        color: #f87171;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .pain-card h3 {
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .pain-card p {
+        color: #94a3b8;
+        line-height: 1.6;
+    }
+
+    /* Solution Section */
+    .solution-section {
+        padding: 6rem 0;
+        background: #1e293b;
+    }
+
+    .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+
+    .solution-card {
+        display: flex;
+        gap: 1.5rem;
+        padding: 2rem;
+        background: rgba(15, 23, 42, 0.5);
+        border-radius: 1rem;
+        border: 1px solid rgba(225, 29, 72, 0.2);
+    }
+
+    .solution-icon {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #e11d48, #f43f5e);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .solution-content h3 {
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+
+    .solution-content p {
+        color: #cbd5e1;
+        line-height: 1.6;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        padding: 6rem 0;
+        background: #0f172a;
+    }
+
+    .cta-box {
+        background: radial-gradient(
+            circle at center,
+            #881337 0%,
+            #0f172a 100%
+        ); /* Rose/Dark radial */
+        border: 1px solid #e11d48;
+        padding: 4rem 2rem;
+        border-radius: 2rem;
+        text-align: center;
+    }
+
+    .cta-box h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+        font-size: 1.2rem;
+        color: #cbd5e1;
+        margin-bottom: 2.5rem;
+    }
+
+    .text-center {
+        text-align: center;
     }
 </style>
