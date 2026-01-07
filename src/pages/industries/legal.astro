@@ -1,0 +1,489 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import IndustryTabs from "../../components/IndustryTabs.astro";
+
+const industry = {
+    name: "Legal Services",
+    title: "Sign High-Value Clients with Authority Marketing",
+    subtitle:
+        "Build trust before they even call. dominate your practice area with AI-driven content, SEO, and reputation management.",
+    description:
+        "Skyabove provides specialized AI marketing for Law Firms, ensuring you rank for high-intent practice areas and automate client intake.",
+};
+
+const painPoints = [
+    {
+        title: "Intake Bottle-necks",
+        description:
+            "Missing calls from distressed clients? Every missed call is a lost case.",
+        icon: "phone-missed",
+    },
+    {
+        title: "Competitive CPD",
+        description:
+            "Cost per Lead skyrocketing in Personal Injury/Family Law? Optimize your spend.",
+        icon: "trending-up",
+    },
+    {
+        title: "Trust Barrier",
+        description:
+            "Clients are skeptical. We build instant authority with content and reviews.",
+        icon: "shield-alert",
+    },
+];
+
+const solutions = [
+    {
+        title: "Practice Area SEO",
+        description:
+            "Rank #1 for 'DUI Attorney [City]' or 'Divorce Lawyer near me'.",
+        icon: "scale",
+    },
+    {
+        title: "Automated Intake",
+        description:
+            "24/7 AI agents to screen leads, schedule consultations, and chase documents.",
+        icon: "bot",
+    },
+    {
+        title: "Reputation Management",
+        description:
+            "Systematically generate positive reviews to win the 'Google Map Pack'.",
+        icon: "star",
+    },
+    {
+        title: "Authority Content",
+        description:
+            "Educational videos and articles that answer client questions and demonstrate expertise.",
+        icon: "book-open",
+    },
+];
+
+const legalTabs = [
+    {
+        id: "websites",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+        title: "Firm Websites",
+        headline: "Professional Law Firm Web Design",
+        description:
+            "Your website is your digital office. We build accessible, fast, and secure websites that convey authority and trust. Integrated with intake forms and live chat to capture clients when they need you most.",
+        image: "/images/legal-website-mockup.png",
+    },
+    {
+        id: "seo",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>`,
+        title: "Legal SEO",
+        headline: "Dominate Practice Area Search",
+        description:
+            "High-intent clients turn to Google. We ensure your firm appears at the top for your specific practice areas. From 'Car Accident Lawyer' to 'Estate Planning Attorney', we target the keywords that drive revenue.",
+        image: "/images/seo-dashboard.png",
+    },
+    {
+        id: "ppc",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>`,
+        title: "PPC / LSA",
+        headline: "Local Services Ads & PPC",
+        description:
+            "Get calls today. We manage high-performance Google Ads and Local Services Ads (LSA) campaigns. We optimize for 'Call Only' ads to connect you directly with potential clients.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
+    },
+    {
+        id: "content",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>`,
+        title: "Content Marketing",
+        headline: "Expert Legal Content",
+        description:
+            "Demonstrate your expertise. We create authoritative blog posts and legal guides that answer common client questions. This builds trust and positions you as the go-to expert in your field.",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000",
+    },
+    {
+        id: "social",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" /></svg>`,
+        title: "Social Media",
+        headline: "Brand Awareness & Trust",
+        description:
+            "Stay professional and visible. We manage your LinkedIn and Facebook profiles to share firm news, successful case results, and community involvement.",
+        image: "/images/social-media-dashboard.png",
+    },
+    {
+        id: "analytics",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>`,
+        title: "Reporting",
+        headline: "Clear Case Attribution",
+        description:
+            "Know your Cost per Case. Our dashboards track every phone call and form submission back to the marketing source, so you know exactly which campaigns are profitable.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
+    },
+];
+---
+
+<Layout
+    title={`${industry.name} Marketing - Skyabove`}
+    description={industry.description}
+>
+    <Navigation />
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="container relative z-10">
+            <div class="hero-content">
+                <span class="hero-label">Exclusively for Law Firms</span>
+                <h1 class="page-title">
+                    Sign More <span class="gradient-text">Cases</span>
+                </h1>
+                <p class="page-subtitle">{industry.subtitle}</p>
+                <div class="cta-wrapper">
+                    <a href="/#contact" class="btn btn-primary"
+                        >Grow Your Practice</a
+                    >
+                    <span class="cta-note"
+                        >Strategies for Personal Injury, Family Law, Estate, and Criminal Defense.</span
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Trap (Problem) Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">The "Generalist" Trap</h2>
+                <p class="section-desc">
+                    Why hiring a generic agency fails for law firms.
+                </p>
+            </div>
+            <div class="pain-points-grid">
+                {
+                    painPoints.map((point) => (
+                        <div class="pain-card">
+                            <div class="pain-icon-wrapper">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class={`lucide lucide-${point.icon}`}
+                                >
+                                    {point.icon === 'phone-missed' && <><line x1="23" x2="17" y1="1" y2="7"/><line x1="17" x2="23" y1="1" y2="7"/><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></>}
+                                    {point.icon === 'trending-up' && <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" />}
+                                    {point.icon === 'shield-alert' && <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/>}
+                                </svg>
+                            </div>
+                            <h3>{point.title}</h3>
+                            <p>{point.description}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">The Skyabove System</span>
+                <h2 class="section-title">
+                    The Verdict is In: AI Works
+                </h2>
+            </div>
+
+            <div class="solutions-grid">
+                {
+                    solutions.map((solution) => (
+                        <div class="solution-card">
+                            <div class="solution-icon">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide-check-circle"
+                                >
+                                    <>
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </>
+                                </svg>
+                            </div>
+                            <div class="solution-content">
+                                <h3>{solution.title}</h3>
+                                <p>{solution.description}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Customized Tabs -->
+    <IndustryTabs tabs={legalTabs} />
+
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready to Approach the Bench?</h2>
+                <p>
+                   Stop losing cases to competitors with better marketing.
+                </p>
+                <a href="/#contact" class="btn btn-primary btn-large"
+                    >Book Your Strategy Call</a
+                >
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+</Layout>
+
+<style>
+    /* Hero Section */
+    .hero-section {
+        position: relative;
+        padding: 12rem 0 8rem;
+        text-align: center;
+        background: url("https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2012")
+            no-repeat center center/cover;
+        overflow: hidden;
+    }
+
+    .hero-bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(15, 23, 42, 0.8), #0f172a);
+        z-index: 1;
+    }
+
+    .relative {
+        position: relative;
+    }
+    .z-10 {
+        z-index: 10;
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: rgba(100, 116, 139, 0.15);
+        color: #94a3b8;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(100, 116, 139, 0.3);
+    }
+
+    .page-title {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        color: white;
+    }
+
+    .gradient-text {
+        background: linear-gradient(45deg, #94a3b8, #cbd5e1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .page-subtitle {
+        font-size: 1.25rem;
+        color: #cbd5e1;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        line-height: 1.7;
+    }
+
+    .cta-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cta-note {
+        font-size: 0.85rem;
+        color: #94a3b8;
+        font-style: italic;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+    }
+
+    .btn-primary {
+        background: linear-gradient(45deg, #64748b, #94a3b8);
+        color: white;
+        box-shadow: 0 4px 20px rgba(100, 116, 139, 0.3);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(100, 116, 139, 0.5);
+    }
+
+    /* Problem Section */
+    .problem-section {
+        padding: 6rem 0;
+        background: #0f172a;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .section-desc {
+        font-size: 1.1rem;
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto 4rem;
+    }
+
+    .pain-points-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .pain-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .pain-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .pain-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        background: rgba(239, 68, 68, 0.1);
+        color: #f87171;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .pain-card h3 {
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .pain-card p {
+        color: #94a3b8;
+        line-height: 1.6;
+    }
+
+    /* Solution Section */
+    .solution-section {
+        padding: 6rem 0;
+        background: #1e293b;
+    }
+
+    .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+
+    .solution-card {
+        display: flex;
+        gap: 1.5rem;
+        padding: 2rem;
+        background: rgba(15, 23, 42, 0.5);
+        border-radius: 1rem;
+        border: 1px solid rgba(100, 116, 139, 0.2);
+    }
+
+    .solution-icon {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #64748b, #94a3b8);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .solution-content h3 {
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+
+    .solution-content p {
+        color: #cbd5e1;
+        line-height: 1.6;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        padding: 6rem 0;
+        background: #0f172a;
+    }
+
+    .cta-box {
+        background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        border: 1px solid #64748b;
+        padding: 4rem 2rem;
+        border-radius: 2rem;
+        text-align: center;
+    }
+
+    .cta-box h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+        font-size: 1.2rem;
+        color: #cbd5e1;
+        margin-bottom: 2.5rem;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>

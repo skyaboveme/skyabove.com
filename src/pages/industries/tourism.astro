@@ -1,0 +1,490 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+import IndustryTabs from "../../components/IndustryTabs.astro";
+
+const industry = {
+    name: "Tourism & Travel",
+    title: "Fill Books & Sell Out Tours with AI Marketing",
+    subtitle:
+        "Stop relying on OTAs and paying massive commissions. Build a direct-booking engine that captures travelers before they ever hit Expedia or TripAdvisor.",
+    description:
+        "Skyabove empowers tourism businesses to drive direct bookings and maximize seasonal revenue with specialized AI marketing strategies.",
+};
+
+const painPoints = [
+    {
+        title: "The OTA Commission Crush",
+        description:
+            "Losing 20-30% of every booking to intermediaries? Take back your margins.",
+        icon: "percent",
+    },
+    {
+        title: "Seasonal Slumps",
+        description:
+            "Empty rooms or tours during shoulder season kill cash flow. We fill the gaps.",
+        icon: "calendar-off",
+    },
+    {
+        title: "Invisible to Travelers",
+        description:
+            "Great experience, but no one knows you exist? We put you in front of planners.",
+        icon: "ghost",
+    },
+];
+
+const solutions = [
+    {
+        title: "Direct Booking SEO",
+        description:
+            "Dominate search results for 'Best [Activity/Stay] in [Location]' and capture intent early.",
+        icon: "globe",
+    },
+    {
+        title: "Visual Storytelling Ads",
+        description:
+            "Immersive video and image campaigns that sell the experience on social media.",
+        icon: "camera",
+    },
+    {
+        title: "Automated Rescheduling",
+        description:
+            "AI agents handle inquiries, re-bookings, and FAQs 24/7 without staff intervention.",
+        icon: "refresh-cw",
+    },
+    {
+        title: "Dynamic Pricing Promos",
+        description:
+            "Smart campaigns that trigger offers based on occupancy and seasonal demand.",
+        icon: "trending-up",
+    },
+];
+
+const tourismTabs = [
+    {
+        id: "websites",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+        title: "Direct Booking Sites",
+        headline: "Commission-Free Booking Engines",
+        description:
+            "Stop paying 20%+ to OTAs. We build stunning, immersive travel websites that inspire wanderlust and drive direct bookings. Features include integrated booking engines, virtual tours, and itinerary builders.",
+        image: "/images/travel-website-mockup.png",
+    },
+    {
+        id: "seo",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>`,
+        title: "Travel SEO",
+        headline: "Rank for Experience-Based Searches",
+        description:
+            "Travelers search for experiences, not just brands. We help you rank for 'best family vacation in [City]' or 'luxury tours in [Region]', capturing high-intent traffic early in the planning phase.",
+        image: "/images/seo-dashboard.png",
+    },
+    {
+        id: "ppc",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>`,
+        title: "PPC & Social Ads",
+        headline: "Visual Storytelling Ads",
+        description:
+            "Travel is emotional. We run breathtaking video and image ads on Instagram and Facebook that make users stop scrolling and start dreaming. Retargeting campaigns bring them back to book.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
+    },
+    {
+        id: "content",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>`,
+        title: "Content Marketing",
+        headline: "Destination Guides & Blogs",
+        description:
+            "Become the authority on your destination. We create detailed travel guides, packing lists, and 'best of' articles that attract travelers and build trust before they even book.",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000",
+    },
+    {
+        id: "social",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" /></svg>`,
+        title: "Social Media",
+        headline: "Inspire & Engage",
+        description:
+            "We curate your social feeds with user-generated content, influencer collaborations, and stunning visuals to create a community of loyal travelers who share your brand.",
+        image: "/images/social-media-dashboard.png",
+    },
+    {
+        id: "analytics",
+        icon: `<svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>`,
+        title: "Reporting",
+        headline: "Revenue Attribution",
+        description:
+            "Know exactly which campaigns are driving heads in beds or tour seats filled. We track ROAS (Return on Ad Spend) diligently to ensure your marketing is profitable.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2000",
+    },
+];
+---
+
+<Layout
+    title={`${industry.name} Marketing - Skyabove`}
+    description={industry.description}
+>
+    <Navigation />
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg-overlay"></div>
+        <div class="container relative z-10">
+            <div class="hero-content">
+                <span class="hero-label">Exclusively for Travel & Tourism</span>
+                <h1 class="page-title">
+                    Drive More <span class="gradient-text">Direct Bookings</span>
+                </h1>
+                <p class="page-subtitle">{industry.subtitle}</p>
+                <div class="cta-wrapper">
+                    <a href="/#contact" class="btn btn-primary"
+                        >Start Your Adventure</a
+                    >
+                    <span class="cta-note"
+                        >Tailored strategies for hotels, tour operators, and agencies.</span
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Trap (Problem) Section -->
+    <section class="problem-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Escape the Aggregator Trap</h2>
+                <p class="section-desc">
+                    Why depending on third-party platforms is costing you a
+                    fortune.
+                </p>
+            </div>
+            <div class="pain-points-grid">
+                {
+                    painPoints.map((point) => (
+                        <div class="pain-card">
+                            <div class="pain-icon-wrapper">
+                                <!-- Placeholder Icons usually, but using generic SVG shapes here -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class={`lucide lucide-${point.icon}`}
+                                >
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="12" y1="8" x2="12" y2="16" />
+                                    <line x1="8" y1="12" x2="16" y2="12" />
+                                </svg>
+                            </div>
+                            <h3>{point.title}</h3>
+                            <p>{point.description}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- The Solution Section -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-label">The Skyabove System</span>
+                <h2 class="section-title">
+                    The First Class Marketing Experience
+                </h2>
+            </div>
+
+            <div class="solutions-grid">
+                {
+                    solutions.map((solution) => (
+                        <div class="solution-card">
+                            <div class="solution-icon">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="lucide-check-circle"
+                                >
+                                    <>
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                        <polyline points="22 4 12 14.01 9 11.01" />
+                                    </>
+                                </svg>
+                            </div>
+                            <div class="solution-content">
+                                <h3>{solution.title}</h3>
+                                <p>{solution.description}</p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <IndustryTabs tabs={tourismTabs} />
+
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready for Takeoff?</h2>
+                <p>
+                    Pack your bags for better margins and consistent bookings.
+                </p>
+                <a href="/#contact" class="btn btn-primary btn-large"
+                    >Book Your Strategy Call</a
+                >
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+</Layout>
+
+<style>
+    /* Hero Section */
+    .hero-section {
+        position: relative;
+        padding: 12rem 0 8rem;
+        text-align: center;
+        background: url("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=2021")
+            no-repeat center center/cover;
+        overflow: hidden;
+    }
+
+    .hero-bg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), #0f172a);
+        z-index: 1;
+    }
+
+    .relative {
+        position: relative;
+    }
+    .z-10 {
+        z-index: 10;
+    }
+
+    .hero-label {
+        display: inline-block;
+        background: rgba(14, 165, 233, 0.15);
+        color: #38bdf8;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(14, 165, 233, 0.3);
+    }
+
+    .page-title {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        color: white;
+    }
+
+    .gradient-text {
+        background: linear-gradient(45deg, #0ea5e9, #22d3ee);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .page-subtitle {
+        font-size: 1.25rem;
+        color: #cbd5e1;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        line-height: 1.7;
+    }
+
+    .cta-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .cta-note {
+        font-size: 0.85rem;
+        color: #94a3b8;
+        font-style: italic;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.1rem;
+    }
+
+    .btn-primary {
+        background: linear-gradient(45deg, #0ea5e9, #22d3ee);
+        color: white;
+        box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(14, 165, 233, 0.5);
+    }
+
+    /* Problem Section */
+    .problem-section {
+        padding: 6rem 0;
+        background: #0f172a;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .section-desc {
+        font-size: 1.1rem;
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto 4rem;
+    }
+
+    .pain-points-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .pain-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
+    }
+
+    .pain-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .pain-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        background: rgba(239, 68, 68, 0.1);
+        color: #f87171;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .pain-card h3 {
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .pain-card p {
+        color: #94a3b8;
+        line-height: 1.6;
+    }
+
+    /* Solution Section */
+    .solution-section {
+        padding: 6rem 0;
+        background: #1e293b;
+    }
+
+    .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+
+    .solution-card {
+        display: flex;
+        gap: 1.5rem;
+        padding: 2rem;
+        background: rgba(15, 23, 42, 0.5);
+        border-radius: 1rem;
+        border: 1px solid rgba(14, 165, 233, 0.2);
+    }
+
+    .solution-icon {
+        flex-shrink: 0;
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .solution-content h3 {
+        color: white;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+
+    .solution-content p {
+        color: #cbd5e1;
+        line-height: 1.6;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        padding: 6rem 0;
+        background: #0f172a;
+    }
+
+    .cta-box {
+        background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        border: 1px solid #0ea5e9;
+        padding: 4rem 2rem;
+        border-radius: 2rem;
+        text-align: center;
+    }
+
+    .cta-box h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+        font-size: 1.2rem;
+        color: #cbd5e1;
+        margin-bottom: 2.5rem;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
