@@ -173,9 +173,9 @@ const realEstateTabs = [
                                     stroke-linejoin="round"
                                     class={`lucide lucide-${point.icon}`}
                                 >
-                                    {point.icon === 'home' && <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />}
-                                    {point.icon === 'clock' && <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />}
-                                    {point.icon === 'trending-down' && <polyline points="23 18 13.5 8.5 8.5 13.5 1 6" /><polyline points="17 18 23 18 23 12" />}
+                                    {point.icon === 'home' && <><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></>}
+                                    {point.icon === 'clock' && <><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></>}
+                                    {point.icon === 'trending-down' && <><polyline points="23 18 13.5 8.5 8.5 13.5 1 6" /><polyline points="17 18 23 18 23 12" /></>}
                                     
                                     <!-- Fallback generic circle if needed, but specific paths above -->
                                 </svg>
