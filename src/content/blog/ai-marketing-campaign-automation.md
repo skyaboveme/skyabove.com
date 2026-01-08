@@ -11,7 +11,7 @@ tags: ["Marketing Automation", "AI", "Campaign Management", "Digital Marketing",
 
 Traditional marketing campaign launches are notoriously time-consuming. Between audience research, creative development, platform setup, and testing, a comprehensive multi-channel campaign could easily take 3-4 weeks from concept to launch.
 
-AI marketing automation is collapsing these timelines to hours—not by cutting corners, but by intelligently accelerating every step of the process.
+AI marketing automation is collapsing these timelines to hours - not by cutting corners, but by intelligently accelerating every step of the process.
 
 ## The Traditional Campaign Timeline: A 3-4 Week Journey
 
@@ -134,7 +134,7 @@ Here's the AI stack that makes this speed possible:
 
 ## Beyond Speed: The Strategic Advantages
 
-The real power of AI marketing automation isn't just speed—it's the strategic opportunities that speed creates:
+The real power of AI marketing automation isn't just speed - it's the strategic opportunities that speed creates:
 
 ### 1. Test More, Learn Faster
 - Launch 10+ campaign variations simultaneously
@@ -226,11 +226,11 @@ In today's market, the ability to launch campaigns quickly creates massive compe
 - **Respond faster** to market changes
 - **Scale campaigns** without scaling headcount
 
-The marketing teams winning right now aren't just using AI—they're using it to move faster than their competition.
+The marketing teams winning right now aren't just using AI - they're using it to move faster than their competition.
 
 ## Making the Shift: From Weeks to Hours
 
-The transformation from traditional marketing to AI-powered automation isn't just about tools—it's about mindset:
+The transformation from traditional marketing to AI-powered automation isn't just about tools - it's about mindset:
 
 **Old mindset**: "We need more time to launch this right"
 **New mindset**: "We can launch, learn, and optimize in real-time"
@@ -250,7 +250,7 @@ Imagine if your next marketing campaign could:
 - Deliver 3.8x ROAS from day one
 - Free up your team for strategic work
 
-That's not future thinking—it's happening now with AI marketing automation.
+That's not future thinking - it's happening now with AI marketing automation.
 
 ---
 
@@ -268,4 +268,4 @@ Skyabove helps businesses implement AI-powered marketing automation that deliver
 **Call us**: (951) 760-0896
 **Email**: hello@skyabove.com
 
-*Comprehensive AI marketing services starting at $3,000/month. 3-month minimum, month-to-month after.*
+*Comprehensive AI marketing services starting at $2,000/month. 3-month minimum, month-to-month after.*

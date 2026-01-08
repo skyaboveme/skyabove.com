@@ -7,7 +7,7 @@ category: "AI Trends"
 tags: ["AI", "Marketing Automation", "Trends", "Agentic AI", "AIO"]
 ---
 
-The marketing landscape is evolving at breakneck speed, and Artificial Intelligence has moved from a "tool" to an "agent." As we move through 2026, AI-powered strategies are no longer just about efficiency—they're about autonomy. Let's explore the top trends shaping the future of marketing.
+The marketing landscape is evolving at breakneck speed, and Artificial Intelligence has moved from a "tool" to an "agent." As we move through 2026, AI-powered strategies are no longer just about efficiency - they're about autonomy. Let's explore the top trends shaping the future of marketing.
 
 ## 1. Agentic AI: From Tools to Teammates
 

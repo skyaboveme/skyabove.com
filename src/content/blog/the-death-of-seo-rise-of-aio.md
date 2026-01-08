@@ -9,7 +9,7 @@ tags: ["SEO", "AIO", "Future of Search", "AI Marketing"]
 
 For 20 years, the goal was simple: get to the top of Google.
 
-We obsessed over keywords, backlinks, and domain authority. We wrote content for algorithms, not people. And it worked—until now.
+We obsessed over keywords, backlinks, and domain authority. We wrote content for algorithms, not people. And it worked - until now.
 
 ## The Shift: From Search to Answers
 

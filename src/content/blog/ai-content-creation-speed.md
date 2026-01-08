@@ -79,7 +79,7 @@ The concern every marketer has: "Can AI really maintain quality while moving thi
 
 The answer: **Yes, when used correctly.**
 
-Here's the key: AI doesn't replace human creativity—it amplifies it. The workflow becomes:
+Here's the key: AI doesn't replace human creativity - it amplifies it. The workflow becomes:
 
 1. **Human**: Define strategy, brand voice, key messages
 2. **AI**: Generate initial drafts and variations
@@ -124,7 +124,7 @@ To achieve these results, we utilize:
 
 ## The Strategic Advantage: Speed Creates Opportunity
 
-The real benefit of AI-accelerated content creation isn't just efficiency—it's competitive advantage:
+The real benefit of AI-accelerated content creation isn't just efficiency - it's competitive advantage:
 
 1. **Test more, learn faster**: Publish 5x more variations to discover what resonates
 2. **Respond in real-time**: Create content about trending topics within hours
@@ -162,7 +162,7 @@ Ready to 10x your content speed? Here's how to begin:
 
 ## The Bottom Line: AI Makes Marketing Faster, Not Just Easier
 
-The marketing teams winning right now aren't working harder—they're working smarter with AI.
+The marketing teams winning right now aren't working harder - they're working smarter with AI.
 
 By leveraging AI for content creation, you can:
 - **Publish 10x more content** in the same time
@@ -171,7 +171,7 @@ By leveraging AI for content creation, you can:
 - **Maintain quality** while increasing quantity
 - **Free up creative time** for strategy and innovation
 
-The question isn't whether to adopt AI for content creation—it's how quickly you can implement it before your competitors do.
+The question isn't whether to adopt AI for content creation - it's how quickly you can implement it before your competitors do.
 
 ---
 
@@ -188,4 +188,4 @@ At Skyabove, we help businesses implement AI-powered marketing workflows that de
 **Call us**: (951) 760-0896
 **Email**: hello@skyabove.com
 
-*Starting at $3,000/month for comprehensive AI-powered marketing services including strategy, content creation, AI optimization, and automation.*
+*Starting at $2,000/month for comprehensive AI-powered marketing services including strategy, content creation, AI optimization, and automation.*

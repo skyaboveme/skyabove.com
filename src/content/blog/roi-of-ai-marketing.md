@@ -11,7 +11,7 @@ tags: ["ROI", "Analytics", "Business Growth", "AI Marketing"]
 
 ## The Bottom Line First
 
-Based on our analysis of 50+ client implementations over the past two years, businesses investing in AI marketing see an average ROI of **340%** within the first 12 months. But the devil is in the details—let's break it down.
+Based on our analysis of 50+ client implementations over the past two years, businesses investing in AI marketing see an average ROI of **340%** within the first 12 months. But the devil is in the details - let's break it down.
 
 ## Understanding AI Marketing ROI
 
