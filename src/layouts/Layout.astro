@@ -1,6 +1,7 @@
 ---
 import SEO from "../components/SEO.astro";
 import WebVitals from "../components/WebVitals.astro";
+import BookingWidget from "../components/BookingWidget.astro";
 
 export interface Props {
   title: string;
@@ -100,6 +101,8 @@ const {
 
     <!-- Core Web Vitals Monitoring -->
     <WebVitals />
+
+    <BookingWidget />
 
     <script>
       // Optimized scroll handling with requestAnimationFrame for better INP

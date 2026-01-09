@@ -7,6 +7,7 @@ import GridAnimation from "../components/GridAnimation.astro";
 import AnimatedCounter from "../components/AnimatedCounter.astro";
 import MarketingPillars from "../components/MarketingPillars.astro";
 import MarketingApproach from "../components/MarketingApproach.astro";
+import AgencyComparison from "../components/AgencyComparison.astro";
 ---
 
 <Layout
@@ -42,9 +43,9 @@ import MarketingApproach from "../components/MarketingApproach.astro";
         <div class="hero-price-card">
           <div class="price-badge">One Comprehensive Package</div>
           <div class="hero-price">
-            <span class="price-currency">$</span>
-            <span class="price-amount">3,000</span>
-            <span class="price-period">/month</span>
+            <span class="price-amount" style="font-size: 0.8em;"
+              >starting at $2,000 a month</span
+            >
           </div>
           <p class="price-commitment">3-month minimum • Month to month after</p>
         </div>
@@ -357,6 +358,8 @@ import MarketingApproach from "../components/MarketingApproach.astro";
       </div>
     </div>
   </section>
+
+  <AgencyComparison />
 
   <!-- Marketing Services -->
   <section class="why-ai">

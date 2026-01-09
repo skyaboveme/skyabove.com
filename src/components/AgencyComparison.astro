@@ -1,0 +1,202 @@
+---
+
+---
+
+<section class="agency-comparison">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label">Why Choose Skyabove?</span>
+            <h2 class="section-title">The Old Way vs. The AI Way</h2>
+            <p class="section-description">
+                Stop paying for overhead and inefficiencies. Get a lean, mean,
+                AI-powered growth engine.
+            </p>
+        </div>
+
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th class="feature-col">Feature</th>
+                        <th class="traditional-col">Traditional Agency</th>
+                        <th class="skyabove-col">
+                            <span class="skyabove-logo">Skyabove</span>
+                            <span class="highlight-badge">AI Powered</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="feature-name">Monthly Cost</td>
+                        <td class="traditional-val">$5,000 - $10,000+</td>
+                        <td class="skyabove-val">$2,000 (Flat Rate)</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Execution Speed</td>
+                        <td class="traditional-val">Weeks or Months</td>
+                        <td class="skyabove-val">Days or Instant</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Availability</td>
+                        <td class="traditional-val">9-5, Mon-Fri</td>
+                        <td class="skyabove-val">24/7/365 Agents</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Scope of Work</td>
+                        <td class="traditional-val">Limited / Hourly Billing</td
+                        >
+                        <td class="skyabove-val">Unlimited Requests</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Technology</td>
+                        <td class="traditional-val">Disjointed Manual Tools</td>
+                        <td class="skyabove-val">Integrated AI Stack</td>
+                    </tr>
+                    <tr>
+                        <td class="feature-name">Ownership</td>
+                        <td class="traditional-val">Vendor Lock-in</td>
+                        <td class="skyabove-val">You Own Everything</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<style>
+    .agency-comparison {
+        padding: 6rem 0;
+        background-color: var(--color-background);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .section-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+    }
+
+    .section-label {
+        color: var(--color-primary);
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: var(--color-text-primary);
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+
+    .section-description {
+        font-size: 1.125rem;
+        color: var(--color-text-secondary);
+    }
+
+    .comparison-table-wrapper {
+        overflow-x: auto;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 1rem;
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+    }
+
+    .comparison-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        min-width: 600px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 1.5rem;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .comparison-table th {
+        font-weight: 600;
+        font-size: 1.125rem;
+        color: var(--color-text-primary);
+        padding-bottom: 2rem;
+    }
+
+    .feature-col {
+        width: 30%;
+    }
+
+    .traditional-col {
+        width: 35%;
+        color: var(--color-text-secondary);
+    }
+
+    .skyabove-col {
+        width: 35%;
+        background: rgba(var(--color-primary-rgb), 0.1);
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        position: relative;
+    }
+
+    /* Fix for background on tbody rows for the skyabove column */
+    .comparison-table tbody tr td:last-child {
+        background: rgba(var(--color-primary-rgb), 0.05);
+    }
+
+    .comparison-table tbody tr:last-child td:last-child {
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-bottom: none;
+    }
+
+    .skyabove-logo {
+        display: block;
+        color: var(--color-primary-light);
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .highlight-badge {
+        display: inline-block;
+        background: var(--color-primary);
+        color: white;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 99px;
+        font-weight: 600;
+    }
+
+    .feature-name {
+        font-weight: 500;
+        color: var(--color-text-secondary);
+    }
+
+    .traditional-val {
+        color: var(--color-text-muted);
+    }
+
+    .skyabove-val {
+        font-weight: 600;
+        color: var(--color-primary-light);
+        font-size: 1.125rem;
+    }
+
+    @media (max-width: 768px) {
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+        }
+
+        .skyabove-val {
+            font-size: 1rem;
+        }
+    }
+</style>
