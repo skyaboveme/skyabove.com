@@ -6,7 +6,7 @@ We replace the fragmented mess of freelancers and agencies with one unified team
 
 **Single Point of Truth:** Skyabove turns attention into action - and action into predictable revenue - by building marketing assets that compound over time rather than resetting every month.
 
-## The Offer: $3,000/Month Complete Growth System
+## The Offer: $2,000/Month Complete Growth System
 We provide a comprehensive, all-inclusive package that covers every aspect of modern digital growth for a single flat fee.
 
 ### What is Included:
@@ -65,7 +65,7 @@ We don't just use tools; we build on top of them.
 
 ## Site Structure & Navigation
 *   **Home**: `/` - The core proposition and "Growth System" overview.
-*   **Services**: `/services` - Detailed breakdown of the $3,000/mo package.
+*   **Services**: `/services` - Detailed breakdown of the $2,000/mo package.
     *   *AI-Powered Ads*: `/services#ads`
     *   *Advanced SEO*: `/services#seo`
     *   *Content Engine*: `/services#content`

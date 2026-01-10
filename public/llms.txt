@@ -1,6 +1,6 @@
 # Skyabove - AI Marketing Agency
 
-> Skyabove is a complete AI marketing agency offering comprehensive marketing, AI development, and automation services starting at $3,000/month.
+> Skyabove is a complete AI marketing agency offering comprehensive marketing, AI development, and automation services starting at $2,000/month.
 
 ## About Skyabove
 
@@ -8,7 +8,7 @@ Skyabove is an AI Marketing Agency with a global team of AI experts in the Unite
 
 ## Services
 
-All services are included in one comprehensive package starting at $3,000/month with a 3-month minimum commitment:
+All services are included in one comprehensive package starting at $2,000/month with a 3-month minimum commitment:
 
 ### Marketing Services
 - Marketing strategy and campaign management
@@ -61,7 +61,7 @@ We master all major AI platforms including:
 
 ## Pricing
 
-- Starting at $3,000/month
+- Starting at $2,000/month
 - 3-month minimum commitment
 - Month-to-month after initial commitment
 - All services included - no hidden fees
